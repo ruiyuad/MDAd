@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.summary      = "A ads framework that show universal ads types."
 
-  s.description  = "A ads framework that show universal ads types."
+  s.description  = "Your can access RuiYuAdMob.framework to show ads such as banner ads, interstitial Ads and video ads."
 
   s.homepage     = "https://github.com/ruiyuad"
 
