@@ -1,0 +1,6 @@
+framework module RuiYuAdMob {
+  umbrella header "RuiYuAdMob.h"
+
+  export *
+  module * { export * }
+}
