@@ -42,23 +42,23 @@
     ```
  3. **RYBannerView** 提供广告请求成功或者失败的代理方法, 如果你在广告数据请求成功后显示广告视图, 你可以这样做:
   
-  - 设置代理给当前控制器:
+    - 设置代理给当前控制器:
   
-    ```Swift
-    bannerView.delegate = self
-    ```
+      ```Swift
+      bannerView.delegate = self
+      ```
 	  
-  - 实现广告数据成功获取代理方法: 
+    - 实现广告数据成功获取代理方法: 
 
-    ```Swift
-    func adViewDidReceiveAd(_ bannerView: RYBannerView) {
-	// You can show infoFlowView with animation.
-	// 你可以在收到横幅广告后, 在这里使用动画来展示它
-	UIView.animate(withDuration: 1.0) {
-	    self.bannerView.alpha = 1.0
-	}
-    }
-    ```
+      ```Swift
+      func adViewDidReceiveAd(_ bannerView: RYBannerView) {
+	  // You can show infoFlowView with animation.
+	  // 你可以在收到横幅广告后, 在这里使用动画来展示它
+	  UIView.animate(withDuration: 1.0) {
+	      self.bannerView.alpha = 1.0
+	  }
+      }
+      ```
 	    
  4. 详细代码请看 Demo 中 `BannerViewController` 类. 实现效果如下: (图三)
 
