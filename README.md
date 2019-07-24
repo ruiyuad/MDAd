@@ -12,7 +12,7 @@
 
 1. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: (图一)
 	
-	 - 在 `target` -> `General` -> `Embedded Binaries` 中点击坐下角 `+`, 选择 `RuiYuAdMob.framework`, 添加. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. (图二)
+	 - 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. (图二)
 	 - 使用用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
 
 2. **通过 CocoaPods 集成 (稍后集成)**
@@ -166,6 +166,7 @@
 
 1. 加载广告未显示, 请检查对应广告 ID 是否正确;
 2. 手动集成发生 `image not found` 错误: 确定 `RuiYuAdMob.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 同时存在项目中.
+3. 
 
 ## 版本日志
 
