@@ -1,4 +1,4 @@
-# RYAds
+# MDAd
 
 **`RuiYuAdMob.framework`** 用于 iOS 端展示常见移动应用广告. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 
 
