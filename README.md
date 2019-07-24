@@ -52,11 +52,11 @@
 
       ```Swift
       func adViewDidReceiveAd(_ bannerView: RYBannerView) {
-	  // You can show infoFlowView with animation.
-	  // 你可以在收到横幅广告后, 在这里使用动画来展示它
-	  UIView.animate(withDuration: 1.0) {
-	      self.bannerView.alpha = 1.0
-	  }
+	    // You can show infoFlowView with animation.
+	    // 你可以在收到横幅广告后, 在这里使用动画来展示它
+	    UIView.animate(withDuration: 1.0) {
+	       self.bannerView.alpha = 1.0
+	    }
       }
       ```
 	    
