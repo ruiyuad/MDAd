@@ -15,11 +15,11 @@
 		9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87C22B0E5C700D51F1C /* Assets.xcassets */; };
 		9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87E22B0E5C700D51F1C /* LaunchScreen.storyboard */; };
 		9825B88B22B0E5C700D51F1C /* TestRuiYuAdMobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B88A22B0E5C700D51F1C /* TestRuiYuAdMobTests.swift */; };
-		9864E55822E8394000ED0A42 /* RuiYuAdMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9864E55622E8394000ED0A42 /* RuiYuAdMob.bundle */; };
-		9864E55922E8394000ED0A42 /* RuiYuAdMob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864E55722E8394000ED0A42 /* RuiYuAdMob.framework */; };
-		9864E55A22E8394B00ED0A42 /* RuiYuAdMob.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9864E55722E8394000ED0A42 /* RuiYuAdMob.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		986C18AD22D5E9C600F06172 /* InfoFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */; };
 		98AFEDD022DECBE50046B760 /* InterstitialHalfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */; };
+		98B3946E22E85E5300AAA27B /* RuiYuAdMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98B3946C22E85E5300AAA27B /* RuiYuAdMob.bundle */; };
+		98B3946F22E85E5D00AAA27B /* RuiYuAdMob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B3946B22E85E5300AAA27B /* RuiYuAdMob.framework */; };
+		98B3947022E85E5D00AAA27B /* RuiYuAdMob.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98B3946B22E85E5300AAA27B /* RuiYuAdMob.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9864E55A22E8394B00ED0A42 /* RuiYuAdMob.framework in Embed Frameworks */,
+				98B3947022E85E5D00AAA27B /* RuiYuAdMob.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,10 +59,10 @@
 		9825B88622B0E5C700D51F1C /* TestRuiYuAdMobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestRuiYuAdMobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9825B88A22B0E5C700D51F1C /* TestRuiYuAdMobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRuiYuAdMobTests.swift; sourceTree = "<group>"; };
 		9825B88C22B0E5C700D51F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9864E55622E8394000ED0A42 /* RuiYuAdMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RuiYuAdMob.bundle; sourceTree = "<group>"; };
-		9864E55722E8394000ED0A42 /* RuiYuAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RuiYuAdMob.framework; sourceTree = "<group>"; };
 		986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFlowViewController.swift; sourceTree = "<group>"; };
 		98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialHalfViewController.swift; sourceTree = "<group>"; };
+		98B3946B22E85E5300AAA27B /* RuiYuAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RuiYuAdMob.framework; path = ../RuiYuAdMob.framework; sourceTree = "<group>"; };
+		98B3946C22E85E5300AAA27B /* RuiYuAdMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RuiYuAdMob.bundle; path = ../RuiYuAdMob.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9864E55922E8394000ED0A42 /* RuiYuAdMob.framework in Frameworks */,
+				98B3946F22E85E5D00AAA27B /* RuiYuAdMob.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +87,8 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
-				9864E55622E8394000ED0A42 /* RuiYuAdMob.bundle */,
-				9864E55722E8394000ED0A42 /* RuiYuAdMob.framework */,
+				98B3946C22E85E5300AAA27B /* RuiYuAdMob.bundle */,
+				98B3946B22E85E5300AAA27B /* RuiYuAdMob.framework */,
 				9825B87422B0E5C600D51F1C /* TestRuiYuAdMob */,
 				9825B88922B0E5C700D51F1C /* TestRuiYuAdMobTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
@@ -215,7 +215,7 @@
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
-				9864E55822E8394000ED0A42 /* RuiYuAdMob.bundle in Resources */,
+				98B3946E22E85E5300AAA27B /* RuiYuAdMob.bundle in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

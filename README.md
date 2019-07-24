@@ -10,7 +10,7 @@
 
 ## 集成方式
 
-1. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: (图一)
+1. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
 	
 	 - 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. (图二)
 	 - 使用用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
@@ -160,13 +160,13 @@
  
  3. **RYBuoyViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
- 4. 详细代码请看 Demo 中 `BuoyViewController` 类. 实现效果如下: (图六)
+ 4. 详细代码请看 Demo 中 `BuoyViewController` 类. 实现效果如下:
 
 ## 常见问题
 
 1. 加载广告未显示, 请检查对应广告 ID 是否正确;
 2. 手动集成发生 `image not found` 错误: 确定 `RuiYuAdMob.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 同时存在项目中.
-3. 文档以 Swift 代码演示, 如果你正在使用是 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
+3. 文档以 Swift 代码演示, 如果你正在使用 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
 
 ## 版本日志
 
