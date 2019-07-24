@@ -166,7 +166,7 @@
 
 1. 加载广告未显示, 请检查对应广告 ID 是否正确;
 2. 手动集成发生 `image not found` 错误: 确定 `RuiYuAdMob.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 同时存在项目中.
-3. 
+3. 文档以 Swift 代码演示, 如果你正在使用是 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
 
 ## 版本日志
 
