@@ -27,38 +27,38 @@
 
  1. 便于展示, 我们采用 Interface Builder 来构建视图. 我们拖入一个 View 视图, 取名为 bannerView, 并选择继承自 `RYBannerView`. `RYBannerView` 是 `RuiYuAdMob.framework` 中用于展示横幅广告的视图类.
  	
- 	```
+ 	```Swift
  	@IBOutlet weak var bannerView: RYBannerView!
  	```
 
  2. 在 `viewDidLoad`(或者其他加载视图的时机) 中配置横幅广告 ID, 并且开始请求广告, 示例代码如下:
 
-   ```Swift
-   		// 1. Required step1: configs AdsID
-        bannerView.adsID = "横幅广告ID"
-        
-        // 2. Required step2: load request
-        bannerView.loadRequest()
-   ```
+    ```Swift
+    // 1. Required step1: configs AdsID
+    bannerView.adsID = "横幅广告ID"
+
+    // 2. Required step2: load request
+    bannerView.loadRequest()
+    ```
  3. **RYBannerView** 提供广告请求成功或者失败的代理方法, 如果你在广告数据请求成功后显示广告视图, 你可以这样做:
   
   - 设置代理给当前控制器:
   
-	  ```Swift
-	  	bannerView.delegate = self
-	  ```
+    ```Swift
+    bannerView.delegate = self
+    ```
 	  
   - 实现广告数据成功获取代理方法: 
 
-	    ```Swift
-	    func adViewDidReceiveAd(_ bannerView: RYBannerView) {
-	        // You can show infoFlowView with animation.
-	        // 你可以在收到横幅广告后, 在这里使用动画来展示它
-	        UIView.animate(withDuration: 1.0) {
-	            self.bannerView.alpha = 1.0
-	        }
-	    }
-	    ```
+    ```Swift
+    func adViewDidReceiveAd(_ bannerView: RYBannerView) {
+	// You can show infoFlowView with animation.
+	// 你可以在收到横幅广告后, 在这里使用动画来展示它
+	UIView.animate(withDuration: 1.0) {
+	    self.bannerView.alpha = 1.0
+	}
+    }
+    ```
 	    
  4. 详细代码请看 Demo 中 `BannerViewController` 类. 实现效果如下: (图三)
 
@@ -69,19 +69,19 @@
 
  1. 创建 `RYInfoFlowView` 实例:
  	
- 	```Swift
- 	@IBOutlet weak var infoFlowView: RYInfoFlowView!
- 	```
+    ```Swift
+    @IBOutlet weak var infoFlowView: RYInfoFlowView!
+    ```
  	
  2. 在 `viewDidLoad`(或者其他加载视图的时机) 中配置信息流广告 ID, 并且开始请求广告, 示例代码如下:
  
- 	```Swift
-	 // 1. Required step1: configs `AdsID`
+    ```Swift
+    // 1. Required step1: configs `AdsID`
     infoFlowView.adsID = "信息流广告ID"
     
     // 2. Required step2: load request
     infoFlowView.loadRequest()
- 	```
+    ```
  
  3. **RYInfoFlowViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
@@ -94,19 +94,19 @@
 
  1. 创建 `RYInterstitialView` 实例:
  	
- 	```Swift
- 	@IBOutlet weak var interstitialView: RYInterstitialView!
- 	```
+    ```Swift
+    @IBOutlet weak var interstitialView: RYInterstitialView!
+    ```
  	
  2. 在 `viewDidLoad`(或者其他加载视图的时机) 中配置开屏广告 ID, 并且开始请求广告, 示例代码如下:
  
- 	```Swift
- 	// 1. Required step1: configs `AdsID`
+    ```Swift
+    // 1. Required step1: configs `AdsID`
     interstitialView.adsID = "开屏广告ID"
     
     // 2. Required step2: load request
     interstitialView.loadRequest()
- 	```
+    ```
  
  3. **RYInterstitialViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
@@ -119,19 +119,19 @@
 
  1. 创建 `RYInterstitialHalfView ` 实例:
  	
- 	```Swift
- 	@IBOutlet weak var halfInterstitialView: RYInterstitialHalfView!
- 	```
+    ```Swift
+    @IBOutlet weak var halfInterstitialView: RYInterstitialHalfView!
+    ```
  	
  2. 在 `viewDidLoad`(或者其他加载视图的时机) 中配置插屏广告 ID, 并且开始请求广告, 示例代码如下:
  
- 	```Swift
- 	// 1. Required step1: configs `AdsID`
+    ```Swift
+    // 1. Required step1: configs `AdsID`
     halfInterstitialView.adsID = "插屏广告ID"
     
     // 2. Required step2: load request
     halfInterstitialView.loadRequest()
- 	```
+    ```
  
  3. **RYInterstitialHalfViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
@@ -144,19 +144,19 @@
 
  1. 创建 `RYBuoyView` 实例:
  	
- 	```Swift
- 	@IBOutlet weak var buoyView: RYBuoyView!
- 	```
+    ```Swift
+    @IBOutlet weak var buoyView: RYBuoyView!
+    ```
  	
  2. 在 `viewDidLoad`(或者其他加载视图的时机) 中配置浮标广告 ID, 并且开始请求广告, 示例代码如下:
  
- 	```Swift
- 	// 1. Required step1: configs `AdsID`
+    ```Swift
+    // 1. Required step1: configs `AdsID`
     buoyView.adsID = "浮标广告ID"
     
     // 2. Required step2: load request
     buoyView.loadRequest()
- 	```
+    ```
  
  3. **RYBuoyViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
