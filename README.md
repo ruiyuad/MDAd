@@ -8,14 +8,20 @@
 - **基于 Swift 5.0 语言开发.** 如需支持 Swift 低版本的 framework, 请联系我们.
 - **最低系统支持 iOS 10.0.**
 
+
 ## 集成方式
 
 1. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
-	
-	 - 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. (图二)
-	 - 使用用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
+
+   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
+
+	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
+	  ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
+	 
+	- 用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
 
 2. **通过 CocoaPods 集成 (稍后集成)**
+
 
 ## 五种广告样式
 
@@ -60,8 +66,9 @@
       }
       ```
 	    
- 4. 详细代码请看 Demo 中 `BannerViewController` 类. 实现效果如下: (图三)
-
+ 4. 详细代码请看 Demo 中 `BannerViewController` 类. 实现效果如下:
+    
+    ![3](https://github.com/ruiyuad/MDAd/blob/master/linkImages/3.PNG)
 
 ### 信息流广告
 
@@ -85,9 +92,10 @@
  
  3. **RYInfoFlowViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
- 4. 详细代码请看 Demo 中 `InfoFlowViewController` 类. 实现效果如下: (图四)
+ 4. 详细代码请看 Demo 中 `InfoFlowViewController` 类. 实现效果如下:
  
-
+    ![4](https://github.com/ruiyuad/MDAd/blob/master/linkImages/4.PNG)
+ 
 ### 开屏广告
 
 **开屏广告** 用于展示全屏广告. 通常用于 App 启动或者用一个页面过渡到另一个页面的场景中. 你可以使用 `RYInterstitialView` 类来实现开屏广告的展示. framework 中提供开屏广告尺寸宽高比为 `750 : 1334`. 在使用该广告之前, 你需要申请开屏广告的广告 ID. 集成开频广告的简单示例如下:
@@ -110,8 +118,9 @@
  
  3. **RYInterstitialViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
- 4. 详细代码请看 Demo 中 `InterstitialViewController` 类. 实现效果如下: (图五)
-
+ 4. 详细代码请看 Demo 中 `InterstitialViewController` 类. 实现效果如下:
+    
+    ![5](https://github.com/ruiyuad/MDAd/blob/master/linkImages/5.PNG)
 
 ### 插屏广告
 
@@ -135,8 +144,9 @@
  
  3. **RYInterstitialHalfViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
- 4. 详细代码请看 Demo 中 `InterstitialHalfViewController` 类. 实现效果如下: (图六)
-
+ 4. 详细代码请看 Demo 中 `InterstitialHalfViewController` 类. 实现效果如下:
+    
+    ![6](https://github.com/ruiyuad/MDAd/blob/master/linkImages/6.PNG)
 
 ### 浮标广告
 
@@ -161,6 +171,8 @@
  3. **RYBuoyViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
  4. 详细代码请看 Demo 中 `BuoyViewController` 类. 实现效果如下:
+    
+    ![7](https://github.com/ruiyuad/MDAd/blob/master/linkImages/7.PNG)
 
 ## 常见问题
 
