@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ruiyuad/RYAds.git", :tag => "#{s.version}" }
 
-  s.swift_versions = "4.2"
+  s.swift_versions = "5.0"
 
   s.ios.vendored_frameworks = 'RuiYuAdMob.framework'
 
