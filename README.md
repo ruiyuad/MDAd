@@ -16,7 +16,8 @@
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
 
 	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
-	  ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
+	
+	   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
 	 
 	- 用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
 
