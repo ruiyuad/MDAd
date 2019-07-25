@@ -11,7 +11,13 @@
 
 ## 集成方式
 
-1. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
+1. **CocoaPods 集成**. 执行以下命令: 
+
+   ```Ruby
+   pod 'RuiYuAdMob', '~> 0.1.0'
+   ```
+
+2. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
 
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
 
@@ -20,9 +26,7 @@
 	   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
 	 
 	- 用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
-
-2. **通过 CocoaPods 集成 (稍后集成)**
-
+	
 
 ## 五种广告样式
 
