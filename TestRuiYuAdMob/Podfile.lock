@@ -1,0 +1,16 @@
+PODS:
+  - RuiYuAdMob (0.1.0)
+
+DEPENDENCIES:
+  - RuiYuAdMob (~> 0.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RuiYuAdMob
+
+SPEC CHECKSUMS:
+  RuiYuAdMob: 18bfdf30a144d2cc98cbbaec73c52d3a43a925c5
+
+PODFILE CHECKSUM: 66d66e5ffc4f0992b637b5689307349de5405f19
+
+COCOAPODS: 1.7.1
