@@ -2,21 +2,40 @@
 
 **`RuiYuAdMob.framework`** 用于 iOS 端展示常见移动应用广告. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 
 
+## 内容
+
+- [环境支持](#环境支持)
+- [集成方式](#集成方式)
+- [广告样式](#广告样式)
+- [常见问题](#常见问题)
+- [版本日志](#版本日志)
 
 ## 环境支持
 
-- **基于 Swift 5.0 语言开发.** 如需支持 Swift 低版本的 framework, 请联系我们.
-- **最低系统支持 iOS 10.0.**
-
+- **基于 Swift 5.0+ 语言开发.** 如需支持 Swift 低版本的 framework, 请联系我们.
+- **支持 iOS 10.0+.**
+- **支持 Xcode 10.0+.**
 
 ## 集成方式
 
-1. **CocoaPods 集成**. 执行以下命令: 
+1. **CocoaPods 集成**. 创建 `Podfile` 并指定其内容: 
 
    ```Ruby
-   pod 'RuiYuAdMob', '~> 0.1.0'
+   source 'https://github.com/CocoaPods/Specs.git'
+   platform :ios, '10.0'
+   use_frameworks!
+   
+   target '<Your Target Name>' do
+       pod 'RuiYuAdMob', '~> 0.1.0'
+   end
    ```
-
+   
+   然后执行:
+   
+   ```bash
+   $ pod install
+   ```
+ 
 2. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
 
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
@@ -28,7 +47,7 @@
 	- 用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
 	
 
-## 五种广告样式
+## 广告样式
 
 **`RuiYuAdMob.framework`** 提供五种广告样式, 分别是 **横幅广告**、**信息流广告**、**开屏广告**、**插屏广告** 和 **浮标广告**.
 
