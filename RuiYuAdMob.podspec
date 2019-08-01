@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
-  s.name         = "RuiYuAdMob"
+  s.name         = "MDAd"
 
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
 
   s.summary      = "An ads framework indicates universal ads types for iOS applications."
 
-  s.description  = "Your can access RuiYuAdMob.framework into your applications to show ads such as banner ads, interstitial Ads and so on."
+  s.description  = "Your can access MDAd.framework into your applications to show ads such as banner ads, interstitial Ads and so on."
 
   s.homepage     = "https://github.com/ruiyuad"
 
@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
   
   s.swift_versions = "5.0"
 
-  s.ios.vendored_frameworks = 'RuiYuAdMob.framework'
+  s.ios.vendored_frameworks = 'MDAd.framework'
 
-  s.resource = "RuiYuAdMob.bundle"  
+  s.resource = "MDAd.bundle"  
   
-#  s.resource = "Resources/RuiYuAdMob.bundle"
+#  s.resource = "Resources/MDAd.bundle"
 
 end
 

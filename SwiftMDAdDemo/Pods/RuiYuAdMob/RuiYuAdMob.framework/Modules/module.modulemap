@@ -1,0 +1,11 @@
+framework module RuiYuAdMob {
+  umbrella header "RuiYuAdMob.h"
+
+  export *
+  module * { export * }
+}
+
+module RuiYuAdMob.Swift {
+    header "RuiYuAdMob-Swift.h"
+    requires objc
+}
