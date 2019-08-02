@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,15 +11,14 @@
 		984DDAF822DDDAB3006C2F27 /* InfoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAF722DDDAB3006C2F27 /* InfoFlowViewController.m */; };
 		984DDAFB22DDDB10006C2F27 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFA22DDDB10006C2F27 /* InterstitialViewController.m */; };
 		984DDAFE22DDDBEB006C2F27 /* InterstitialHalfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */; };
+		986951A222F412EE003964C9 /* Pods_OCMDAdDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835B797E82229325962077 /* Pods_OCMDAdDemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9881434822B1ED3B003037B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9881434722B1ED3B003037B5 /* AppDelegate.m */; };
 		9881434B22B1ED3B003037B5 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9881434A22B1ED3B003037B5 /* BannerViewController.m */; };
 		9881434E22B1ED3B003037B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9881434C22B1ED3B003037B5 /* Main.storyboard */; };
 		9881435022B1ED3B003037B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9881434F22B1ED3B003037B5 /* Assets.xcassets */; };
 		9881435322B1ED3B003037B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9881435122B1ED3B003037B5 /* LaunchScreen.storyboard */; };
 		9881435622B1ED3B003037B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9881435522B1ED3B003037B5 /* main.m */; };
-		98C6D1AD22F2E4C600D8C01A /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98C6D1AB22F2E4C600D8C01A /* MDAd.bundle */; };
-		98C6D1B222F2E88800D8C01A /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C6D1AC22F2E4C600D8C01A /* MDAd.framework */; };
-		98C6D1B322F2E88800D8C01A /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98C6D1AC22F2E4C600D8C01A /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF0D34114A6F541A43632B74 /* Pods_OCMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E835B797E82229325962077 /* Pods_OCMDAdDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				98C6D1B322F2E88800D8C01A /* MDAd.framework in Embed Frameworks */,
+				986951A222F412EE003964C9 /* Pods_OCMDAdDemo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +36,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19311CC5429D965DFA9C8709 /* Pods-OCMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCMDAdDemo.debug.xcconfig"; path = "Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4E835B797E82229325962077 /* Pods_OCMDAdDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCMDAdDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		582AA89CEEDAFDEA57B17694 /* Pods-OCMDAdDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCMDAdDemo.release.xcconfig"; path = "Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo.release.xcconfig"; sourceTree = "<group>"; };
 		981C0F6E22E016CD00BDF6E1 /* BuoyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuoyViewController.h; sourceTree = "<group>"; };
 		981C0F6F22E016CD00BDF6E1 /* BuoyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuoyViewController.m; sourceTree = "<group>"; };
 		984DDAF622DDDAB3006C2F27 /* InfoFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoFlowViewController.h; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		9881435222B1ED3B003037B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9881435422B1ED3B003037B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9881435522B1ED3B003037B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		98C6D1AB22F2E4C600D8C01A /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
-		98C6D1AC22F2E4C600D8C01A /* MDAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MDAd.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +64,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C6D1B222F2E88800D8C01A /* MDAd.framework in Frameworks */,
+				EF0D34114A6F541A43632B74 /* Pods_OCMDAdDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C39975A8571CA8D30F38D02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19311CC5429D965DFA9C8709 /* Pods-OCMDAdDemo.debug.xcconfig */,
+				582AA89CEEDAFDEA57B17694 /* Pods-OCMDAdDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9822F30F22DDC99300DC42E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E835B797E82229325962077 /* Pods_OCMDAdDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,11 +91,10 @@
 		9881433A22B1ED3B003037B5 = {
 			isa = PBXGroup;
 			children = (
-				98C6D1AB22F2E4C600D8C01A /* MDAd.bundle */,
-				98C6D1AC22F2E4C600D8C01A /* MDAd.framework */,
 				9881434522B1ED3B003037B5 /* OCMDAdDemo */,
 				9881434422B1ED3B003037B5 /* Products */,
 				9822F30F22DDC99300DC42E4 /* Frameworks */,
+				3C39975A8571CA8D30F38D02 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,11 +137,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9881435922B1ED3B003037B5 /* Build configuration list for PBXNativeTarget "OCMDAdDemo" */;
 			buildPhases = (
+				50ABF6FBE36A6C334B4EA5EC /* [CP] Check Pods Manifest.lock */,
 				9881433F22B1ED3B003037B5 /* Sources */,
 				9881434022B1ED3B003037B5 /* Frameworks */,
 				9881434122B1ED3B003037B5 /* Resources */,
 				9864E53922E80CB400ED0A42 /* ShellScript */,
 				98C6D1B422F2E88900D8C01A /* Embed Frameworks */,
+				06C11D1BB7AFEC727547D8D8 /* [CP] Embed Pods Frameworks */,
+				2917A194DD3AA21ABD0FB165 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9881435322B1ED3B003037B5 /* LaunchScreen.storyboard in Resources */,
-				98C6D1AD22F2E4C600D8C01A /* MDAd.bundle in Resources */,
 				9881435022B1ED3B003037B5 /* Assets.xcassets in Resources */,
 				9881434E22B1ED3B003037B5 /* Main.storyboard in Resources */,
 			);
@@ -191,6 +202,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06C11D1BB7AFEC727547D8D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2917A194DD3AA21ABD0FB165 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50ABF6FBE36A6C334B4EA5EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCMDAdDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9864E53922E80CB400ED0A42 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,7 +428,9 @@
 		};
 		9881435A22B1ED3B003037B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19311CC5429D965DFA9C8709 /* Pods-OCMDAdDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,7 +458,9 @@
 		};
 		9881435B22B1ED3B003037B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582AA89CEEDAFDEA57B17694 /* Pods-OCMDAdDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
