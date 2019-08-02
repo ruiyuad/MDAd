@@ -7,98 +7,89 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		56354F386BBCA37452E5089B2666E43D /* RuiYuAdMob */ = {
+		0676363C3DEB2442FC47AE0E8B459922 /* MDAd */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = C64D6B6C278804B9078124CFC4DB451D /* Build configuration list for PBXAggregateTarget "RuiYuAdMob" */;
+			buildConfigurationList = 0056D35A8920F8862A6AF5D92EA11DCB /* Build configuration list for PBXAggregateTarget "MDAd" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
-			name = RuiYuAdMob;
+			name = MDAd;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0602A7F2D123314745328B9DDFEB8B72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		2D6516E5A0AF8E5F3AB0009336F657B5 /* Pods-SwiftMDAdDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */; };
-		9BFAD957D7B7547F0553B7A44B61232B /* Pods-SwiftMDAdDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		125B988706FBF5DD5C389BE8DFE0BAF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3819A232C7CE444EF99C298BBA8DC7F0 /* Pods-SwiftMDAdDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF2D79AED090A352B625432F27F0615A /* Pods-SwiftMDAdDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7EDAC1A8BCE435F9DFA1E1C7A88D8802 /* PBXContainerItemProxy */ = {
+		FC88A9EAA94C157F0D674572DFB84A4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 56354F386BBCA37452E5089B2666E43D;
-			remoteInfo = RuiYuAdMob;
+			remoteGlobalIDString = 0676363C3DEB2442FC47AE0E8B459922;
+			remoteInfo = MDAd;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F14EDFD638B258D12EB94DA08E445F /* RuiYuAdMob.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RuiYuAdMob.xcconfig; sourceTree = "<group>"; };
 		064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftMDAdDemo-umbrella.h"; sourceTree = "<group>"; };
-		0BBFFD2804B80132AD7726BD2911A73C /* RuiYuAdMob.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = RuiYuAdMob.bundle; sourceTree = "<group>"; };
 		0D09C4478BEB08C678C8B2D1C6786CDA /* Pods-SwiftMDAdDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftMDAdDemo-Info.plist"; sourceTree = "<group>"; };
+		0DA4C66A4C99F999F100EBA063331222 /* MDAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MDAd.framework; sourceTree = "<group>"; };
+		1053EC4287B2203C1C5B730704065395 /* MDAd.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		1E3C293AF99FA29D06FE97356B052695 /* Pods-SwiftMDAdDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMDAdDemo-frameworks.sh"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		381D51B4163F38751CA793507B730DEF /* Pods-SwiftMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6F202C2FA73C332A108291635BDC614D /* Pods_SwiftMDAdDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftMDAdDemo.framework; path = "Pods-SwiftMDAdDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		710E1775597201396EF45637552F369C /* Pods-SwiftMDAdDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftMDAdDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDAd.xcconfig; sourceTree = "<group>"; };
 		8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftMDAdDemo-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A7B66F26AE2AD36E51607502E6A38D4F /* Pods-SwiftMDAdDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftMDAdDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CBE82981E7CFFFE19922D01780476E11 /* Pods-SwiftMDAdDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMDAdDemo-resources.sh"; sourceTree = "<group>"; };
 		E1B05C265E1EBE45C3F1C5BEE357A70A /* Pods-SwiftMDAdDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMDAdDemo.release.xcconfig"; sourceTree = "<group>"; };
 		EBE60796E4B53678E5D6A248A7F55F8E /* Pods-SwiftMDAdDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftMDAdDemo.modulemap"; sourceTree = "<group>"; };
-		EFD114505DF7F32EAA1ABBD27ACABEA0 /* RuiYuAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RuiYuAdMob.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E85CB794B75BDA24B08A4AE629C1B41C /* Frameworks */ = {
+		3944624F184F1BAF3E9242B89C6F0C81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0602A7F2D123314745328B9DDFEB8B72 /* Foundation.framework in Frameworks */,
+				125B988706FBF5DD5C389BE8DFE0BAF6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E12A7F270A1AF314AAB22A0D7C1E29 /* Resources */ = {
+		2E16A8E69264E89BA717E47B43B2BF6F /* MDAd */ = {
 			isa = PBXGroup;
 			children = (
-				0BBFFD2804B80132AD7726BD2911A73C /* RuiYuAdMob.bundle */,
+				348D8DC53BBEBFDB3410A579FD1751CA /* Frameworks */,
+				B62806DA0BBAFDD497B307A7DC2CED85 /* Resources */,
+				BC717744F0FC504429F06CBA31C07720 /* Support Files */,
 			);
-			name = Resources;
+			name = MDAd;
+			path = MDAd;
 			sourceTree = "<group>";
 		};
-		01D3860D4F9782F2FA0D6AD0F2A665FE /* Frameworks */ = {
+		348D8DC53BBEBFDB3410A579FD1751CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EFD114505DF7F32EAA1ABBD27ACABEA0 /* RuiYuAdMob.framework */,
+				0DA4C66A4C99F999F100EBA063331222 /* MDAd.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2C785CB115750B31A2DD494C0B835F1C /* Support Files */ = {
+		5CBA0F0F554CA37CC437F27111FB7AA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04F14EDFD638B258D12EB94DA08E445F /* RuiYuAdMob.xcconfig */,
+				2E16A8E69264E89BA717E47B43B2BF6F /* MDAd */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RuiYuAdMob";
-			sourceTree = "<group>";
-		};
-		5DA9B95A5FB00F6C5D3D9AFF56B05E06 /* RuiYuAdMob */ = {
-			isa = PBXGroup;
-			children = (
-				01D3860D4F9782F2FA0D6AD0F2A665FE /* Frameworks */,
-				00E12A7F270A1AF314AAB22A0D7C1E29 /* Resources */,
-				2C785CB115750B31A2DD494C0B835F1C /* Support Files */,
-			);
-			name = RuiYuAdMob;
-			path = RuiYuAdMob;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7FF1ABA31D0F294FD8E9C10016865B89 /* Products */ = {
@@ -107,14 +98,6 @@
 				6F202C2FA73C332A108291635BDC614D /* Pods_SwiftMDAdDemo.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		98A7CD5042E4E308F0A0679CDBE5F977 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5DA9B95A5FB00F6C5D3D9AFF56B05E06 /* RuiYuAdMob */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		9CADF2991F572318F0B5D82E57BDA9B9 /* Pods-SwiftMDAdDemo */ = {
@@ -143,6 +126,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		B62806DA0BBAFDD497B307A7DC2CED85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1053EC4287B2203C1C5B730704065395 /* MDAd.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BC717744F0FC504429F06CBA31C07720 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MDAd";
+			sourceTree = "<group>";
+		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +156,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				98A7CD5042E4E308F0A0679CDBE5F977 /* Pods */,
+				5CBA0F0F554CA37CC437F27111FB7AA0 /* Pods */,
 				7FF1ABA31D0F294FD8E9C10016865B89 /* Products */,
 				A4F495E2CCE01B698EE66C5A72E506BB /* Targets Support Files */,
 			);
@@ -173,11 +173,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1DFB72952181A2379772FB12EF17A537 /* Headers */ = {
+		4F67B92D35D33124B4ECF56236B3F78D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFAD957D7B7547F0553B7A44B61232B /* Pods-SwiftMDAdDemo-umbrella.h in Headers */,
+				3819A232C7CE444EF99C298BBA8DC7F0 /* Pods-SwiftMDAdDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,17 +186,17 @@
 /* Begin PBXNativeTarget section */
 		C00C4ED52618E151F7CFB21603D65749 /* Pods-SwiftMDAdDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AACCD97DB3E4FEF58010B05B2753B340 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */;
+			buildConfigurationList = 499B1F700FED6D1639046A2A130EE0B5 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */;
 			buildPhases = (
-				1DFB72952181A2379772FB12EF17A537 /* Headers */,
-				DC518E68A22FAF7119D98016EC23BB0D /* Sources */,
-				E85CB794B75BDA24B08A4AE629C1B41C /* Frameworks */,
-				50A37FDEFEA6554B90F899FD9A6F895B /* Resources */,
+				4F67B92D35D33124B4ECF56236B3F78D /* Headers */,
+				229EF1F0E0AB367B063604E37C576D0C /* Sources */,
+				3944624F184F1BAF3E9242B89C6F0C81 /* Frameworks */,
+				9CF7D5C0ADFD8ADE3B65E36BE5A65D51 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DCCCDA108A717BEAFFD869F105BE0611 /* PBXTargetDependency */,
+				EFEB8F01BD54336ECC0AB4E842F4CDA2 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftMDAdDemo";
 			productName = "Pods-SwiftMDAdDemo";
@@ -224,14 +224,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0676363C3DEB2442FC47AE0E8B459922 /* MDAd */,
 				C00C4ED52618E151F7CFB21603D65749 /* Pods-SwiftMDAdDemo */,
-				56354F386BBCA37452E5089B2666E43D /* RuiYuAdMob */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		50A37FDEFEA6554B90F899FD9A6F895B /* Resources */ = {
+		9CF7D5C0ADFD8ADE3B65E36BE5A65D51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,44 +241,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DC518E68A22FAF7119D98016EC23BB0D /* Sources */ = {
+		229EF1F0E0AB367B063604E37C576D0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6516E5A0AF8E5F3AB0009336F657B5 /* Pods-SwiftMDAdDemo-dummy.m in Sources */,
+				DF2D79AED090A352B625432F27F0615A /* Pods-SwiftMDAdDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DCCCDA108A717BEAFFD869F105BE0611 /* PBXTargetDependency */ = {
+		EFEB8F01BD54336ECC0AB4E842F4CDA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RuiYuAdMob;
-			target = 56354F386BBCA37452E5089B2666E43D /* RuiYuAdMob */;
-			targetProxy = 7EDAC1A8BCE435F9DFA1E1C7A88D8802 /* PBXContainerItemProxy */;
+			name = MDAd;
+			target = 0676363C3DEB2442FC47AE0E8B459922 /* MDAd */;
+			targetProxy = FC88A9EAA94C157F0D674572DFB84A4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08B1AA1F29B3814C413ED685C4B48D0C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F14EDFD638B258D12EB94DA08E445F /* RuiYuAdMob.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -343,7 +325,25 @@
 			};
 			name = Debug;
 		};
-		56F1EE2C4D82A9C7E6ECE61F5986D5EB /* Debug */ = {
+		2FDF721A66FEE5648B836D7D62D7EA74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54E019E5B8FEE91B916BB48574CF2193 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 381D51B4163F38751CA793507B730DEF /* Pods-SwiftMDAdDemo.debug.xcconfig */;
 			buildSettings = {
@@ -381,44 +381,22 @@
 			};
 			name = Debug;
 		};
-		7B21DC6D702E096273467CBC69DBC4ED /* Release */ = {
+		7568C845DF7E268B71984C6123C9A012 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B05C265E1EBE45C3F1C5BEE357A70A /* Pods-SwiftMDAdDemo.release.xcconfig */;
+			baseConfigurationReference = 78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -480,26 +458,57 @@
 			};
 			name = Release;
 		};
-		B9479E308D6238C4B691E1244A5D5225 /* Debug */ = {
+		B2ADEB37CEEBEB8AA73DF3BC0D3DC0B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F14EDFD638B258D12EB94DA08E445F /* RuiYuAdMob.xcconfig */;
+			baseConfigurationReference = E1B05C265E1EBE45C3F1C5BEE357A70A /* Pods-SwiftMDAdDemo.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0056D35A8920F8862A6AF5D92EA11DCB /* Build configuration list for PBXAggregateTarget "MDAd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7568C845DF7E268B71984C6123C9A012 /* Debug */,
+				2FDF721A66FEE5648B836D7D62D7EA74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -509,20 +518,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AACCD97DB3E4FEF58010B05B2753B340 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */ = {
+		499B1F700FED6D1639046A2A130EE0B5 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				56F1EE2C4D82A9C7E6ECE61F5986D5EB /* Debug */,
-				7B21DC6D702E096273467CBC69DBC4ED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C64D6B6C278804B9078124CFC4DB451D /* Build configuration list for PBXAggregateTarget "RuiYuAdMob" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9479E308D6238C4B691E1244A5D5225 /* Debug */,
-				08B1AA1F29B3814C413ED685C4B48D0C /* Release */,
+				54E019E5B8FEE91B916BB48574CF2193 /* Debug */,
+				B2ADEB37CEEBEB8AA73DF3BC0D3DC0B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
