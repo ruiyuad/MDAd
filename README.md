@@ -46,7 +46,9 @@
 	 
 	- 用法: 在使用 `MDAd.framework` 时, 在需要的文件头部 `import MDAd` 即可. 
 	
-
+	
+     > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
+ 
 ## 广告样式
 
 **`MDAd.framework`** 提供五种广告样式, 分别是 **横幅广告**、**信息流广告**、**开屏广告**、**插屏广告** 和 **浮标广告**.
@@ -206,5 +208,5 @@
 
 ## 版本日志
 
-0.1.0: 接入五种常用广告.
+0.1.0: 接入五种常用广告.   
 0.2.0: 修改SDK命名规范.
