@@ -6,7 +6,7 @@
 
 - [环境支持](#环境支持)
 - [集成方式](#集成方式)
-- [初始化](#注册AppKey、AppSecret)
+- [初始化](#初始化)
 - [广告样式](#广告样式)
 - [常见问题](#常见问题)
 - [版本日志](#版本日志)
@@ -41,9 +41,7 @@
 
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
 
-	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `MDAd.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `MDAd.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
-	
-	   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
+	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `MDAd.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `MDAd.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份.
 	 
 	- 用法: 在使用 `MDAd.framework` 时, 在需要的文件头部 `import MDAd` 即可. 
 	
@@ -51,7 +49,7 @@
      > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
      
 
-## 注册 AppKey、AppSecret
+## 初始化
 
 使用 `MDAd.framework` 前, 请先确认已注册 **AppKey** 和 **AppSecret**. 如有疑问, 请联系我们 *admin@mobiw.com* 或者当前 github 账号. 如已注册 **AppKey** 和 **AppSecret**, 请在 `application(_ application:, didFinishLaunchingWithOptions launchOptions:)` 做如下初始化:
 
@@ -220,4 +218,4 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
 0.1.0: 接入五种常用广告.   
 0.2.0: 修改 SDK 命名规范.   
-0.3.0: 新增横幅左图有文样式, 信息流左图右文、上文下图样式; 纯图模式广告改版.
+0.3.0: 新增横幅广告**左图右文**样式, 信息流广告**左图右文**、**上文下图**样式; 横幅、信息流、开屏、插屏和浮标广告位纯图模式广告改版.
