@@ -26,7 +26,6 @@ class InterstitialViewController: UIViewController {
         super.viewDidLoad()
         
         title = "开屏广告示例"
-        skipButton.isHidden = true
         
         // Do any additional setup after loading the view.
         
@@ -52,16 +51,6 @@ class InterstitialViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
     }
-    
-<<<<<<< Updated upstream
-    // MARK: - Actions
-    
-    @IBAction func skipButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-=======
->>>>>>> Stashed changes
 }
 
 // MARK: - RYInterstitialViewDelegate

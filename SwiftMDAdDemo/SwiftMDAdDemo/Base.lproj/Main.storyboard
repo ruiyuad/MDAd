@@ -161,10 +161,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-Nq-ayl" customClass="RYBannerView" customModule="MDAd">
-                                <rect key="frame" x="20" y="712.5" width="374" height="149.5"/>
+                                <rect key="frame" x="20" y="827" width="374" height="35"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="KaR-Nq-ayl" secondAttribute="height" multiplier="700:280" id="1K9-te-Qle"/>
+                                    <constraint firstAttribute="width" secondItem="KaR-Nq-ayl" secondAttribute="height" multiplier="640:60" id="1K9-te-Qle"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -248,9 +248,6 @@
                             <constraint firstItem="rpz-3N-uCA" firstAttribute="top" secondItem="bZO-5V-rUA" secondAttribute="top" id="HFZ-iE-Rcp"/>
                             <constraint firstItem="eLT-hX-kF9" firstAttribute="trailing" secondItem="rpz-3N-uCA" secondAttribute="trailing" id="Mpt-DB-XvR"/>
                             <constraint firstItem="rpz-3N-uCA" firstAttribute="leading" secondItem="eLT-hX-kF9" secondAttribute="leading" id="X8H-ys-8Li"/>
-                            <constraint firstItem="j73-0g-k7e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLT-hX-kF9" secondAttribute="leading" constant="16" id="fzR-8g-075"/>
-                            <constraint firstItem="eLT-hX-kF9" firstAttribute="bottom" secondItem="j73-0g-k7e" secondAttribute="bottom" constant="36" id="lFM-HR-MTU"/>
-                            <constraint firstItem="eLT-hX-kF9" firstAttribute="trailing" secondItem="j73-0g-k7e" secondAttribute="trailing" constant="20" id="x4y-sx-pOt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLT-hX-kF9"/>
                     </view>
@@ -321,7 +318,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-5c-GRx" customClass="RYBuoyView" customModule="MDAd">
-                                <rect key="frame" x="324" y="108" width="70" height="70"/>
+                                <rect key="frame" x="324" y="360" width="70" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c1v-5c-GRx" secondAttribute="height" multiplier="1:1" id="DQj-Xf-F2X"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A055361EC899D6A07AC2954 /* Pods_SwiftMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909CBB66D784EA3440CD4EEB /* Pods_SwiftMDAdDemo.framework */; };
 		981A978822D71E9100C8540A /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A978722D71E9100C8540A /* InterstitialViewController.swift */; };
 		981C0F6D22E011DE00BDF6E1 /* BuoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981C0F6C22E011DE00BDF6E1 /* BuoyViewController.swift */; };
 		9825B87622B0E5C600D51F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B87522B0E5C600D51F1C /* AppDelegate.swift */; };
@@ -17,8 +16,8 @@
 		9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87E22B0E5C700D51F1C /* LaunchScreen.storyboard */; };
 		9825B88B22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B88A22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift */; };
 		986C18AD22D5E9C600F06172 /* InfoFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */; };
-		986CC59C233CCDB800F0DD45 /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 986CC59B233CCDB800F0DD45 /* MDAd.bundle */; };
 		98AFEDD022DECBE50046B760 /* InterstitialHalfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */; };
+		FB8592DE0DDCCE22F28F486C /* Pods_SwiftMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909CBB66D784EA3440CD4EEB /* Pods_SwiftMDAdDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,6 @@
 		9825B88A22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMDAdDemoTests.swift; sourceTree = "<group>"; };
 		9825B88C22B0E5C700D51F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFlowViewController.swift; sourceTree = "<group>"; };
-		986CC59B233CCDB800F0DD45 /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialHalfViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A055361EC899D6A07AC2954 /* Pods_SwiftMDAdDemo.framework in Frameworks */,
+				FB8592DE0DDCCE22F28F486C /* Pods_SwiftMDAdDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +102,6 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
-				980B107522F7DC32004D001A /* MDAd.framework */,
-				986CC59B233CCDB800F0DD45 /* MDAd.bundle */,
 				9825B87422B0E5C600D51F1C /* SwiftMDAdDemo */,
 				9825B88922B0E5C700D51F1C /* SwiftMDAdDemoTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
@@ -236,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
-				986CC59C233CCDB800F0DD45 /* MDAd.bundle in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
 			);
@@ -499,7 +494,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06BAFF3ECDA777B8C46B33AB /* Pods-SwiftMDAdDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PSA7A9D36;
@@ -525,7 +519,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333DE4EA433733421FDAC87B /* Pods-SwiftMDAdDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

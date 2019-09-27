@@ -6,6 +6,7 @@
 
 - [环境支持](#环境支持)
 - [集成方式](#集成方式)
+- [初始化](#注册AppKey、AppSecret)
 - [广告样式](#广告样式)
 - [常见问题](#常见问题)
 - [版本日志](#版本日志)
@@ -26,7 +27,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.2.0'
+       pod 'MDAd', '~> 0.3.0'
    end
    ```
    
@@ -48,6 +49,15 @@
 	
 	
      > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
+     
+
+## 注册 AppKey、AppSecret
+
+使用 `MDAd.framework` 前, 请先确认已注册 **AppKey** 和 **AppSecret**. 如有疑问, 请联系我们 *admin@mobiw.com* 或者当前 github 账号. 如已注册 **AppKey** 和 **AppSecret**, 请在 `application(_ application:, didFinishLaunchingWithOptions launchOptions:)` 做如下初始化:
+
+```
+RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
+```
  
 ## 广告样式
 
@@ -209,4 +219,5 @@
 ## 版本日志
 
 0.1.0: 接入五种常用广告.   
-0.2.0: 修改SDK命名规范.
+0.2.0: 修改 SDK 命名规范.   
+0.3.0: 新增横幅左图有文样式, 信息流左图右文、上文下图样式; 纯图模式广告改版.

@@ -18,8 +18,6 @@ class InfoFlowViewController: UIViewController {
     
     @IBOutlet weak var infoFlowViewAspectConstraint: NSLayoutConstraint!
     
-    /// `RYInfoFlowView`'s ratio is 700.0 : 280.0 (Width : Height).
-    ///  信息流广告展示宽高比是 700.0 : 280.0
     @IBOutlet weak var infoFlowView: RYInfoFlowView!
     
     override func viewDidLoad() {
