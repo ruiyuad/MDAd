@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01S-Qo-irE">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01S-Qo-irE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,14 +36,14 @@
                             <tableViewSection id="0yp-Yy-WPW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="KKs-be-Lae" rowHeight="61" style="IBUITableViewCellStyleDefault" id="WP2-Ct-UsF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WP2-Ct-UsF" id="45s-za-oGx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Banner广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KKs-be-Lae">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="60.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="61"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -58,14 +56,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="xe3-JO-kaB" rowHeight="54" style="IBUITableViewCellStyleDefault" id="Iyb-v5-5nZ">
-                                        <rect key="frame" x="0.0" y="61" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="89" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iyb-v5-5nZ" id="6iv-3e-dJe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="信息流广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xe3-JO-kaB">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="53.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="54"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -78,14 +76,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="mYO-TS-Yyd" rowHeight="58" style="IBUITableViewCellStyleDefault" id="Rse-bH-oEt">
-                                        <rect key="frame" x="0.0" y="115" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="143" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rse-bH-oEt" id="BRN-Yu-2Gl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="开屏广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mYO-TS-Yyd">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="57.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="58"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -98,14 +96,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1ms-e3-ilC" rowHeight="58" style="IBUITableViewCellStyleDefault" id="Zge-i9-66x">
-                                        <rect key="frame" x="0.0" y="173" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="201" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zge-i9-66x" id="tYa-g2-htg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="插屏广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ms-e3-ilC">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="57.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="58"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -118,14 +116,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="pHr-qF-Tnc" rowHeight="58" style="IBUITableViewCellStyleDefault" id="iKv-E9-rpH">
-                                        <rect key="frame" x="0.0" y="231" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="259" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iKv-E9-rpH" id="Nw3-xe-tnK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="浮标广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pHr-qF-Tnc">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="57.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="58"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -202,10 +200,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70Q-wd-mV0" customClass="RYInfoFlowView" customModule="MDAd">
-                                <rect key="frame" x="20" y="400" width="374" height="150"/>
+                                <rect key="frame" x="20" y="396.5" width="374" height="157"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="70Q-wd-mV0" secondAttribute="height" multiplier="700:280" id="fCd-8F-wkr"/>
+                                    <constraint firstAttribute="width" secondItem="70Q-wd-mV0" secondAttribute="height" multiplier="690:290" id="fCd-8F-wkr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -224,6 +222,7 @@
                     </view>
                     <connections>
                         <outlet property="infoFlowView" destination="70Q-wd-mV0" id="MHs-Uv-hDb"/>
+                        <outlet property="infoFlowViewAspectConstraint" destination="fCd-8F-wkr" id="d71-k1-wz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pc-QV-ULj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,17 +241,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j73-0g-k7e">
-                                <rect key="frame" x="357" y="782" width="37" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gOF-0U-gUu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="跳过"/>
-                                <connections>
-                                    <action selector="skipButtonTapped:" destination="L4f-bf-6ex" eventType="touchUpInside" id="7jA-79-Hm8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -268,7 +256,6 @@
                     </view>
                     <connections>
                         <outlet property="interstitialView" destination="rpz-3N-uCA" id="0sV-WG-qo7"/>
-                        <outlet property="skipButton" destination="j73-0g-k7e" id="xKT-aV-fnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nca-BW-95Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,21 +273,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="AMd-VS-CVL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7d-wk-Gec">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-Xg-vjD" customClass="RYInterstitialHalfView" customModule="MDAd">
-                                <rect key="frame" x="44" y="312" width="326" height="326"/>
+                                <rect key="frame" x="79.5" y="256" width="255" height="310"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="nhH-Xg-vjD" secondAttribute="height" multiplier="1:1" id="0kq-bx-6ty"/>
+                                    <constraint firstAttribute="height" constant="310" id="OSZ-3f-jhp"/>
+                                    <constraint firstAttribute="width" constant="255" id="alF-I2-juA"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="leading" secondItem="bxn-WF-z57" secondAttribute="leading" constant="44" id="3Uz-t3-R80"/>
+                            <constraint firstItem="i7d-wk-Gec" firstAttribute="top" secondItem="bxn-WF-z57" secondAttribute="top" id="581-El-yB3"/>
+                            <constraint firstItem="bxn-WF-z57" firstAttribute="bottom" secondItem="i7d-wk-Gec" secondAttribute="bottom" id="G9X-Af-liM"/>
                             <constraint firstItem="bxn-WF-z57" firstAttribute="bottom" secondItem="AMd-VS-CVL" secondAttribute="bottom" id="Iio-40-Bba"/>
+                            <constraint firstItem="i7d-wk-Gec" firstAttribute="leading" secondItem="bxn-WF-z57" secondAttribute="leading" id="Ncu-ZY-hvx"/>
                             <constraint firstItem="AMd-VS-CVL" firstAttribute="top" secondItem="bxn-WF-z57" secondAttribute="top" id="Ocm-vx-iBk"/>
-                            <constraint firstItem="bxn-WF-z57" firstAttribute="trailing" secondItem="nhH-Xg-vjD" secondAttribute="trailing" constant="44" id="P7t-Ar-hIQ"/>
-                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerY" secondItem="bxn-WF-z57" secondAttribute="centerY" id="mBj-Xh-9tL"/>
+                            <constraint firstItem="bxn-WF-z57" firstAttribute="trailing" secondItem="i7d-wk-Gec" secondAttribute="trailing" id="dyk-hs-gNJ"/>
+                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerY" secondItem="bxn-WF-z57" secondAttribute="centerY" constant="-64" id="mBj-Xh-9tL"/>
                             <constraint firstItem="AMd-VS-CVL" firstAttribute="leading" secondItem="bxn-WF-z57" secondAttribute="leading" id="pGt-nD-hlX"/>
                             <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerX" secondItem="bxn-WF-z57" secondAttribute="centerX" id="t4b-7c-psx"/>
                             <constraint firstItem="AMd-VS-CVL" firstAttribute="trailing" secondItem="bxn-WF-z57" secondAttribute="trailing" id="xiq-er-spq"/>
@@ -340,7 +334,7 @@
                             <constraint firstItem="OFf-nM-Njr" firstAttribute="leading" secondItem="c27-x9-XfG" secondAttribute="leading" id="4ue-aQ-Ies"/>
                             <constraint firstItem="c27-x9-XfG" firstAttribute="bottom" secondItem="OFf-nM-Njr" secondAttribute="bottom" id="Egg-Tg-vLD"/>
                             <constraint firstItem="OFf-nM-Njr" firstAttribute="top" secondItem="c27-x9-XfG" secondAttribute="top" id="Klh-US-2Qc"/>
-                            <constraint firstItem="c1v-5c-GRx" firstAttribute="top" secondItem="c27-x9-XfG" secondAttribute="top" constant="20" id="PHu-iR-1sT"/>
+                            <constraint firstItem="c1v-5c-GRx" firstAttribute="centerY" secondItem="c27-x9-XfG" secondAttribute="centerY" constant="-80" id="akI-JF-dpg"/>
                             <constraint firstItem="c27-x9-XfG" firstAttribute="trailing" secondItem="OFf-nM-Njr" secondAttribute="trailing" id="c1m-KG-GDz"/>
                             <constraint firstItem="c27-x9-XfG" firstAttribute="trailing" secondItem="c1v-5c-GRx" secondAttribute="trailing" constant="20" id="lU4-LT-WbE"/>
                         </constraints>

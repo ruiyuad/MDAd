@@ -14,9 +14,12 @@ import UIKit
 import MDAd
 
 class InfoFlowViewController: UIViewController {
-
-    /// `RYInfoFlowView`'s ratio is 700 : 280 (Width : Height).
-    ///  信息流广告展示宽高比是 700 : 280
+    
+    
+    @IBOutlet weak var infoFlowViewAspectConstraint: NSLayoutConstraint!
+    
+    /// `RYInfoFlowView`'s ratio is 700.0 : 280.0 (Width : Height).
+    ///  信息流广告展示宽高比是 700.0 : 280.0
     @IBOutlet weak var infoFlowView: RYInfoFlowView!
     
     override func viewDidLoad() {
@@ -29,7 +32,15 @@ class InfoFlowViewController: UIViewController {
         // Required configs - 初始化 RYInfoFlowView 实例之后, 必要的配置有:
         
         // 1. Required step1: configs `AdsID`
-        infoFlowView.adsID = "800005"
+        
+        // 纯图模式, 广告位尺寸是 700.0 : 280.0 (请初始化 bannerView 初始宽高比为 700.0 : 280.0)
+        // infoFlowView.adsID = "850001"
+        
+        // 左图右文模式, 广告位尺寸是 690.0 : 290.0 (请初始化 bannerView 初始宽高比为 690.0 : 290.0)
+         infoFlowView.adsID = "850002"
+        
+        // 上文下图模式, 广告位尺寸是 690.0 : 440.0 (保证高度大于宽度 26.0)
+//        infoFlowView.adsID = "850006"
         
         // 2. Required step2: load request
         infoFlowView.loadRequest()
@@ -37,19 +48,18 @@ class InfoFlowViewController: UIViewController {
         // Optional configs - 可选配置:
         infoFlowView.delegate = self
         
-        // Other custimized setting
+        // Other custimized settings
         infoFlowView.alpha = 0.0
     }
-
+    
 }
 
 // MARK: - RYInfoFlowViewDelegate
 
 extension InfoFlowViewController: RYInfoFlowViewDelegate {
     
-    func infoFlowViewDidReceiveAd(_ infoFlowView: RYInfoFlowView) {
-        // You can show infoFlowView with animation.
-        // 你可以在收到信息流广告后, 在这里使用动画来展示它
+    func infoFlowDidReceiveAd(_ infoFlowView: RYInfoFlowView) {
+        // You can show infoFlowView with simple animation.
         UIView.animate(withDuration: 1.0) {
             self.infoFlowView.alpha = 1.0
         }

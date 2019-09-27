@@ -27,7 +27,7 @@ class BuoyViewController: UIViewController {
         // Required configs - 初始化 RYBuoyView 之后, 必要的配置有:
         
         // 1. Required step1: configs `AdsID`
-        buoyView.adsID = "800006"
+        buoyView.adsID = "860001"
         
         // 2. Required step2: load request
         buoyView.loadRequest()
@@ -36,18 +36,16 @@ class BuoyViewController: UIViewController {
         
         buoyView.delegate = self
         
-        // Other customized setting
-        
-        buoyView.backgroundColor = .groupTableViewBackground
+        // Other customized settings
+//        buoyView.backgroundColor = nil
     }
-
 }
 
 
 // MARK: - RYBuoyViewDelegate
 
 extension BuoyViewController: RYBuoyViewDelegate {
-    func buoyViewDidReceiveAd(_ buoyView: RYBuoyView) {
+    func buoyDidReceiveAd(_ buoyView: RYBuoyView) {
     }
 }
 

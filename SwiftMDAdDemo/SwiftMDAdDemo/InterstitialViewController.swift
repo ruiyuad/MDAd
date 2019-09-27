@@ -15,10 +15,8 @@ import MDAd
 
 class InterstitialViewController: UIViewController {
     
-    @IBOutlet weak var skipButton: UIButton!
-    
-    /// `RYInfoFlowView`'s ratio is 750:1334(Width : Height).
-    /// 插页式广告展示宽高比是 750 : 1334
+    /// `RYInfoFlowView`'s ratio is 750.0 : 1334.0 (Width : Height).
+    /// 插页式广告展示宽高比是 750.0 : 1334.0
     @IBOutlet weak var interstitialView: RYInterstitialView!
     
     
@@ -35,7 +33,7 @@ class InterstitialViewController: UIViewController {
         // Required configs - 初始化 RYBannerView 之后, 必要的配置有:
         
         // 1. Required step1: configs `AdsID`
-        interstitialView.adsID = "800001"
+        interstitialView.adsID = "810001"
         
         // 2. Required step2: load request
         interstitialView.loadRequest()
@@ -55,20 +53,22 @@ class InterstitialViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
     }
     
+<<<<<<< Updated upstream
     // MARK: - Actions
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+=======
+>>>>>>> Stashed changes
 }
 
 // MARK: - RYInterstitialViewDelegate
 
 extension InterstitialViewController: RYInterstitialViewDelegate {
-    func interstitialDidReceiveAd(_ interstitial: RYInterstitialView) {
-        DispatchQueue.main.async {
-            self.skipButton.isHidden = false
-        }
+    
+    func interstitialCountDownDidTap() {
+        navigationController?.popViewController(animated: true)
     }
 }
