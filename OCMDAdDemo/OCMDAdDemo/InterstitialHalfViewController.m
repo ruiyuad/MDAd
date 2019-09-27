@@ -16,8 +16,7 @@
 
 @interface InterstitialHalfViewController ()
 
-/// `RYInterstitialHalfView`'s ratio is 510 : 510(Width : Height).
-/// 弹屏式广告展示宽高比是 510 : 510
+/// 插屏式广告位展示宽高值推荐为 255.0 * (255.0 + 55.0), 为保证底部 Close 按钮正常显示, 请保证高度始终大于宽度 55.0
 @property (weak, nonatomic) IBOutlet RYInterstitialHalfView *halfInterstitialView;
 
 @end
@@ -31,7 +30,7 @@
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
     
     // 1. Required step1: configs `AdsID`
-    self.halfInterstitialView.adsID = @"800004";
+    self.halfInterstitialView.adsID = @"840001";
     
     // 2. Required step2: load request
     [self.halfInterstitialView loadRequest];
@@ -41,7 +40,6 @@
     // self.halfInterstitialView.delegate = self;
     
     // Other customized setting
-    self.halfInterstitialView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 

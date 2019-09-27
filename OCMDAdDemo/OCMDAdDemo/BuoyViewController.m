@@ -30,7 +30,7 @@
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
     
     // 1. Required step1: configs `AdsID`
-    self.buoyView.adsID = @"800006";
+    self.buoyView.adsID = @"860001";
     
     // 2. Required step2: load request
     [self.buoyView loadRequest];
@@ -40,7 +40,6 @@
     // self.buoyView.delegate = self;
     
     // Other customized setting
-    self.buoyView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 

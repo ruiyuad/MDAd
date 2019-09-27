@@ -16,8 +16,6 @@
 
 @interface InfoFlowViewController ()<RYInfoFlowViewDelegate>
 
-/// `RYInfoFlowView`'s ratio is 700 : 280 (Width : Height).
-///  信息流广告展示宽高比是 700 : 280
 @property (weak, nonatomic) IBOutlet RYInfoFlowView *infoFlowView;
 
 @end
@@ -30,7 +28,15 @@
     // Required configs - 初始化 RYInfoFlowView 实例之后, 必要的配置有:
     
     // 1. Required step1: configs `AdsID`
-    self.infoFlowView.adsID = @"800005";
+    
+    // 纯图模式, 广告位尺寸是 700.0 : 280.0 (请初始化 bannerView 初始宽高比为 700.0 : 280.0)
+    self.infoFlowView.adsID = @"850001";
+    
+    // 左图右文模式, 广告位尺寸是 690.0 : 290.0 (请初始化 bannerView 初始宽高比为 690.0 : 290.0)
+    // self.infoFlowView.adsID = @"850002";
+            
+    // 上文下图模式, 广告位尺寸是 690.0 : 440.0 (保证高度大于宽度 26.0)
+    // self.infoFlowView.adsID = @"850006";
     
     // 2. Required step2: load request
     [self.infoFlowView loadRequest];
@@ -43,7 +49,7 @@
 
 #pragma mark - RYInfoFlowViewDelegate
 
-- (void)infoFlowViewDidReceiveAd:(RYInfoFlowView *)infoFlowView {
+- (void)infoFlowDidReceiveAd:(RYInfoFlowView *)infoFlowView {
     // You can show infoFlowView with animation.
     // 你可以在收到信息流广告后, 在这里使用动画来展示它.
     [UIView animateWithDuration:1.0 animations:^{

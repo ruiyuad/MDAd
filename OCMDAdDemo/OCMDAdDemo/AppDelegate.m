@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+@import MDAd;
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[RYAdMobCenter center] setup:@"621112" appSecret:@"537dab8740884583a82f2db97fbc6eb6"];
     return YES;
 }
 

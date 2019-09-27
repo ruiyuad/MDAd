@@ -1,6 +1,6 @@
 # MDAd
 
-**`RuiYuAdMob.framework`** 用于 iOS 端展示常见移动应用广告. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 
+**`MDAd.framework`** 用于 iOS 端展示常见移动应用广告. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 
 
 ## 内容
 
@@ -26,7 +26,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'RuiYuAdMob', '~> 0.1.0'
+       pod 'MDAd', '~> 0.2.0'
    end
    ```
    
@@ -36,26 +36,28 @@
    $ pod install
    ```
  
-2. **手动集成**. 请将仓库中 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
+2. **手动集成**. 请将仓库中 `MDAd.framework` 和 `MDAd.bundle` 手动拖入项目中. 在弹出的文件选项框中, 请勾选 `Copy items if needed`, 如图所示: 
 
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
 
-	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `RuiYuAdMob.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `RuiYuAdMob.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
+	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `MDAd.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `MDAd.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
 	
 	   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
 	 
-	- 用法: 在使用 `RuiYuAdMob.framework` 时, 在需要的文件头部 `import RuiYuAdMob` 即可. 
+	- 用法: 在使用 `MDAd.framework` 时, 在需要的文件头部 `import MDAd` 即可. 
 	
-
+	
+     > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
+ 
 ## 广告样式
 
-**`RuiYuAdMob.framework`** 提供五种广告样式, 分别是 **横幅广告**、**信息流广告**、**开屏广告**、**插屏广告** 和 **浮标广告**.
+**`MDAd.framework`** 提供五种广告样式, 分别是 **横幅广告**、**信息流广告**、**开屏广告**、**插屏广告** 和 **浮标广告**.
 
 ### 横幅广告
 
 **横幅广告** 又称为 Banner. 通常展示在 App 页面的顶部或者底部. framework 中提供横幅广告尺寸宽高比为 `700 : 280`. 在使用该广告之前, 你需要申请横幅广告的广告 ID. 集成横幅广告的简单示例如下:
 
- 1. 便于展示, 我们采用 Interface Builder 来构建视图. 我们拖入一个 View 视图, 取名为 bannerView, 并选择继承自 `RYBannerView`. `RYBannerView` 是 `RuiYuAdMob.framework` 中用于展示横幅广告的视图类.
+ 1. 便于展示, 我们采用 Interface Builder 来构建视图. 我们拖入一个 View 视图, 取名为 bannerView, 并选择继承自 `RYBannerView`. `RYBannerView` 是 `MDAd.framework` 中用于展示横幅广告的视图类.
  	
  	```Swift
  	@IBOutlet weak var bannerView: RYBannerView!
@@ -201,9 +203,10 @@
 ## 常见问题
 
 1. 加载广告未显示, 请检查对应广告 ID 是否正确;
-2. 手动集成发生 `image not found` 错误: 确定 `RuiYuAdMob.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `RuiYuAdMob.framework` 和 `RuiYuAdMob.bundle` 同时存在项目中.
+2. 手动集成发生 `image not found` 错误: 确定 `MDAd.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `MDAd.framework` 和 `MDAd.bundle` 同时存在项目中.
 3. 文档以 Swift 代码演示, 如果你正在使用 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
 
 ## 版本日志
 
-0.1.0: 接入五种常用广告.
+0.1.0: 接入五种常用广告.   
+0.2.0: 修改SDK命名规范.
