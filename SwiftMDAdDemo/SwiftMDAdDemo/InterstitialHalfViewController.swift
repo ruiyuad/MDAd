@@ -15,7 +15,7 @@ import MDAd
 
 class InterstitialHalfViewController: UIViewController {
     
-    /// 插屏式广告位展示宽高值推荐为 255.0 * (255.0 + 55.0), 为保证底部 Close 按钮正常显示, 请保证高度始终大于宽度 55.0
+    
     @IBOutlet weak var halfInterstitialView: RYInterstitialHalfView!
     
     override func viewDidLoad() {
@@ -24,9 +24,11 @@ class InterstitialHalfViewController: UIViewController {
         title = "插屏广告示例"
         // Required configs - 初始化 RYInterstitialHalfView 之后, 必要的配置有:
         
+        /// 插屏式广告位展示宽高值推荐为 255.0 * (255.0 + 55.0), 为保证底部 Close 按钮正常显示, 请保证高度始终大于宽度 55.0
+        
         // 1. Required step1: configs `AdsID`
         halfInterstitialView.adsID = "840001"
-       
+        
         // 2. Required step2: load request
         halfInterstitialView.loadRequest()
         

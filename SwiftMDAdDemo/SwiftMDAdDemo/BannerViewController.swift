@@ -26,10 +26,15 @@ class BannerViewController: UIViewController {
         
         // Required configs - 初始化 RYBannerView 之后, 必要的配置有:
         
-        // 1. Required step1: configs `AdsID`
-        bannerView.adsID = "820001" // 640.0 : 60.0 (请初始化 bannerView 初始宽高比为 640.0 : 60.0)
+        // 横幅广告位可选择两种样式. 不同的 AdsID 对应不同样式. 以下分别列举三种信息流广告位的 adsID 和 尺寸. 每次请选择一种样式展示.
         
-//        bannerView.adsID = "820004" // 690.0 : 100.0 (请初始化 bannerView 初始宽高比为 690.0 : 100.0)
+        // 1. Required step1: configs `AdsID`
+        
+        // 1.1. 纯图模式, adsID 为 820001, 广告位尺寸是 640.0 : 60.0 (请初始化 bannerView 初始宽高比为 640.0 : 60.0)
+        bannerView.adsID = "820001"
+        
+        // 1.2. 左图右文模式, adsID 为 820004, 广告位尺寸是 690.0 : 100.0 (请初始化 bannerView 初始宽高比为 690.0 : 100.0)
+//        bannerView.adsID = "820004"
         
         // 2. Required step2: load request
         bannerView.loadRequest()

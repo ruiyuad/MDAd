@@ -15,8 +15,6 @@ import MDAd
 
 class BuoyViewController: UIViewController {
     
-    /// `RYBuoyView`'s ratio is 110 : 110(Width : Height).
-    /// 浮标式广告展示宽高比是 110 : 110
     @IBOutlet weak var buoyView: RYBuoyView!
     
     override func viewDidLoad() {
@@ -25,6 +23,9 @@ class BuoyViewController: UIViewController {
         title = "浮标广告示例"
         
         // Required configs - 初始化 RYBuoyView 之后, 必要的配置有:
+        
+        /// `RYBuoyView`'s ratio is 110 : 110(Width : Height).
+        /// 浮标式广告展示宽高比是 110 : 110
         
         // 1. Required step1: configs `AdsID`
         buoyView.adsID = "860001"

@@ -16,8 +16,7 @@
 
 @interface InterstitialViewController ()<RYInterstitialViewDelegate>
 
-/// `RYInfoFlowView`'s ratio is 750 : 1334(Width : Height).
-/// 插页式广告展示宽高比是 750 : 1334
+
 @property (weak, nonatomic) IBOutlet RYInterstitialView *interstitialView;
 
 @end
@@ -30,6 +29,9 @@
     [super viewDidLoad];
     
     // Required configs - 初始化 RYInterstitialView 实例之后, 必要的配置有:
+    
+    /// `RYInfoFlowView`'s ratio is 750 : 1334(Width : Height).
+    /// 插页式广告展示宽高比是 750 : 1334
     
     // 1. Required step1: configs `AdsID`
     self.interstitialView.adsID = @"810001";
@@ -56,9 +58,6 @@
 }
 
 #pragma mark - RYInterstitialViewDelegate
-
-- (void)interstitialDidReceiveAd:(RYInterstitialView *)interstitial {
-}
 
 - (void)interstitialCountDownDidTap {
     [self.navigationController popViewControllerAnimated:YES];

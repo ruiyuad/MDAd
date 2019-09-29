@@ -16,8 +16,7 @@
 
 @interface BuoyViewController ()
 
-/// `RYBuoyView`'s ratio is 110 : 110(Width : Height).
-/// 浮标式广告展示宽高比是 110 : 110
+
 @property (weak, nonatomic) IBOutlet RYBuoyView *buoyView;
 
 @end
@@ -28,6 +27,9 @@
     [super viewDidLoad];
     
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
+    
+    /// `RYBuoyView`'s ratio is 110 : 110(Width : Height).
+    /// 浮标式广告展示宽高比是 110 : 110
     
     // 1. Required step1: configs `AdsID`
     self.buoyView.adsID = @"860001";
