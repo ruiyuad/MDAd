@@ -5,6 +5,6 @@ use_frameworks!
 
 
 target 'SwiftMDAdDemo' do
-    pod 'MDAd', '~> 0.3.0'
+    pod 'MDAd', '~> 0.3.1'
 end
 

@@ -27,7 +27,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.3.0'
+       pod 'MDAd', '~> 0.3.1'
    end
    ```
    
@@ -210,12 +210,15 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
 ## 常见问题
 
-1. 加载广告未显示, 请检查对应广告 ID 是否正确;
-2. 手动集成发生 `image not found` 错误: 确定 `MDAd.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `MDAd.framework` 和 `MDAd.bundle` 同时存在项目中.
-3. 文档以 Swift 代码演示, 如果你正在使用 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
+1. 广告代理方法均未执行, 检查  `appKey` 和 `appSecret` 配置.
+2. 加载广告未显示, 请检查对应广告 ID 是否正确.
+3. 手动集成发生 `image not found` 错误: 确定 `MDAd.bundle` 已经导入, 可在 `target` -> `Build Phases` -> `Copy Bundle Resources` 查看是否存在. 确保 `MDAd.framework` 和 `MDAd.bundle` 同时存在项目中.
+4. 文档以 Swift 代码演示, 如果你正在使用 Objective-C 语言开发, 可查看仓库中 OC 示例工程.
 
 ## 版本日志
 
 0.1.0: 接入五种常用广告.   
 0.2.0: 修改 SDK 命名规范.   
-0.3.0: 新增横幅广告**左图右文**样式, 信息流广告**左图右文**、**上文下图**样式; 横幅、信息流、开屏、插屏和浮标广告位纯图模式广告改版.
+0.3.0: 新增横幅广告**左图右文**样式, 信息流广告**左图右文**、**上文下图**样式. 横幅、信息流、开屏、插屏和浮标广告位纯图模式广告改版.
+0.3.1: 修复`加载左图右文格式广告位时, 左图在第三方 App 内显示不完整` bug.
+

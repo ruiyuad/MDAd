@@ -6,6 +6,7 @@
 
 - [环境支持](#环境支持)
 - [集成方式](#集成方式)
+- [初始化](#初始化)
 - [广告样式](#广告样式)
 - [常见问题](#常见问题)
 - [版本日志](#版本日志)
@@ -26,7 +27,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.2.0'
+       pod 'MDAd', '~> 0.3.0'
    end
    ```
    
@@ -40,14 +41,21 @@
 
    ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/1.png)
 
-	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `MDAd.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `MDAd.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份. 如图所示:
-	
-	   ![1](https://github.com/ruiyuad/MDAd/blob/master/linkImages/2.png)
+	- 在 `target` -> `General` -> `Linked Frameworks and Libraries` 下删除 `MDAd.framework`, 然后在 `target` -> `General` -> `Embedded Binaries` 中添加 `MDAd.framework`. 这时也会自动在 `Linked Frameworks and Libraries` 目录下添加一份.
 	 
 	- 用法: 在使用 `MDAd.framework` 时, 在需要的文件头部 `import MDAd` 即可. 
 	
 	
      > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
+     
+
+## 初始化
+
+使用 `MDAd.framework` 前, 请先确认已注册 **AppKey** 和 **AppSecret**. 如有疑问, 请联系我们 *admin@mobiw.com* 或者当前 github 账号. 如已注册 **AppKey** 和 **AppSecret**, 请在 `application(_ application:, didFinishLaunchingWithOptions launchOptions:)` 做如下初始化:
+
+```
+RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
+```
  
 ## 广告样式
 
@@ -55,9 +63,9 @@
 
 ### 横幅广告
 
-**横幅广告** 又称为 Banner. 通常展示在 App 页面的顶部或者底部. framework 中提供横幅广告尺寸宽高比为 `700 : 280`. 在使用该广告之前, 你需要申请横幅广告的广告 ID. 集成横幅广告的简单示例如下:
+**横幅广告** 又称为 Banner. 通常展示在 App 页面的顶部或者底部. framework 中提供横幅广告样式有两种, 分别是**纯图模式** (宽高比为`640.0 : 60.0`) 和 **左图右文模式**(宽高比为`690.0 : 100.0`). 不同广告样式对应不同的 ID. 在使用该广告之前, 你需要申请横幅广告的广告 ID. 集成横幅广告的简单示例如下:
 
- 1. 便于展示, 我们采用 Interface Builder 来构建视图. 我们拖入一个 View 视图, 取名为 bannerView, 并选择继承自 `RYBannerView`. `RYBannerView` 是 `MDAd.framework` 中用于展示横幅广告的视图类.
+ 1. 便于展示, 我们采用 Interface Builder 来构建视图. 我们拖入 View 视图, 取名为 bannerView, 并选择继承自 `RYBannerView`. `RYBannerView` 是 `MDAd.framework` 中用于展示横幅广告的视图类.
  	
  	```Swift
  	@IBOutlet weak var bannerView: RYBannerView!
@@ -98,7 +106,7 @@
 
 ### 信息流广告
 
-**信息流广告** 用于展示在信息流列表中. 你可以使用 `RYInfoFlowView` 类来实现信息流广告的展示. framework 中提供信息流广告尺寸宽高比为 `700 : 280`. 在使用该广告之前, 你需要申请信息流广告的广告 ID. 集成信息流广告的简单示例如下:
+**信息流广告** 用于展示在信息流列表中. 你可以使用 `RYInfoFlowView` 类来实现信息流广告的展示. framework 中提供横幅广告样式有三种, 分别是**纯图模式** (宽高比为`700.0 : 280.0`)、**左图右文模式** (宽高比为`690.0 : 290.0`) 和 **上文下图模式** (宽高比为`690.0 : 440.0`). 在使用该广告之前, 你需要申请信息流广告的广告 ID. 集成信息流广告的简单示例如下:
 
  1. 创建 `RYInfoFlowView` 实例:
  	
@@ -209,4 +217,5 @@
 ## 版本日志
 
 0.1.0: 接入五种常用广告.   
-0.2.0: 修改SDK命名规范.
+0.2.0: 修改 SDK 命名规范.   
+0.3.0: 新增横幅广告**左图右文**样式, 信息流广告**左图右文**、**上文下图**样式; 横幅、信息流、开屏、插屏和浮标广告位纯图模式广告改版.
