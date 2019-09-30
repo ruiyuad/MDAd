@@ -40,6 +40,8 @@
     // 1.3. 上文下图模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0 (保证高度大于宽度 26.0)
     // self.infoFlowView.adsID = @"850006";
     
+    
+    
     // 2. Required step2: load request
     [self.infoFlowView loadRequest];
     

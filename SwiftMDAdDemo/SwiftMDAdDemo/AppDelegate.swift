@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        RYAdMobCenter.center.setup("621112", appSecret: "537dab8740884583a82f2db97fbc6eb6")
+//        RYAdMobCenter.center.setup("621112", appSecret: "537dab8740884583a82f2db97fbc6eb6")
+        RYAdMobCenter.center.setup("621114", appSecret: "d7973d2a4a9f4ca18eaa2e5fef1f9088")
         return true
     }
     

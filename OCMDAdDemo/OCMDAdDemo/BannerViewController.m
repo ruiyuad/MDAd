@@ -53,7 +53,7 @@
 
 #pragma mark - RYBannerViewDelegate
 
-- (void)adViewDidReceiveAd:(RYBannerView *)bannerView {
+- (void)bannerDidReceiveAd:(RYBannerView *)bannerView {
 }
 
 @end

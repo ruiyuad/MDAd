@@ -28,7 +28,7 @@ class InterstitialHalfViewController: UIViewController {
         
         // 1. Required step1: configs `AdsID`
         halfInterstitialView.adsID = "840001"
-        
+        halfInterstitialView.isShowCloseButton = false
         // 2. Required step2: load request
         halfInterstitialView.loadRequest()
         

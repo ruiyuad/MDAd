@@ -29,7 +29,7 @@ class BuoyViewController: UIViewController {
         
         // 1. Required step1: configs `AdsID`
         buoyView.adsID = "860001"
-        
+        buoyView.isShowCloseButton = false
         // 2. Required step2: load request
         buoyView.loadRequest()
         

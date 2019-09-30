@@ -42,6 +42,9 @@ class InfoFlowViewController: UIViewController {
         // 1.3. 上文下图模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0 (保证高度大于宽度 26.0)
 //        infoFlowView.adsID = "850006"
         
+        infoFlowView.isShowCloseButton = false
+        infoFlowView.isShowDownloadButton = false
+        
         // 2. Required step2: load request
         infoFlowView.loadRequest()
         
@@ -60,8 +63,15 @@ extension InfoFlowViewController: RYInfoFlowViewDelegate {
     
     func infoFlowDidReceiveAd(_ infoFlowView: RYInfoFlowView) {
         // You can show infoFlowView with simple animation.
-        UIView.animate(withDuration: 1.0) {
+//        UIView.animate(withDuration: 1.0) {
+//            self.infoFlowView.alpha = 1.0
+//        }
+        
+        UIView.animate(withDuration: 1.0, animations: {
             self.infoFlowView.alpha = 1.0
+        }) { _ in
+            infoFlowView.isShowCloseButton = true
+            infoFlowView.isShowDownloadButton = true
         }
     }
     
