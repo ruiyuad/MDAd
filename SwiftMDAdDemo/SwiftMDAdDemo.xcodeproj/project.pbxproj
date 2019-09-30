@@ -15,11 +15,9 @@
 		9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87C22B0E5C700D51F1C /* Assets.xcassets */; };
 		9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87E22B0E5C700D51F1C /* LaunchScreen.storyboard */; };
 		9825B88B22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B88A22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift */; };
-		984C11FA2341A58300423754 /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 984C11F92341A58300423754 /* MDAd.bundle */; };
-		984C11FC2341A58C00423754 /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984C11FB2341A58C00423754 /* MDAd.framework */; };
-		984C11FD2341A58C00423754 /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 984C11FB2341A58C00423754 /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		986C18AD22D5E9C600F06172 /* InfoFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */; };
 		98AFEDD022DECBE50046B760 /* InterstitialHalfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */; };
+		B35809F79654F5D4C541C5DA /* Pods_SwiftMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909CBB66D784EA3440CD4EEB /* Pods_SwiftMDAdDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				984C11FD2341A58C00423754 /* MDAd.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,7 +44,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33B79C46CC1DE39CEF6C387B /* Pods-SwiftMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMDAdDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		909CBB66D784EA3440CD4EEB /* Pods_SwiftMDAdDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMDAdDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		913CBCC70C492C719BC2DE62 /* Pods-SwiftMDAdDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMDAdDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.release.xcconfig"; sourceTree = "<group>"; };
 		981A978722D71E9100C8540A /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		981C0F6C22E011DE00BDF6E1 /* BuoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuoyViewController.swift; sourceTree = "<group>"; };
 		9825B87222B0E5C600D51F1C /* SwiftMDAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMDAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +59,6 @@
 		9825B88622B0E5C700D51F1C /* SwiftMDAdDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMDAdDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9825B88A22B0E5C700D51F1C /* SwiftMDAdDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMDAdDemoTests.swift; sourceTree = "<group>"; };
 		9825B88C22B0E5C700D51F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		984C11F92341A58300423754 /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
-		984C11FB2341A58C00423754 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFlowViewController.swift; sourceTree = "<group>"; };
 		98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialHalfViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				984C11FC2341A58C00423754 /* MDAd.framework in Frameworks */,
+				B35809F79654F5D4C541C5DA /* Pods_SwiftMDAdDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +85,6 @@
 		32548EB5E9AE0AB799D547B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				984C11FB2341A58C00423754 /* MDAd.framework */,
 				909CBB66D784EA3440CD4EEB /* Pods_SwiftMDAdDemo.framework */,
 			);
 			name = Frameworks;
@@ -97,11 +93,11 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
-				984C11F92341A58300423754 /* MDAd.bundle */,
 				9825B87422B0E5C600D51F1C /* SwiftMDAdDemo */,
 				9825B88922B0E5C700D51F1C /* SwiftMDAdDemoTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
 				32548EB5E9AE0AB799D547B3 /* Frameworks */,
+				F9FC0D5024FA13E7A355AA40 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +136,16 @@
 			path = SwiftMDAdDemoTests;
 			sourceTree = "<group>";
 		};
+		F9FC0D5024FA13E7A355AA40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33B79C46CC1DE39CEF6C387B /* Pods-SwiftMDAdDemo.debug.xcconfig */,
+				913CBCC70C492C719BC2DE62 /* Pods-SwiftMDAdDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,10 +153,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9825B88F22B0E5C700D51F1C /* Build configuration list for PBXNativeTarget "SwiftMDAdDemo" */;
 			buildPhases = (
+				0167DD3645AF7130174B3AF9 /* [CP] Check Pods Manifest.lock */,
 				9825B86E22B0E5C600D51F1C /* Sources */,
 				9825B86F22B0E5C600D51F1C /* Frameworks */,
 				9825B87022B0E5C600D51F1C /* Resources */,
 				98CF8AF322E769B200225F36 /* Embed Frameworks */,
+				6E533ED390AE0429778BCB73 /* [CP] Embed Pods Frameworks */,
+				DEDB6671CF748AAE693EAA9C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
-				984C11FA2341A58300423754 /* MDAd.bundle in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
 			);
@@ -237,6 +245,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0167DD3645AF7130174B3AF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftMDAdDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E533ED390AE0429778BCB73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEDB6671CF748AAE693EAA9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9825B86E22B0E5C600D51F1C /* Sources */ = {
@@ -408,6 +475,7 @@
 		};
 		9825B89022B0E5C700D51F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33B79C46CC1DE39CEF6C387B /* Pods-SwiftMDAdDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -434,6 +502,7 @@
 		};
 		9825B89122B0E5C700D51F1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913CBCC70C492C719BC2DE62 /* Pods-SwiftMDAdDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
