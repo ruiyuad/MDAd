@@ -34,16 +34,18 @@ class BannerViewController: UIViewController {
         
         // 纯图模式, adsID 为 820001, 广告位尺寸是 640.0 : 60.0 (请初始化 bannerView 初始宽高比为 640.0 : 60.0)
         case "820001":
-            bannerView.adsID = "820001"
             ratio = 640.0 / 60.0
+            
+            bannerView.adsID = "820001"
             bannerView.rootViewController = self
             bannerView.delegate = self
             bannerView.loadRequest()
         
         // 左图右文模式, adsID 为 820004, 广告位尺寸是 690.0 : 100.0 (请初始化 bannerView 初始宽高比为 690.0 : 100.0)
         case "820004":
-            bannerView.adsID = "820004"
             ratio = 690.0 / 100.0
+            
+            bannerView.adsID = "820004"
             bannerView.rootViewController = self
             bannerView.delegate = self
             bannerView.loadRequest()

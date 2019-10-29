@@ -50,7 +50,7 @@ class HomePage: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
-        if let detailsAds = ads[indexPath.section].values.first, detailsAds.count > 0 {
+        if let detailsAds = ads[indexPath.section].values.first, detailsAds.count > 0, indexPath.row < detailsAds.count {
             let ad = detailsAds[indexPath.row]
             cell.textLabel?.text = ad.title + " (\(ad.adsID))"
         }

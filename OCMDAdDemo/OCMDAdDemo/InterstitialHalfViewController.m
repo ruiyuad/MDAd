@@ -14,7 +14,7 @@
 
 @import MDAd;
 
-@interface InterstitialHalfViewController ()
+@interface InterstitialHalfViewController ()<RYInterstitialHalfViewDelegate>
 
 @property (weak, nonatomic) IBOutlet RYInterstitialHalfView *halfInterstitialView;
 
@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"插屏广告示例";
     
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
     
@@ -32,16 +33,29 @@
     
     // 1. Required step1: configs `AdsID`
     self.halfInterstitialView.adsID = @"840001";
-    
-    // 2. Required step2: load request
+    self.halfInterstitialView.rootViewController = self;
+    self.halfInterstitialView.delegate = self;
     [self.halfInterstitialView loadRequest];
-    
-    // Optional configs - 可选配置.
-    
-    // self.halfInterstitialView.delegate = self;
     
     // Other customized setting
 }
 
+
+#pragma mark - RYInterstitialViewDelegate
+
+- (void)interstitialHalfDidReceiveAd:(RYInterstitialHalfView *)interstitial {}
+
+- (void)interstitialHalfDidFailToReceiveAd:(RYInterstitialHalfView *)interstitial error:(RYError *)error {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"检测返回异常"
+                                                                     message: error.errorDescription
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertVC addAction:action];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
 
 @end

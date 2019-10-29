@@ -31,17 +31,11 @@
     /// `RYBuoyView`'s ratio is 110 : 110(Width : Height).
     /// 浮标式广告展示宽高比是 110 : 110
     
-    // 1. Required step1: configs `AdsID`
     self.buoyView.adsID = @"860001";
-    
-    // 2. Required step2: load request
+    self.buoyView.rootViewController = self;
     [self.buoyView loadRequest];
     
-    // Optional configs - 可选配置. 这里可以根据业务需要去实现代理方法, 详情代理方法请查阅发布文档.
-    
     // self.buoyView.delegate = self;
-    
-    // Other customized setting
 }
 
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		981C0F7022E016CD00BDF6E1 /* BuoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 981C0F6F22E016CD00BDF6E1 /* BuoyViewController.m */; };
+		98380ADD2368302F00BA8784 /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 98380ADC2368302F00BA8784 /* HomePage.m */; };
+		98380AE02368333B00BA8784 /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 98380ADF2368333B00BA8784 /* Ad.m */; };
+		98380AE323683CAD00BA8784 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98380AE223683CAD00BA8784 /* CustomViewController.m */; };
 		984DDAF822DDDAB3006C2F27 /* InfoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAF722DDDAB3006C2F27 /* InfoFlowViewController.m */; };
 		984DDAFB22DDDB10006C2F27 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFA22DDDB10006C2F27 /* InterstitialViewController.m */; };
 		984DDAFE22DDDBEB006C2F27 /* InterstitialHalfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */; };
@@ -37,6 +40,12 @@
 		599BDB4CE540F567E81DC5D4 /* Pods-OCMDAdDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCMDAdDemo.release.xcconfig"; path = "Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo.release.xcconfig"; sourceTree = "<group>"; };
 		981C0F6E22E016CD00BDF6E1 /* BuoyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuoyViewController.h; sourceTree = "<group>"; };
 		981C0F6F22E016CD00BDF6E1 /* BuoyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuoyViewController.m; sourceTree = "<group>"; };
+		98380ADB2368302F00BA8784 /* HomePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
+		98380ADC2368302F00BA8784 /* HomePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
+		98380ADE2368333B00BA8784 /* Ad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ad.h; sourceTree = "<group>"; };
+		98380ADF2368333B00BA8784 /* Ad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ad.m; sourceTree = "<group>"; };
+		98380AE123683CAD00BA8784 /* CustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		98380AE223683CAD00BA8784 /* CustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 		984DDAF622DDDAB3006C2F27 /* InfoFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoFlowViewController.h; sourceTree = "<group>"; };
 		984DDAF722DDDAB3006C2F27 /* InfoFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoFlowViewController.m; sourceTree = "<group>"; };
 		984DDAF922DDDB10006C2F27 /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
@@ -109,6 +118,8 @@
 			children = (
 				9881434622B1ED3B003037B5 /* AppDelegate.h */,
 				9881434722B1ED3B003037B5 /* AppDelegate.m */,
+				98380ADB2368302F00BA8784 /* HomePage.h */,
+				98380ADC2368302F00BA8784 /* HomePage.m */,
 				9881434922B1ED3B003037B5 /* BannerViewController.h */,
 				9881434A22B1ED3B003037B5 /* BannerViewController.m */,
 				984DDAF622DDDAB3006C2F27 /* InfoFlowViewController.h */,
@@ -119,6 +130,10 @@
 				984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */,
 				981C0F6E22E016CD00BDF6E1 /* BuoyViewController.h */,
 				981C0F6F22E016CD00BDF6E1 /* BuoyViewController.m */,
+				98380AE123683CAD00BA8784 /* CustomViewController.h */,
+				98380AE223683CAD00BA8784 /* CustomViewController.m */,
+				98380ADE2368333B00BA8784 /* Ad.h */,
+				98380ADF2368333B00BA8784 /* Ad.m */,
 				9881434C22B1ED3B003037B5 /* Main.storyboard */,
 				9881434F22B1ED3B003037B5 /* Assets.xcassets */,
 				9881435122B1ED3B003037B5 /* LaunchScreen.storyboard */,
@@ -281,11 +296,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9881434B22B1ED3B003037B5 /* BannerViewController.m in Sources */,
+				98380AE323683CAD00BA8784 /* CustomViewController.m in Sources */,
 				9881435622B1ED3B003037B5 /* main.m in Sources */,
 				984DDAFE22DDDBEB006C2F27 /* InterstitialHalfViewController.m in Sources */,
+				98380ADD2368302F00BA8784 /* HomePage.m in Sources */,
 				984DDAFB22DDDB10006C2F27 /* InterstitialViewController.m in Sources */,
 				984DDAF822DDDAB3006C2F27 /* InfoFlowViewController.m in Sources */,
 				9881434822B1ED3B003037B5 /* AppDelegate.m in Sources */,
+				98380AE02368333B00BA8784 /* Ad.m in Sources */,
 				981C0F7022E016CD00BDF6E1 /* BuoyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1A95B1F4DA24593EDBD8FC2 /* Pods-OCMDAdDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 599BDB4CE540F567E81DC5D4 /* Pods-OCMDAdDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

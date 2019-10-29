@@ -59,7 +59,7 @@ class InfoFlowViewController: UIViewController {
             // 上文下图无底部浮层模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0
             infoFlowView.adsID = "850006"
             ratio = 686.0 / 386.0
-            // 上文下图无底部浮层模式, 配置 isShowDescriptionText 为 true
+            // 上文下图无底部浮层模式, 配置 isShowDescriptionText 为 true, 打开浮层模式, 否则关闭, 默认关闭
             infoFlowView.isShowDescriptionText = true
             infoFlowView.rootViewController = self
             infoFlowView.delegate = self

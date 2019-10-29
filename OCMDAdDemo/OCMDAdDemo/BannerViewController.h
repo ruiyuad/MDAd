@@ -10,6 +10,7 @@
 
 @interface BannerViewController : UIViewController
 
+@property (copy, nonatomic) NSString *adsID;
 
 @end
 
