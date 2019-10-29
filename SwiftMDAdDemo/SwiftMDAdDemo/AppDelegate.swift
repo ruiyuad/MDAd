@@ -11,14 +11,14 @@ import MDAd
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        RYAdMobCenter.center.setup("621112", appSecret: "537dab8740884583a82f2db97fbc6eb6")
-        RYAdMobCenter.center.setup("621114", appSecret: "d7973d2a4a9f4ca18eaa2e5fef1f9088")
+        RYAdMobCenter.center.setup("621111", appSecret: "4a1fc76826444f9a8309768136ed7547")
+        RYAdMobCenter.center.enableDebugPrint(true)
         return true
     }
     

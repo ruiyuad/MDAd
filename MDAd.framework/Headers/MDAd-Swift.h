@@ -186,6 +186,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import StoreKit;
 @import UIKit;
 #endif
 
@@ -206,10 +207,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -221,6 +226,8 @@ SWIFT_CLASS("_TtC4MDAd13RYAdMobCenter")
 /// Singleton.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCenter * _Nonnull center;)
 + (RYAdMobCenter * _Nonnull)center SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
@@ -228,13 +235,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
-/// <ul>
-///   <li>
-///     Parameters isEnabled: A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
-///   </li>
-/// </ul>
+/// \param isEnabled A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
+///
 - (void)enableDebugPrint:(BOOL)isEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class SKStoreProductViewController;
+
+@interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
+- (void)productViewControllerDidFinish:(SKStoreProductViewController * _Nonnull)viewController;
 @end
 
 @protocol RYBannerViewDelegate;
@@ -265,10 +274,18 @@ SWIFT_PROTOCOL("_TtP4MDAd20RYBannerViewDelegate_")
 @protocol RYBannerViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an banner ad request successfully received an ad.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerDidReceiveAd:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that an banner ad request failed.
+/// \param bannerView The current instance of RYBannerView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)bannerDidFailToReceiveAd:(RYBannerView * _Nonnull)bannerView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerWillLeaveApplication:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)bannerViewDidClose;
@@ -299,13 +316,75 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYBuoyViewDelegate_")
 @protocol RYBuoyViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyDidReceiveAd:(RYBuoyView * _Nonnull)buoyView;
 /// Tells the delegate that an ad request failed.
+/// \param buoyView The current instance of RYBuoyView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)buoyDidFailToReceiveAd:(RYBuoyView * _Nonnull)buoyView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyWillLeaveApplication:(RYBuoyView * _Nonnull)buoyView;
 /// Tell the delegate that the user did clicked the close button.
 - (void)buoyViewDidClose;
+@end
+
+@protocol RYCustomAdDelegate;
+
+SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
+@interface RYCustomAd : NSObject
+@property (nonatomic, weak) id <RYCustomAdDelegate> _Nullable delegate;
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the custom ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
+/// Call this method when the user clicks the ad.
+- (void)recordClick;
+/// Call this method when the ad is visible to the user.
+- (void)recordImpression;
+/// Call this method when open the ad’s link.
+/// You can add this method to your Selector for gestures or actions that added for custom ad view or its subviews.
+- (void)openAdLink;
+/// Requests a custom ad. Remembers must set <code>adsID</code> before call this function.
+- (void)loadRequest;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Delegate methods for receiving custom ads state change messages such as ad request status.
+SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
+@protocol RYCustomAdDelegate <NSObject>
+/// Tells the delegate that an custom ad request successfully.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
+/// <ul>
+///   <li>
+///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
+///   </li>
+/// </ul>
+///
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+@optional
+/// Tells the delegate that an custom ad request failed.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
 @end
 
 
@@ -318,7 +397,7 @@ SWIFT_CLASS("_TtC4MDAd7RYError")
 
 @protocol RYInfoFlowViewDelegate;
 
-/// An information ad. This is a advertisement shown in list such as UITableView and UICollectionView.
+/// An ad type displayed in the flow of information.
 SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @interface RYInfoFlowView : RYAdBaseView
 /// Indicates that information flow ads id.
@@ -329,6 +408,9 @@ SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @property (nonatomic) BOOL isShowCloseButton;
 /// A Boolean value that determines whether the default download button is display. Default is true.
 @property (nonatomic) BOOL isShowDownloadButton;
+/// A Boolean value that determines whether the description label is display. Default is false.
+/// Remembers that the property works only in the case that the adsID’s value is 850006.
+@property (nonatomic) BOOL isShowDescriptionText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Request an information flow ad.
@@ -343,10 +425,18 @@ SWIFT_PROTOCOL("_TtP4MDAd22RYInfoFlowViewDelegate_")
 @protocol RYInfoFlowViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowDidReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that an ad request failed.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)infoFlowDidFailToReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowWillLeaveApplication:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)infoFlowViewDidClose;
@@ -377,10 +467,18 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 @protocol RYInterstitialHalfViewDelegate <NSObject>
 @optional
 /// Called when an half interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfDidReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial;
-/// Called when an interstitial ad request completed without an interstitial to show.
+/// Called when an half interstitial ad request completed without an half interstitial to show.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialHalfDidFailToReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfWillLeaveApplication:(RYInterstitialHalfView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the close button.
 - (void)interstitialHalfViewDidClose;
@@ -412,12 +510,20 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 @protocol RYInterstitialViewDelegate <NSObject>
 @optional
 /// Called when an interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialDidReceiveAd:(RYInterstitialView * _Nonnull)interstitial;
 /// Called when an interstitial ad request completed without an interstitial to show.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialDidFailToReceiveAd:(RYInterstitialView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
-/// Tell the delegate that the user did clicked the close button.
+/// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
 @end
 
@@ -617,6 +723,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import StoreKit;
 @import UIKit;
 #endif
 
@@ -637,10 +744,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -652,6 +763,8 @@ SWIFT_CLASS("_TtC4MDAd13RYAdMobCenter")
 /// Singleton.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCenter * _Nonnull center;)
 + (RYAdMobCenter * _Nonnull)center SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
@@ -659,13 +772,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
-/// <ul>
-///   <li>
-///     Parameters isEnabled: A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
-///   </li>
-/// </ul>
+/// \param isEnabled A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
+///
 - (void)enableDebugPrint:(BOOL)isEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class SKStoreProductViewController;
+
+@interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
+- (void)productViewControllerDidFinish:(SKStoreProductViewController * _Nonnull)viewController;
 @end
 
 @protocol RYBannerViewDelegate;
@@ -696,10 +811,18 @@ SWIFT_PROTOCOL("_TtP4MDAd20RYBannerViewDelegate_")
 @protocol RYBannerViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an banner ad request successfully received an ad.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerDidReceiveAd:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that an banner ad request failed.
+/// \param bannerView The current instance of RYBannerView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)bannerDidFailToReceiveAd:(RYBannerView * _Nonnull)bannerView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerWillLeaveApplication:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)bannerViewDidClose;
@@ -730,13 +853,75 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYBuoyViewDelegate_")
 @protocol RYBuoyViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyDidReceiveAd:(RYBuoyView * _Nonnull)buoyView;
 /// Tells the delegate that an ad request failed.
+/// \param buoyView The current instance of RYBuoyView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)buoyDidFailToReceiveAd:(RYBuoyView * _Nonnull)buoyView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyWillLeaveApplication:(RYBuoyView * _Nonnull)buoyView;
 /// Tell the delegate that the user did clicked the close button.
 - (void)buoyViewDidClose;
+@end
+
+@protocol RYCustomAdDelegate;
+
+SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
+@interface RYCustomAd : NSObject
+@property (nonatomic, weak) id <RYCustomAdDelegate> _Nullable delegate;
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the custom ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
+/// Call this method when the user clicks the ad.
+- (void)recordClick;
+/// Call this method when the ad is visible to the user.
+- (void)recordImpression;
+/// Call this method when open the ad’s link.
+/// You can add this method to your Selector for gestures or actions that added for custom ad view or its subviews.
+- (void)openAdLink;
+/// Requests a custom ad. Remembers must set <code>adsID</code> before call this function.
+- (void)loadRequest;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Delegate methods for receiving custom ads state change messages such as ad request status.
+SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
+@protocol RYCustomAdDelegate <NSObject>
+/// Tells the delegate that an custom ad request successfully.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
+/// <ul>
+///   <li>
+///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
+///   </li>
+/// </ul>
+///
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+@optional
+/// Tells the delegate that an custom ad request failed.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
 @end
 
 
@@ -749,7 +934,7 @@ SWIFT_CLASS("_TtC4MDAd7RYError")
 
 @protocol RYInfoFlowViewDelegate;
 
-/// An information ad. This is a advertisement shown in list such as UITableView and UICollectionView.
+/// An ad type displayed in the flow of information.
 SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @interface RYInfoFlowView : RYAdBaseView
 /// Indicates that information flow ads id.
@@ -760,6 +945,9 @@ SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @property (nonatomic) BOOL isShowCloseButton;
 /// A Boolean value that determines whether the default download button is display. Default is true.
 @property (nonatomic) BOOL isShowDownloadButton;
+/// A Boolean value that determines whether the description label is display. Default is false.
+/// Remembers that the property works only in the case that the adsID’s value is 850006.
+@property (nonatomic) BOOL isShowDescriptionText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Request an information flow ad.
@@ -774,10 +962,18 @@ SWIFT_PROTOCOL("_TtP4MDAd22RYInfoFlowViewDelegate_")
 @protocol RYInfoFlowViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowDidReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that an ad request failed.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)infoFlowDidFailToReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowWillLeaveApplication:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)infoFlowViewDidClose;
@@ -808,10 +1004,18 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 @protocol RYInterstitialHalfViewDelegate <NSObject>
 @optional
 /// Called when an half interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfDidReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial;
-/// Called when an interstitial ad request completed without an interstitial to show.
+/// Called when an half interstitial ad request completed without an half interstitial to show.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialHalfDidFailToReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfWillLeaveApplication:(RYInterstitialHalfView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the close button.
 - (void)interstitialHalfViewDidClose;
@@ -843,12 +1047,20 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 @protocol RYInterstitialViewDelegate <NSObject>
 @optional
 /// Called when an interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialDidReceiveAd:(RYInterstitialView * _Nonnull)interstitial;
 /// Called when an interstitial ad request completed without an interstitial to show.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialDidFailToReceiveAd:(RYInterstitialView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
-/// Tell the delegate that the user did clicked the close button.
+/// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
 @end
 
@@ -1050,6 +1262,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import StoreKit;
 @import UIKit;
 #endif
 
@@ -1070,10 +1283,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1085,6 +1302,8 @@ SWIFT_CLASS("_TtC4MDAd13RYAdMobCenter")
 /// Singleton.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCenter * _Nonnull center;)
 + (RYAdMobCenter * _Nonnull)center SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
@@ -1092,13 +1311,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
-/// <ul>
-///   <li>
-///     Parameters isEnabled: A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
-///   </li>
-/// </ul>
+/// \param isEnabled A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
+///
 - (void)enableDebugPrint:(BOOL)isEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class SKStoreProductViewController;
+
+@interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
+- (void)productViewControllerDidFinish:(SKStoreProductViewController * _Nonnull)viewController;
 @end
 
 @protocol RYBannerViewDelegate;
@@ -1129,10 +1350,18 @@ SWIFT_PROTOCOL("_TtP4MDAd20RYBannerViewDelegate_")
 @protocol RYBannerViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an banner ad request successfully received an ad.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerDidReceiveAd:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that an banner ad request failed.
+/// \param bannerView The current instance of RYBannerView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)bannerDidFailToReceiveAd:(RYBannerView * _Nonnull)bannerView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerWillLeaveApplication:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)bannerViewDidClose;
@@ -1163,13 +1392,75 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYBuoyViewDelegate_")
 @protocol RYBuoyViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyDidReceiveAd:(RYBuoyView * _Nonnull)buoyView;
 /// Tells the delegate that an ad request failed.
+/// \param buoyView The current instance of RYBuoyView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)buoyDidFailToReceiveAd:(RYBuoyView * _Nonnull)buoyView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyWillLeaveApplication:(RYBuoyView * _Nonnull)buoyView;
 /// Tell the delegate that the user did clicked the close button.
 - (void)buoyViewDidClose;
+@end
+
+@protocol RYCustomAdDelegate;
+
+SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
+@interface RYCustomAd : NSObject
+@property (nonatomic, weak) id <RYCustomAdDelegate> _Nullable delegate;
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the custom ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
+/// Call this method when the user clicks the ad.
+- (void)recordClick;
+/// Call this method when the ad is visible to the user.
+- (void)recordImpression;
+/// Call this method when open the ad’s link.
+/// You can add this method to your Selector for gestures or actions that added for custom ad view or its subviews.
+- (void)openAdLink;
+/// Requests a custom ad. Remembers must set <code>adsID</code> before call this function.
+- (void)loadRequest;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Delegate methods for receiving custom ads state change messages such as ad request status.
+SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
+@protocol RYCustomAdDelegate <NSObject>
+/// Tells the delegate that an custom ad request successfully.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
+/// <ul>
+///   <li>
+///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
+///   </li>
+/// </ul>
+///
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+@optional
+/// Tells the delegate that an custom ad request failed.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
 @end
 
 
@@ -1182,7 +1473,7 @@ SWIFT_CLASS("_TtC4MDAd7RYError")
 
 @protocol RYInfoFlowViewDelegate;
 
-/// An information ad. This is a advertisement shown in list such as UITableView and UICollectionView.
+/// An ad type displayed in the flow of information.
 SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @interface RYInfoFlowView : RYAdBaseView
 /// Indicates that information flow ads id.
@@ -1193,6 +1484,9 @@ SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @property (nonatomic) BOOL isShowCloseButton;
 /// A Boolean value that determines whether the default download button is display. Default is true.
 @property (nonatomic) BOOL isShowDownloadButton;
+/// A Boolean value that determines whether the description label is display. Default is false.
+/// Remembers that the property works only in the case that the adsID’s value is 850006.
+@property (nonatomic) BOOL isShowDescriptionText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Request an information flow ad.
@@ -1207,10 +1501,18 @@ SWIFT_PROTOCOL("_TtP4MDAd22RYInfoFlowViewDelegate_")
 @protocol RYInfoFlowViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowDidReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that an ad request failed.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)infoFlowDidFailToReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowWillLeaveApplication:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)infoFlowViewDidClose;
@@ -1241,10 +1543,18 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 @protocol RYInterstitialHalfViewDelegate <NSObject>
 @optional
 /// Called when an half interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfDidReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial;
-/// Called when an interstitial ad request completed without an interstitial to show.
+/// Called when an half interstitial ad request completed without an half interstitial to show.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialHalfDidFailToReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfWillLeaveApplication:(RYInterstitialHalfView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the close button.
 - (void)interstitialHalfViewDidClose;
@@ -1276,12 +1586,20 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 @protocol RYInterstitialViewDelegate <NSObject>
 @optional
 /// Called when an interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialDidReceiveAd:(RYInterstitialView * _Nonnull)interstitial;
 /// Called when an interstitial ad request completed without an interstitial to show.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialDidFailToReceiveAd:(RYInterstitialView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
-/// Tell the delegate that the user did clicked the close button.
+/// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
 @end
 
@@ -1481,6 +1799,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import StoreKit;
 @import UIKit;
 #endif
 
@@ -1501,10 +1820,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1516,6 +1839,8 @@ SWIFT_CLASS("_TtC4MDAd13RYAdMobCenter")
 /// Singleton.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCenter * _Nonnull center;)
 + (RYAdMobCenter * _Nonnull)center SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
@@ -1523,13 +1848,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
-/// <ul>
-///   <li>
-///     Parameters isEnabled: A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
-///   </li>
-/// </ul>
+/// \param isEnabled A boolean indicates that whether the function of debug print is enabled. True is enabled. otherwise, debug print is disenabled.
+///
 - (void)enableDebugPrint:(BOOL)isEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class SKStoreProductViewController;
+
+@interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
+- (void)productViewControllerDidFinish:(SKStoreProductViewController * _Nonnull)viewController;
 @end
 
 @protocol RYBannerViewDelegate;
@@ -1560,10 +1887,18 @@ SWIFT_PROTOCOL("_TtP4MDAd20RYBannerViewDelegate_")
 @protocol RYBannerViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an banner ad request successfully received an ad.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerDidReceiveAd:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that an banner ad request failed.
+/// \param bannerView The current instance of RYBannerView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)bannerDidFailToReceiveAd:(RYBannerView * _Nonnull)bannerView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param bannerView The current instance of RYBannerView class.
+///
 - (void)bannerWillLeaveApplication:(RYBannerView * _Nonnull)bannerView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)bannerViewDidClose;
@@ -1594,13 +1929,75 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYBuoyViewDelegate_")
 @protocol RYBuoyViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyDidReceiveAd:(RYBuoyView * _Nonnull)buoyView;
 /// Tells the delegate that an ad request failed.
+/// \param buoyView The current instance of RYBuoyView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)buoyDidFailToReceiveAd:(RYBuoyView * _Nonnull)buoyView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param buoyView The current instance of RYBuoyView class.
+///
 - (void)buoyWillLeaveApplication:(RYBuoyView * _Nonnull)buoyView;
 /// Tell the delegate that the user did clicked the close button.
 - (void)buoyViewDidClose;
+@end
+
+@protocol RYCustomAdDelegate;
+
+SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
+@interface RYCustomAd : NSObject
+@property (nonatomic, weak) id <RYCustomAdDelegate> _Nullable delegate;
+/// Required reference to a root view controller that is used by the ads view to present content after the
+/// user interacts with the ad. The root view controller is most commonly the view controller displaying the custom ad view.
+@property (nonatomic, weak) UIViewController * _Nullable rootViewController;
+/// Call this method when the user clicks the ad.
+- (void)recordClick;
+/// Call this method when the ad is visible to the user.
+- (void)recordImpression;
+/// Call this method when open the ad’s link.
+/// You can add this method to your Selector for gestures or actions that added for custom ad view or its subviews.
+- (void)openAdLink;
+/// Requests a custom ad. Remembers must set <code>adsID</code> before call this function.
+- (void)loadRequest;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Delegate methods for receiving custom ads state change messages such as ad request status.
+SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
+@protocol RYCustomAdDelegate <NSObject>
+/// Tells the delegate that an custom ad request successfully.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
+/// <ul>
+///   <li>
+///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
+///   </li>
+///   <li>
+///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
+///   </li>
+/// </ul>
+///
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+@optional
+/// Tells the delegate that an custom ad request failed.
+/// \param customAd An instance of RYCustomAd class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
 @end
 
 
@@ -1613,7 +2010,7 @@ SWIFT_CLASS("_TtC4MDAd7RYError")
 
 @protocol RYInfoFlowViewDelegate;
 
-/// An information ad. This is a advertisement shown in list such as UITableView and UICollectionView.
+/// An ad type displayed in the flow of information.
 SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @interface RYInfoFlowView : RYAdBaseView
 /// Indicates that information flow ads id.
@@ -1624,6 +2021,9 @@ SWIFT_CLASS("_TtC4MDAd14RYInfoFlowView")
 @property (nonatomic) BOOL isShowCloseButton;
 /// A Boolean value that determines whether the default download button is display. Default is true.
 @property (nonatomic) BOOL isShowDownloadButton;
+/// A Boolean value that determines whether the description label is display. Default is false.
+/// Remembers that the property works only in the case that the adsID’s value is 850006.
+@property (nonatomic) BOOL isShowDescriptionText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Request an information flow ad.
@@ -1638,10 +2038,18 @@ SWIFT_PROTOCOL("_TtP4MDAd22RYInfoFlowViewDelegate_")
 @protocol RYInfoFlowViewDelegate <NSObject>
 @optional
 /// Tells the delegate that an ad request successfully received an ad.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowDidReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that an ad request failed.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)infoFlowDidFailToReceiveAd:(RYInfoFlowView * _Nonnull)infoFlowView error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param infoFlowView The current instance of RYInfoFlowView class.
+///
 - (void)infoFlowWillLeaveApplication:(RYInfoFlowView * _Nonnull)infoFlowView;
 /// Tells the delegate that the user did clicked the close button.
 - (void)infoFlowViewDidClose;
@@ -1672,10 +2080,18 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 @protocol RYInterstitialHalfViewDelegate <NSObject>
 @optional
 /// Called when an half interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfDidReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial;
-/// Called when an interstitial ad request completed without an interstitial to show.
+/// Called when an half interstitial ad request completed without an half interstitial to show.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialHalfDidFailToReceiveAd:(RYInterstitialHalfView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialHalfView class.
+///
 - (void)interstitialHalfWillLeaveApplication:(RYInterstitialHalfView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the close button.
 - (void)interstitialHalfViewDidClose;
@@ -1707,12 +2123,20 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 @protocol RYInterstitialViewDelegate <NSObject>
 @optional
 /// Called when an interstitial ad request succeeded.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialDidReceiveAd:(RYInterstitialView * _Nonnull)interstitial;
 /// Called when an interstitial ad request completed without an interstitial to show.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
 - (void)interstitialDidFailToReceiveAd:(RYInterstitialView * _Nonnull)interstitial error:(RYError * _Nonnull)error;
 /// Tells the delegate that the user click will open another app, backgrounding the current application.
+/// \param interstitial The current instance of RYInterstitialView class.
+///
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
-/// Tell the delegate that the user did clicked the close button.
+/// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
 @end
 
