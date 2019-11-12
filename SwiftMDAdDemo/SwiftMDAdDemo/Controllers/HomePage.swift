@@ -18,6 +18,7 @@ class HomePage: UITableViewController {
                                                  ["开屏广告":[Banner(title: "全屏广告类型", adsID: "810001")]],
                                                  ["插屏广告":[Banner(title: "插屏广告类型", adsID: "840001")]],
                                                  ["浮标广告":[Banner(title: "浮标广告类型", adsID: "860001")]],
+                                                 ["视频广告":[Banner(title: "视频广告类型", adsID: "870001")]],
                                                  ["自定义广告":[Banner(title: "自定义广告类型", adsID: "-")]]]
     
     override func viewDidLoad() {
@@ -99,6 +100,11 @@ class HomePage: UITableViewController {
         case "浮标广告":
             if let buoyVC = main.instantiateViewController(withIdentifier: "BuoyViewController") as? BuoyViewController {
                 navigationController?.pushViewController(buoyVC, animated: true)
+            }
+            
+        case "视频广告":
+            if let rewardVideoVC = main.instantiateViewController(withIdentifier: "RewardVideoViewController") as? RewardVideoViewController {
+                navigationController?.pushViewController(rewardVideoVC, animated: true)
             }
             
         case "自定义广告":

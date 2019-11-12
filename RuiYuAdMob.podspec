@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "MDAd"
 
-  s.version      = "0.4.0"
+  s.version      = "0.4.1"
 
   s.summary      = "An ads framework indicates universal ads types for iOS applications."
 

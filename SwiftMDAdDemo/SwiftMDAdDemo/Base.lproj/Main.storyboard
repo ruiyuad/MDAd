@@ -218,6 +218,42 @@
             </objects>
             <point key="canvasLocation" x="1750.7246376811595" y="689.73214285714278"/>
         </scene>
+        <!--Reward Video View Controller-->
+        <scene sceneID="RX9-Av-igD">
+            <objects>
+                <viewController storyboardIdentifier="RewardVideoViewController" id="SfY-4C-Rz0" customClass="RewardVideoViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yc0-KJ-pcs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hZ-SF-Jqa">
+                                <rect key="frame" x="16" y="431" width="382" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YeM-pT-TC1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="激励视频">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="openRewardVideo:" destination="SfY-4C-Rz0" eventType="touchUpInside" id="lBt-7O-7Sg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="439-cE-SPX" firstAttribute="trailing" secondItem="3hZ-SF-Jqa" secondAttribute="trailing" constant="16" id="IA4-3j-XPO"/>
+                            <constraint firstItem="3hZ-SF-Jqa" firstAttribute="leading" secondItem="439-cE-SPX" secondAttribute="leading" constant="16" id="Sip-Rr-v4Q"/>
+                            <constraint firstItem="3hZ-SF-Jqa" firstAttribute="centerY" secondItem="439-cE-SPX" secondAttribute="centerY" id="hnm-2K-nYV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="439-cE-SPX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyO-Yi-wcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2608.6956521739135" y="713.83928571428567"/>
+        </scene>
         <!--浮标广告示例-->
         <scene sceneID="pN9-Ah-B1d">
             <objects>

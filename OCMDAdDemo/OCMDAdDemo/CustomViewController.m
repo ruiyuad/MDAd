@@ -7,6 +7,7 @@
 //
 
 #import "CustomViewController.h"
+@import MDAd;
 
 @interface CustomViewController ()
 
