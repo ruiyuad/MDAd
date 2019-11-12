@@ -32,7 +32,7 @@ class CustomViewController: UIViewController {
         // add CustomView
         view.addSubview(customView)
         customView.delegate = self
-    
+
         // config instance of RYCustomAd
         customAd.rootViewController = self
         customAd.delegate = self
