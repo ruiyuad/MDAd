@@ -55,6 +55,7 @@
             self.infoFlowView.delegate = self;
             [self.infoFlowView loadRequest];
         }
+            break;
             
         case 850006: {
             // 上文下图底部浮层模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0
@@ -69,7 +70,8 @@
             
             self.extraHeight = 26;
         }
-        
+            break;
+            
         case 850008: {
             // 左图右文模式, adsID 为 850008, 广告位尺寸是 690.0 : 290.0, 广告图片比例是 140: 180 (请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
             self.ratio = 700.0 / 280.0;
@@ -79,6 +81,7 @@
             self.infoFlowView.delegate = self;
             [self.infoFlowView loadRequest];
         }
+            break;
             
         case 850009: {
             // 上图下文模式, adsID 为 850009, 广告位尺寸是 690.0 : 440.0
@@ -91,6 +94,7 @@
             
             self.extraHeight = 26;
         }
+            break;
             
         default:
             break;
@@ -100,8 +104,8 @@
     
     // Other custimized settings
     
-    self.infoFlowView.isShowCloseButton = NO;
-    self.infoFlowView.isShowDownloadButton = NO;
+//    self.infoFlowView.isShowCloseButton = NO;
+//    self.infoFlowView.isShowDownloadButton = NO;
     self.infoFlowView.alpha = 0.0;
 }
 
