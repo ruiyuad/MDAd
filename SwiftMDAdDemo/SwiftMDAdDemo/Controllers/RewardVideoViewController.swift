@@ -31,16 +31,11 @@ class RewardVideoViewController: UIViewController {
 extension RewardVideoViewController: RYRewardVideoViewControllerDelegate {
     
     func rewardVideoDidReceiveAd(_ controller: RYRewardVideoViewController) {
-        debugPrint("received successfully")
+        debugPrint("reward video received successfully")
     }
     
     func rewardVideoDidFailToReceiveAd(_ controller: RYRewardVideoViewController, error: RYError) {
-        let alertVC = UIAlertController(title: "检测返回异常", message: error.errorDescription ?? "无详细错误信息", preferredStyle: .alert)
-        let action = UIAlertAction(title: "确定", style: UIAlertAction.Style.default) { _ in
-            alertVC.dismiss(animated: true, completion: nil)
-        }
-        alertVC.addAction(action)
-        present(alertVC, animated: true, completion: nil)
+        debugPrint("Reward video received failed and the error info is \(error.errorDescription ?? "无详细错误信息")")
     }
     
     func RewardVideoWillClose() {

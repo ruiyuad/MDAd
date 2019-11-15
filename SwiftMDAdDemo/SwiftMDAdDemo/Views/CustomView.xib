@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,10 +68,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="bgImageView" destination="sqn-gd-02s" id="M4y-h2-yre"/>
-                <outlet property="detailsLabel" destination="GeC-pP-sUt" id="8jP-fq-uVl"/>
-                <outlet property="imageViewRatioConstraint" destination="d3b-QY-vru" id="mpP-sV-ZJ2"/>
-                <outlet property="titleLabel" destination="rtM-yR-bH5" id="9em-ey-BfR"/>
+                <outlet property="bgImageView" destination="sqn-gd-02s" id="yUe-Yr-RLw"/>
+                <outlet property="detailsLabel" destination="GeC-pP-sUt" id="4dU-SU-dFZ"/>
+                <outlet property="imageViewRatioConstraint" destination="d3b-QY-vru" id="CVF-BA-YQB"/>
+                <outlet property="titleLabel" destination="rtM-yR-bH5" id="6tK-Dz-Vht"/>
             </connections>
             <point key="canvasLocation" x="-90.579710144927546" y="-231.36160714285714"/>
         </view>

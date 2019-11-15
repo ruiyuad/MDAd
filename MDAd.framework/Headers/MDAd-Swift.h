@@ -210,6 +210,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class UIViewController;
 @class NSCoder;
 
+/// Super view for ads’s views. Remember that never use this view to show and load ads.
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
 /// Required reference to a root view controller that is used by the ads view to present content after the
@@ -231,7 +232,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
-/// \param appSecret A string used to identify original app.
+/// \param appSecretString A string used to identify original app.
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
@@ -528,6 +529,53 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
+@end
+
+@protocol RYRewardVideoViewControllerDelegate;
+
+/// A view controller to show reward videos.
+SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
+@interface RYRewardVideoViewController : UIViewController
+/// Optional delegate object that receives state change notifications from this RYRewardVideoViewController. Typically this is a UIViewController.
+@property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
+/// Indicates that reward video ads id.
+@property (nonatomic, copy) NSString * _Nullable adsID;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+@end
+
+
+
+
+
+
+@interface RYRewardVideoViewController (SWIFT_EXTENSION(MDAd))
+/// Requests a reward video ad.
+- (void)loadRequest;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+
+
+/// Delegate methods for receiving reward video state change messages such as ad request status and ad click lifecycle.
+SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
+@protocol RYRewardVideoViewControllerDelegate <NSObject>
+@optional
+/// Tells the delegate that the reward video ad request successfully received an ad.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+- (void)rewardVideoDidReceiveAd:(RYRewardVideoViewController * _Nonnull)controller;
+/// Tells the delegate that the reward video ad request failed.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the user did clicked the close button.
+- (void)RewardVideoWillClose;
 @end
 
 
@@ -750,6 +798,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class UIViewController;
 @class NSCoder;
 
+/// Super view for ads’s views. Remember that never use this view to show and load ads.
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
 /// Required reference to a root view controller that is used by the ads view to present content after the
@@ -771,7 +820,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
-/// \param appSecret A string used to identify original app.
+/// \param appSecretString A string used to identify original app.
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
@@ -1068,6 +1117,53 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
+@end
+
+@protocol RYRewardVideoViewControllerDelegate;
+
+/// A view controller to show reward videos.
+SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
+@interface RYRewardVideoViewController : UIViewController
+/// Optional delegate object that receives state change notifications from this RYRewardVideoViewController. Typically this is a UIViewController.
+@property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
+/// Indicates that reward video ads id.
+@property (nonatomic, copy) NSString * _Nullable adsID;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+@end
+
+
+
+
+
+
+@interface RYRewardVideoViewController (SWIFT_EXTENSION(MDAd))
+/// Requests a reward video ad.
+- (void)loadRequest;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+
+
+/// Delegate methods for receiving reward video state change messages such as ad request status and ad click lifecycle.
+SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
+@protocol RYRewardVideoViewControllerDelegate <NSObject>
+@optional
+/// Tells the delegate that the reward video ad request successfully received an ad.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+- (void)rewardVideoDidReceiveAd:(RYRewardVideoViewController * _Nonnull)controller;
+/// Tells the delegate that the reward video ad request failed.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the user did clicked the close button.
+- (void)RewardVideoWillClose;
 @end
 
 
@@ -1292,6 +1388,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class UIViewController;
 @class NSCoder;
 
+/// Super view for ads’s views. Remember that never use this view to show and load ads.
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
 /// Required reference to a root view controller that is used by the ads view to present content after the
@@ -1313,7 +1410,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
-/// \param appSecret A string used to identify original app.
+/// \param appSecretString A string used to identify original app.
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
@@ -1610,6 +1707,53 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
+@end
+
+@protocol RYRewardVideoViewControllerDelegate;
+
+/// A view controller to show reward videos.
+SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
+@interface RYRewardVideoViewController : UIViewController
+/// Optional delegate object that receives state change notifications from this RYRewardVideoViewController. Typically this is a UIViewController.
+@property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
+/// Indicates that reward video ads id.
+@property (nonatomic, copy) NSString * _Nullable adsID;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+@end
+
+
+
+
+
+
+@interface RYRewardVideoViewController (SWIFT_EXTENSION(MDAd))
+/// Requests a reward video ad.
+- (void)loadRequest;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+
+
+/// Delegate methods for receiving reward video state change messages such as ad request status and ad click lifecycle.
+SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
+@protocol RYRewardVideoViewControllerDelegate <NSObject>
+@optional
+/// Tells the delegate that the reward video ad request successfully received an ad.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+- (void)rewardVideoDidReceiveAd:(RYRewardVideoViewController * _Nonnull)controller;
+/// Tells the delegate that the reward video ad request failed.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the user did clicked the close button.
+- (void)RewardVideoWillClose;
 @end
 
 
@@ -1832,6 +1976,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class UIViewController;
 @class NSCoder;
 
+/// Super view for ads’s views. Remember that never use this view to show and load ads.
 SWIFT_CLASS("_TtC4MDAd12RYAdBaseView")
 @interface RYAdBaseView : UIView
 /// Required reference to a root view controller that is used by the ads view to present content after the
@@ -1853,7 +1998,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 /// Setups sdk with app key and app secret.
 /// \param appKey A string used to identify original app.
 ///
-/// \param appSecret A string used to identify original app.
+/// \param appSecretString A string used to identify original app.
 ///
 - (void)setup:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecretString;
 /// Enables logs print under <code>Debug</code> mode. Default is false.
@@ -2150,6 +2295,53 @@ SWIFT_PROTOCOL("_TtP4MDAd26RYInterstitialViewDelegate_")
 - (void)interstitialWillLeaveApplication:(RYInterstitialView * _Nonnull)interstitial;
 /// Tell the delegate that the user did clicked the countdown button.
 - (void)interstitialCountDownDidTap;
+@end
+
+@protocol RYRewardVideoViewControllerDelegate;
+
+/// A view controller to show reward videos.
+SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
+@interface RYRewardVideoViewController : UIViewController
+/// Optional delegate object that receives state change notifications from this RYRewardVideoViewController. Typically this is a UIViewController.
+@property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
+/// Indicates that reward video ads id.
+@property (nonatomic, copy) NSString * _Nullable adsID;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+@end
+
+
+
+
+
+
+@interface RYRewardVideoViewController (SWIFT_EXTENSION(MDAd))
+/// Requests a reward video ad.
+- (void)loadRequest;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+
+
+/// Delegate methods for receiving reward video state change messages such as ad request status and ad click lifecycle.
+SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
+@protocol RYRewardVideoViewControllerDelegate <NSObject>
+@optional
+/// Tells the delegate that the reward video ad request successfully received an ad.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+- (void)rewardVideoDidReceiveAd:(RYRewardVideoViewController * _Nonnull)controller;
+/// Tells the delegate that the reward video ad request failed.
+/// \param controller An instance of RYRewardVideoViewController class for the current request.
+///
+/// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
+///
+- (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the user did clicked the close button.
+- (void)RewardVideoWillClose;
 @end
 
 

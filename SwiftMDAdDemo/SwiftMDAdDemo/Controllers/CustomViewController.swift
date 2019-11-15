@@ -72,6 +72,7 @@ extension CustomViewController: RYCustomAdDelegate {
 extension CustomViewController: CustomViewDelegate {
     func adTapped() {
         
+        // open ad link.
         // called when you add gestures, actions or other Selectors to you custom ad view
         customAd.openAdLink()
     }
