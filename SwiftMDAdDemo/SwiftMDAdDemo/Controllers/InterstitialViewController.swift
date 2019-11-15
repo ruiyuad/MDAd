@@ -29,7 +29,7 @@ class InterstitialViewController: UIViewController {
         
         // Required configs - 初始化 RYInterstitialView 之后, 必要的配置有:
         
-        /// `RYInfoFlowView`'s ratio is 750.0 : 1334.0 (Width : Height).
+        /// `RYInterstitialView`'s ratio is 750.0 : 1334.0 (Width : Height).
         /// 插页式广告展示宽高比是 750.0 : 1334.0
         
         interstitialView.adsID = "810001"

@@ -52,9 +52,9 @@ extension CustomViewController: RYCustomAdDelegate {
         
         // update datasource for customview after received custom ad data.
         customView.update(infos["MDAdKeyForImageUrl"],
-                                title: infos["MDAdKeyForTitle"],
-                                desc: infos["MDAdKeyForDescription"],
-                                imageRatio: imageViewRatioForCustomAd)
+                          title: infos["MDAdKeyForTitle"],
+                          desc: infos["MDAdKeyForDescription"],
+                          imageRatio: imageViewRatioForCustomAd)
     }
     
     func customAdDidFailToReceiveAd(_ customAd: RYCustomAd, error: RYError) {
