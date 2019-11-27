@@ -450,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1794D1D5046B70772431787A /* Pods-OCMDAdDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 152F0472512BCAC09DC59057 /* Pods-OCMDAdDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

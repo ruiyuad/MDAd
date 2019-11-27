@@ -488,6 +488,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 - (void)interstitialHalfViewDidClose;
 @end
 
+@class UIFont;
+@class UIColor;
 @protocol RYInterstitialViewDelegate;
 
 /// An interstitial ad. This is a full-screen advertisement shown at
@@ -496,6 +498,12 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIFont * _Nullable logoTextFont;
+/// Indicates that the logo label text color. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIColor * _Nullable logoTextColor;
+/// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic) CGFloat logoCornerRadius;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -506,7 +514,17 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 
 
 
+@class UIImage;
 
+@interface RYInterstitialView (SWIFT_EXTENSION(MDAd))
+/// Configs interstitial ad resources.
+/// Only works for interstitial ad which adsID is 810002.
+/// \param logoImage The app icon. The ratio of logoImage size is 1:1. We strongly recommand fill it with app icons.
+///
+/// \param name The app display name description. Default is “MDAd”.
+///
+- (void)configWithAppLogo:(UIImage * _Nullable)logoImage appName:(NSString * _Nullable)name;
+@end
 
 
 /// Delegate methods for receiving RYInterstitialView state change messages such as ad request status and ad click lifecycle.
@@ -1076,6 +1094,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 - (void)interstitialHalfViewDidClose;
 @end
 
+@class UIFont;
+@class UIColor;
 @protocol RYInterstitialViewDelegate;
 
 /// An interstitial ad. This is a full-screen advertisement shown at
@@ -1084,6 +1104,12 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIFont * _Nullable logoTextFont;
+/// Indicates that the logo label text color. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIColor * _Nullable logoTextColor;
+/// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic) CGFloat logoCornerRadius;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -1094,7 +1120,17 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 
 
 
+@class UIImage;
 
+@interface RYInterstitialView (SWIFT_EXTENSION(MDAd))
+/// Configs interstitial ad resources.
+/// Only works for interstitial ad which adsID is 810002.
+/// \param logoImage The app icon. The ratio of logoImage size is 1:1. We strongly recommand fill it with app icons.
+///
+/// \param name The app display name description. Default is “MDAd”.
+///
+- (void)configWithAppLogo:(UIImage * _Nullable)logoImage appName:(NSString * _Nullable)name;
+@end
 
 
 /// Delegate methods for receiving RYInterstitialView state change messages such as ad request status and ad click lifecycle.
@@ -1666,6 +1702,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 - (void)interstitialHalfViewDidClose;
 @end
 
+@class UIFont;
+@class UIColor;
 @protocol RYInterstitialViewDelegate;
 
 /// An interstitial ad. This is a full-screen advertisement shown at
@@ -1674,6 +1712,12 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIFont * _Nullable logoTextFont;
+/// Indicates that the logo label text color. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIColor * _Nullable logoTextColor;
+/// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic) CGFloat logoCornerRadius;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -1684,7 +1728,17 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 
 
 
+@class UIImage;
 
+@interface RYInterstitialView (SWIFT_EXTENSION(MDAd))
+/// Configs interstitial ad resources.
+/// Only works for interstitial ad which adsID is 810002.
+/// \param logoImage The app icon. The ratio of logoImage size is 1:1. We strongly recommand fill it with app icons.
+///
+/// \param name The app display name description. Default is “MDAd”.
+///
+- (void)configWithAppLogo:(UIImage * _Nullable)logoImage appName:(NSString * _Nullable)name;
+@end
 
 
 /// Delegate methods for receiving RYInterstitialView state change messages such as ad request status and ad click lifecycle.
@@ -2254,6 +2308,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 - (void)interstitialHalfViewDidClose;
 @end
 
+@class UIFont;
+@class UIColor;
 @protocol RYInterstitialViewDelegate;
 
 /// An interstitial ad. This is a full-screen advertisement shown at
@@ -2262,6 +2318,12 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIFont * _Nullable logoTextFont;
+/// Indicates that the logo label text color. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic, strong) UIColor * _Nullable logoTextColor;
+/// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
+@property (nonatomic) CGFloat logoCornerRadius;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -2272,7 +2334,17 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 
 
 
+@class UIImage;
 
+@interface RYInterstitialView (SWIFT_EXTENSION(MDAd))
+/// Configs interstitial ad resources.
+/// Only works for interstitial ad which adsID is 810002.
+/// \param logoImage The app icon. The ratio of logoImage size is 1:1. We strongly recommand fill it with app icons.
+///
+/// \param name The app display name description. Default is “MDAd”.
+///
+- (void)configWithAppLogo:(UIImage * _Nullable)logoImage appName:(NSString * _Nullable)name;
+@end
 
 
 /// Delegate methods for receiving RYInterstitialView state change messages such as ad request status and ad click lifecycle.

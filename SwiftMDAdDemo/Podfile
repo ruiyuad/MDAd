@@ -1,10 +1,11 @@
 platform :ios, '10.0'
 inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
 
 target 'SwiftMDAdDemo' do
-    pod 'MDAd', '~> 0.6.0'
+    pod 'MDAd', '~> 0.6.1'
 end
 
