@@ -33,7 +33,8 @@
                  @{@"信息流广告": @[[[Ad alloc] initWithID:@"850006" title:@"上文下图带底部阴影类型"],
                                [[Ad alloc] initWithID:@"850009" title:@"上图下文类型"],
                                [[Ad alloc] initWithID:@"850008" title:@"左图右文类型(1:1.3)"]]},
-                 @{@"开屏广告": @[[[Ad alloc] initWithID:@"810001" title:@"全屏广告类型"]]},
+                 @{@"全屏广告": @[[[Ad alloc] initWithID:@"810001" title:@"开屏广告类型"],
+                                [[Ad alloc] initWithID:@"810002" title:@"开屏广告类型"]]},
                  @{@"插屏广告": @[[[Ad alloc] initWithID:@"840001" title:@"插屏广告类型"]]},
                  @{@"浮标广告": @[[[Ad alloc] initWithID:@"860001" title:@"浮标广告类型"]]},
                  @{@"视频广告": @[[[Ad alloc] initWithID:@"870001" title:@"视频广告类型"]]},
@@ -121,6 +122,10 @@
         case 2: {
             InterstitialViewController *interstitialVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"InterstitialViewController"];
             if ([interstitialVC isKindOfClass:InterstitialViewController.class] && interstitialVC) {
+                NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
+                if (ads.count > indexPath.row) {
+                    interstitialVC.adsID = ((Ad *)ads[indexPath.row]).adsID;
+                }
                 [self.navigationController pushViewController:interstitialVC animated:YES];
             }
         }

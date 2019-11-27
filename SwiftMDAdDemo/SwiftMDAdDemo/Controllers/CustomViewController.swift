@@ -15,14 +15,14 @@ import MDAd
 
 class CustomViewController: UIViewController {
     
-    // 你可以选择不用的广告类型进行自定义, 比如 Banner 广告, 信息流广告, 全屏广告等, 详情请看 `BannerViewController`, `InfoFlowViewController`, `InterstitialViewController` 等.
-    // 这里选择信息流广告类型(850008) 来进行自定义展示.
+    /// 你可以选择不同的广告类型进行自定义, 比如 Banner 广告, 信息流广告, 全屏广告等, 详情请看 `BannerViewController`, `InfoFlowViewController`, `InterstitialViewController` 等.
+    /// 这里选择信息流广告类型(850008) 来进行自定义展示.
     fileprivate let customAd = RYCustomAd(adsID: "850008")
     
-    // 自定义广告对应的广告图片的比例. 注意: 在进行自定义广告时, 请务必保证自定义图片的比例与对应广告类型图片比例保持一致.
+    /// 自定义广告对应的广告图片的比例. 注意: 在进行自定义广告时, 请务必保证自定义图片的比例与对应广告类型图片比例保持一致.
     fileprivate let imageViewRatioForCustomAd: CGFloat = 140.0 / 180.0
     
-    // 广告自定义视图, 你可以开发你所需要的自定义设计. 这里以 `CustomView` 为例.
+    /// 广告自定义视图, 你可以开发你所需要的自定义设计. 这里以 `CustomView` 为例.
     fileprivate let customView = CustomView.loadFromNib()
     
     override func viewDidLoad() {

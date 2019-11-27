@@ -27,17 +27,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"开屏广告示例";
+    self.title = @"全屏广告示例";
     
     // Required configs - 初始化 RYInterstitialView 实例之后, 必要的配置有:
     
-    /// `RYInfoFlowView`'s ratio is 750 : 1334(Width : Height).
-    /// 插页式广告展示宽高比是 750 : 1334
-    
-    self.interstitialView.adsID = @"810001";
-    self.interstitialView.rootViewController = self;
-    self.interstitialView.delegate = self;
-    [self.interstitialView loadRequest];
+    switch (self.adsID.integerValue) {
+        
+        // 纯图模式, adsID 为 810001
+        // 广告位尺寸是 750.0 : 1334.0
+        case 810001: {
+            self.interstitialView.adsID = @"810001";
+            self.interstitialView.rootViewController = self;
+            self.interstitialView.delegate = self;
+            [self.interstitialView loadRequest];
+        }
+            break;
+        
+        // 左图右文模式, adsID 为 810002
+        // 广告位尺寸是 750.0 : 1143.0
+        case 810002: {
+            self.interstitialView.adsID = @"810002";
+            self.interstitialView.rootViewController = self;
+            self.interstitialView.delegate = self;
+            [self.interstitialView loadRequest];
+            
+            /// Only works for interstitial ad which adsID is 810002.
+            /*
+            [self.interstitialView configWithAppLogo:[UIImage imageNamed:@"appIcon40"] appName:@"妙招助手, 活出每一个细节"];
+            self.interstitialView.logoTextColor = UIColor.darkTextColor;
+            self.interstitialView.logoTextFont = [UIFont fontWithName:@"PingFangSC-Regular" size:18.0];
+            self.interstitialView.logoCornerRadius = 5.0;
+            */
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

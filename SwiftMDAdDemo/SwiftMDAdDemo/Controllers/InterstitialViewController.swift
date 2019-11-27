@@ -15,6 +15,8 @@ import MDAd
 
 class InterstitialViewController: UIViewController {
     
+    var adsID: String = "810001"
+    
     @IBOutlet weak var interstitialView: RYInterstitialView!
     
     
@@ -25,17 +27,36 @@ class InterstitialViewController: UIViewController {
         
         title = "开屏广告示例"
         
-        // Do any additional setup after loading the view.
-        
         // Required configs - 初始化 RYInterstitialView 之后, 必要的配置有:
         
-        /// `RYInterstitialView`'s ratio is 750.0 : 1334.0 (Width : Height).
-        /// 插页式广告展示宽高比是 750.0 : 1334.0
+        switch adsID {
+        case "810001":
+            // 纯图模式, adsID 为 810001
+            // 广告位尺寸是 750.0 : 1334.0
+            interstitialView.adsID = "810001"
+            interstitialView.rootViewController = self
+            interstitialView.loadRequest()
+            interstitialView.delegate = self
         
-        interstitialView.adsID = "810001"
-        interstitialView.rootViewController = self
-        interstitialView.loadRequest()
-        interstitialView.delegate = self
+        case "810002":
+            // 上图下文模式, adsID 为 810002
+            // 广告位尺寸是 750.0 : 1143.0
+            
+            interstitialView.adsID = "810002"
+            interstitialView.rootViewController = self
+            interstitialView.loadRequest()
+            interstitialView.delegate = self
+            
+            /// Only works for interstitial ad which adsID is 810002.
+            /*
+            interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "妙招助手, 活出每一个细节")
+            interstitialView.logoCornerRadius = 5.0
+//            interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
+//            interstitialView.logoTextColor = UIColor.darkText
+            */
+        default:
+            break
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

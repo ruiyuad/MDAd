@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InterstitialViewController : UIViewController
 
+@property (copy, nonatomic) NSString *adsID;
+
 @end
 
 NS_ASSUME_NONNULL_END

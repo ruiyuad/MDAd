@@ -15,7 +15,8 @@ class HomePage: UITableViewController {
                                                  ["信息流广告": [Banner(title: "上文下图带底部阴影类型", adsID: "850006"),
                                                                Banner(title: "上图下文类型", adsID: "850009"),
                                                                Banner(title: "左图右文类型(1:1.3)", adsID: "850008")]],
-                                                 ["开屏广告":[Banner(title: "全屏广告类型", adsID: "810001")]],
+                                                 ["全屏广告":[Banner(title: "开屏广告类型", adsID: "810001"),
+                                                            Banner(title: "开屏广告类型", adsID: "810002")]],
                                                  ["插屏广告":[Banner(title: "插屏广告类型", adsID: "840001")]],
                                                  ["浮标广告":[Banner(title: "浮标广告类型", adsID: "860001")]],
                                                  ["视频广告":[Banner(title: "视频广告类型", adsID: "870001")]],
@@ -87,8 +88,9 @@ class HomePage: UITableViewController {
                 navigationController?.pushViewController(infoflowVC, animated: true)
             }
             
-        case "开屏广告":
+        case "全屏广告":
             if let interstitialVC = main.instantiateViewController(withIdentifier: "InterstitialViewController") as? InterstitialViewController {
+                interstitialVC.adsID = ads[indexPath.section].values.first![indexPath.row].adsID
                 navigationController?.pushViewController(interstitialVC, animated: true)
             }
             
