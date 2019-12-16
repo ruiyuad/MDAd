@@ -24,6 +24,7 @@
     /// 不要全局持有 `RYRewardVideoViewController`的实例, 每个实例管理一次完整的视频加载生命周期.
     RYRewardVideoViewController *rewardVideoVC = [[RYRewardVideoViewController alloc] init];
     rewardVideoVC.adsID = @"870001";
+    rewardVideoVC.needDisplayBackgroundImageView = true;
     rewardVideoVC.delegate = self;
     [rewardVideoVC loadRequest];
     [self presentViewController:rewardVideoVC animated:true completion:nil];

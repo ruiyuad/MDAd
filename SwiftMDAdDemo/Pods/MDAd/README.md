@@ -28,7 +28,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.6.1'
+       pod 'MDAd', '~> 0.7.0'
    end
    ```
    
@@ -296,4 +296,5 @@ A: 下面分别介绍两个错误码含义:
 0.5.0: 新增**激励视频**广告.     
 0.6.0: 新增全屏广告**上图下文样式**.        
 0.6.1: 修复 tag 0.6.0 未链接对应 MDAd.framework 和 MDAd.bundle.       
+0.7.0: 新增激励视频广告背景样式.       
 

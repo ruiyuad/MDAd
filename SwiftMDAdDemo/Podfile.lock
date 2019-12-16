@@ -1,16 +1,16 @@
 PODS:
-  - MDAd (0.6.1)
+  - MDAd (0.7.0)
 
 DEPENDENCIES:
-  - MDAd (~> 0.6.1)
+  - MDAd (~> 0.7.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - MDAd
 
 SPEC CHECKSUMS:
-  MDAd: 4e5bf81924572f3d771cc0887d0a4bbce685d51a
+  MDAd: 3d702cdcf417caac862afa7ecc6d97c8113e7777
 
-PODFILE CHECKSUM: 1661b87ee91d4ec4a8a93249a16c84741187f7a8
+PODFILE CHECKSUM: a56e8c93d3fc7ee291ff15dbf27ad4041a9bc935
 
 COCOAPODS: 1.8.4

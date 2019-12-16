@@ -20,6 +20,7 @@ class RewardVideoViewController: UIViewController {
         /// 不要全局持有 `RYRewardVideoViewController`的实例, 每个实例管理一次完整的视频加载生命周期.
         let rewardVideoVC = RYRewardVideoViewController()
         rewardVideoVC.adsID = "870001"
+        rewardVideoVC.needDisplayBackgroundImageView = true
         rewardVideoVC.delegate = self
         rewardVideoVC.loadRequest()
         present(rewardVideoVC, animated: true, completion: nil)

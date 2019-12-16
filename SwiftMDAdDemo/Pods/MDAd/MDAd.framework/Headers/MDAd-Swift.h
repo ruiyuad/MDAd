@@ -558,6 +558,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 @property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
 /// Indicates that reward video ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// A Boolean value that determines whether the default background imageview is display. There will display a background image after award video
+/// finishes play if you set the property to true. Default is false.
+@property (nonatomic) BOOL needDisplayBackgroundImageView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -1164,6 +1167,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 @property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
 /// Indicates that reward video ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// A Boolean value that determines whether the default background imageview is display. There will display a background image after award video
+/// finishes play if you set the property to true. Default is false.
+@property (nonatomic) BOOL needDisplayBackgroundImageView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -1772,6 +1778,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 @property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
 /// Indicates that reward video ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// A Boolean value that determines whether the default background imageview is display. There will display a background image after award video
+/// finishes play if you set the property to true. Default is false.
+@property (nonatomic) BOOL needDisplayBackgroundImageView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -2378,6 +2387,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 @property (nonatomic, weak) id <RYRewardVideoViewControllerDelegate> _Nullable delegate;
 /// Indicates that reward video ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
+/// A Boolean value that determines whether the default background imageview is display. There will display a background image after award video
+/// finishes play if you set the property to true. Default is false.
+@property (nonatomic) BOOL needDisplayBackgroundImageView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
