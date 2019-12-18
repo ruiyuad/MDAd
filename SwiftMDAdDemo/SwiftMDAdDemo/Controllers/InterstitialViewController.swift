@@ -34,6 +34,7 @@ class InterstitialViewController: UIViewController {
             // 纯图模式, adsID 为 810001
             // 广告位尺寸是 750.0 : 1334.0
             interstitialView.adsID = "810001"
+            interstitialView.needPauseCountDownWhenShowAds = true
             interstitialView.rootViewController = self
             interstitialView.loadRequest()
             interstitialView.delegate = self
@@ -44,6 +45,7 @@ class InterstitialViewController: UIViewController {
             
             interstitialView.adsID = "810002"
             interstitialView.rootViewController = self
+            interstitialView.needPauseCountDownWhenShowAds = true
             interstitialView.loadRequest()
             interstitialView.delegate = self
             
@@ -88,6 +90,12 @@ extension InterstitialViewController: RYInterstitialViewDelegate {
     }
     
     func interstitialCountDownDidTap() {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        if let window = UIApplication.shared.keyWindow {
+            let newRootVC = UIViewController()
+            newRootVC.view.backgroundColor = .red
+            window.rootViewController = newRootVC
+        }
+        
     }
 }

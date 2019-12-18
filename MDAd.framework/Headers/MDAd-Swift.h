@@ -496,6 +496,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
+/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
+@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -1105,6 +1107,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
+/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
+@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -1716,6 +1720,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
+/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
+@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -2325,6 +2331,8 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
+/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
+@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
