@@ -37,6 +37,7 @@
         // 广告位尺寸是 750.0 : 1334.0
         case 810001: {
             self.interstitialView.adsID = @"810001";
+            self.interstitialView.needPauseCountDownWhenShowAds = YES;
             self.interstitialView.rootViewController = self;
             self.interstitialView.delegate = self;
             [self.interstitialView loadRequest];
@@ -47,6 +48,7 @@
         // 广告位尺寸是 750.0 : 1143.0
         case 810002: {
             self.interstitialView.adsID = @"810002";
+            self.interstitialView.needPauseCountDownWhenShowAds = YES;
             self.interstitialView.rootViewController = self;
             self.interstitialView.delegate = self;
             [self.interstitialView loadRequest];

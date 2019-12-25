@@ -11,19 +11,38 @@ import MDAd
 
 class RewardVideoViewController: UIViewController {
     
+    fileprivate let rewardVideoVC = RYRewardVideoViewController()
+    
+    /// 默认第一次进入页面预加载视频. 如果后续需要在当前页面多次加载视频, 请在第一次预加载成功后, 设置为 false. 防止后续加载视频重复调用 `loadRequest()`.
+    var isPreLoadRewardVideo = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rewardVideoVC.adsID = "870001"
+        rewardVideoVC.needDisplayBackgroundImageView = true
+        rewardVideoVC.delegate = self
+        rewardVideoVC.loadRequest()
     }
     
     @IBAction func openRewardVideo(_ sender: UIButton) {
-
-        /// 不要全局持有 `RYRewardVideoViewController`的实例, 每个实例管理一次完整的视频加载生命周期.
+        if !isPreLoadRewardVideo {
+            rewardVideoVC.loadRequest()
+            isPreLoadRewardVideo = false
+        }
+//        rewardVideoVC.modalPresentationStyle = .fullScreen
+        present(rewardVideoVC, animated: true, completion: nil)
+        
+        /*
+        第二种加载方式
+        在每个场景直接创建局部 `RYRewardVideoViewController`的实例, 每个实例管理一次完整的视频加载生命周期.
         let rewardVideoVC = RYRewardVideoViewController()
         rewardVideoVC.adsID = "870001"
         rewardVideoVC.needDisplayBackgroundImageView = true
         rewardVideoVC.delegate = self
         rewardVideoVC.loadRequest()
         present(rewardVideoVC, animated: true, completion: nil)
+        */
     }
     
 }
@@ -39,7 +58,14 @@ extension RewardVideoViewController: RYRewardVideoViewControllerDelegate {
         debugPrint("Reward video received failed and the error info is \(error.errorDescription ?? "无详细错误信息")")
     }
     
-    func RewardVideoWillClose() {
+    func rewardVideoIsReadyForPlay(_ controller: RYRewardVideoViewController, isReadyForPlay isReady: Bool) {
+        if isReady {
+            debugPrint("rewardVideoIsReadyForPlay")
+        }
+    }
+    
+    func rewardVideoWillClose() {
         dismiss(animated: true, completion: nil)
     }
+    
 }

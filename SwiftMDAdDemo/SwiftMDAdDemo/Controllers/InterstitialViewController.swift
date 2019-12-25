@@ -16,6 +16,8 @@ import MDAd
 class InterstitialViewController: UIViewController {
     
     var adsID: String = "810001"
+    var isChildViewControllerOfHomePage = false
+    
     
     @IBOutlet weak var interstitialView: RYInterstitialView!
     
@@ -34,18 +36,18 @@ class InterstitialViewController: UIViewController {
             // 纯图模式, adsID 为 810001
             // 广告位尺寸是 750.0 : 1334.0
             interstitialView.adsID = "810001"
-            interstitialView.needPauseCountDownWhenShowAds = true
             interstitialView.rootViewController = self
+            // 设置广告链接跳转方式为应用外打开
+            interstitialView.needOpenAdsLinkFromWithinCurrentApp = false
             interstitialView.loadRequest()
             interstitialView.delegate = self
-        
+            
         case "810002":
             // 上图下文模式, adsID 为 810002
             // 广告位尺寸是 750.0 : 1143.0
             
             interstitialView.adsID = "810002"
             interstitialView.rootViewController = self
-            interstitialView.needPauseCountDownWhenShowAds = true
             interstitialView.loadRequest()
             interstitialView.delegate = self
             
@@ -90,12 +92,18 @@ extension InterstitialViewController: RYInterstitialViewDelegate {
     }
     
     func interstitialCountDownDidTap() {
-//        navigationController?.popViewController(animated: true)
-        if let window = UIApplication.shared.keyWindow {
-            let newRootVC = UIViewController()
-            newRootVC.view.backgroundColor = .red
-            window.rootViewController = newRootVC
+        if isChildViewControllerOfHomePage {
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.9, animations: {
+                    self.view.alpha = 0.0
+                }) { _ in
+                    self.view.isHidden = true
+                    self.view.removeFromSuperview()
+                    self.removeFromParent()
+                }
+            }
+        } else {
+            navigationController?.popViewController(animated: true)
         }
-        
     }
 }

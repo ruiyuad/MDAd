@@ -8,7 +8,9 @@
 
 import UIKit
 
-class HomePage: UITableViewController {
+class HomePage: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
     
     fileprivate let ads: [[String: [Banner]]] = [["Banner 广告": [Banner(title: "纯图类型", adsID: "820001"),
                                                                  Banner(title: "左图右文类型", adsID: "820004")]],
@@ -25,32 +27,47 @@ class HomePage: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+    
+        // Add InterstitialViewController as full screen ad
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let interstitialVC = main.instantiateViewController(withIdentifier: "InterstitialViewController") as? InterstitialViewController {
+            interstitialVC.isChildViewControllerOfHomePage = true
+            interstitialVC.adsID = "810002"
+            addChild(interstitialVC)
+            
+            view.addSubview(interstitialVC.view)
+        }
     }
+}
+
+extension HomePage: UITableViewDelegate, UITableViewDataSource {
     
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return ads.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 38.0
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard ads.count > section else { return 0 }
         return ads[section].values.first!.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
         if let detailsAds = ads[indexPath.section].values.first, detailsAds.count > 0, indexPath.row < detailsAds.count {
             let ad = detailsAds[indexPath.row]
@@ -59,7 +76,7 @@ class HomePage: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 38.0))
         view.backgroundColor = .groupTableViewBackground
         let label = UILabel(frame: CGRect(x: 16, y: 0, width: view.bounds.width - 16*2, height: view.bounds.height))
@@ -70,7 +87,7 @@ class HomePage: UITableViewController {
         return view
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -117,7 +134,6 @@ class HomePage: UITableViewController {
         default: break
         }
     }
-
 }
 
 

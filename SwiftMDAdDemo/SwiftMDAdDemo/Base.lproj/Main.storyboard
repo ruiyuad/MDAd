@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="dT9-w7-i8k" kind="relationship" relationship="rootViewController" id="9NO-MC-3qo"/>
+                        <segue destination="128-Dw-V1F" kind="relationship" relationship="rootViewController" id="jMF-fs-hEu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdL-9Q-HvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,24 +25,35 @@
             <point key="canvasLocation" x="-29" y="143"/>
         </scene>
         <!--广告 Demo 示例-->
-        <scene sceneID="FgR-hA-wDi">
+        <scene sceneID="6rk-ws-Fqb">
             <objects>
-                <tableViewController storyboardIdentifier="HomePage" id="dT9-w7-i8k" customClass="HomePage" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QPz-C7-bvd">
+                <viewController storyboardIdentifier="HomePage" id="128-Dw-V1F" customClass="HomePage" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q0F-Dy-idN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="dT9-w7-i8k" id="DZS-UB-ANE"/>
-                            <outlet property="delegate" destination="dT9-w7-i8k" id="pQX-MN-TRh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="广告 Demo 示例" id="FUr-IY-abg"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4fg-Ar-6Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f9p-0I-xgr">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f9p-0I-xgr" firstAttribute="top" secondItem="iSN-lo-oO3" secondAttribute="top" id="BK9-ES-iDW"/>
+                            <constraint firstAttribute="bottom" secondItem="f9p-0I-xgr" secondAttribute="bottom" id="O5E-Nu-5lb"/>
+                            <constraint firstItem="f9p-0I-xgr" firstAttribute="leading" secondItem="iSN-lo-oO3" secondAttribute="leading" id="eC6-WP-ooj"/>
+                            <constraint firstItem="iSN-lo-oO3" firstAttribute="trailing" secondItem="f9p-0I-xgr" secondAttribute="trailing" id="uFQ-uW-pk3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iSN-lo-oO3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="广告 Demo 示例" id="K1u-Vo-ou3"/>
+                    <connections>
+                        <outlet property="tableView" destination="f9p-0I-xgr" id="1LY-HA-ucz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ogu-tP-9we" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711.59420289855075" y="140.625"/>
+            <point key="canvasLocation" x="711" y="143"/>
         </scene>
         <!--Banner View Controller-->
         <scene sceneID="tne-QT-ifu">
