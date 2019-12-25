@@ -28,7 +28,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.7.1'
+       pod 'MDAd', '~> 0.7.2'
    end
    ```
    
@@ -189,7 +189,6 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
  1. 创建 **RYRewardVideoViewController** 实例. **RYRewardVideoViewController** 是 `MDAd.framework` 中用于展示激励视频广告的控制器类. 具体初始化代码如下:
 
     ```Swift
-    /// 不要全局持有 `RYRewardVideoViewController`的实例, 每个实例管理一次完整的视频加载生命周期.
     let rewardVideoVC = RYRewardVideoViewController()
     rewardVideoVC.adsID = "870001"
     rewardVideoVC.delegate = self
@@ -205,7 +204,7 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
 ### 自定义广告
 
-**自定义广告**不是某一类广告. MDAd.framework 提供多种通用的广告类型, 对于需要 UI 定制化的广告展示, framework 提供自定义类型, 开放广告展示所需的数据源给开发者, 用于 UI 定制化. 集成自定义广告的示例如下:
+**自定义广告**不是某一类广告, 而是提供广告数据源供开发者自定义广告样式. MDAd.framework 提供多种通用的广告类型, 对于需要 UI 定制化的广告展示, framework 提供自定义类型, 开放广告展示所需的数据源给开发者, 用于 UI 定制化. 集成自定义广告的示例如下:
 
  1. 创建 **RYCustomAd** 实例. **RYCustomAd** 是 `MDAd.framework` 中用于自定义广告的工具类. 具体初始化代码如下:
 
@@ -298,4 +297,5 @@ A: 下面分别介绍两个错误码含义:
 0.6.1: 修复 tag 0.6.0 未链接对应 MDAd.framework 和 MDAd.bundle.       
 0.7.0: 新增激励视频广告背景样式.        
 0.7.1: 修复场景: 当全屏广告所在视图被 keyWindow 覆盖时, 广告点击视图无法显示问题.     
+0.7.2: 视频预加载优化、开屏广告提供广告链接应用外打开方式及其他细节优化.     
 

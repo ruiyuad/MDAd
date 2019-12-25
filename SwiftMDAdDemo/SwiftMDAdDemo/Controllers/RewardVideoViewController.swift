@@ -13,8 +13,13 @@ class RewardVideoViewController: UIViewController {
     
     fileprivate let rewardVideoVC = RYRewardVideoViewController()
     
-    /// 默认第一次进入页面预加载视频. 如果后续需要在当前页面多次加载视频, 请在第一次预加载成功后, 设置为 false. 防止后续加载视频重复调用 `loadRequest()`.
+    /// 默认第一次进入页面预加载视频.
+    /// 如果后续需要在当前页面多次加载视频, 请在第一次预加载成功后, 设置为 false.
     var isPreLoadRewardVideo = true
+    
+    deinit {
+        rewardVideoVC.delegate = nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +33,10 @@ class RewardVideoViewController: UIViewController {
     @IBAction func openRewardVideo(_ sender: UIButton) {
         if !isPreLoadRewardVideo {
             rewardVideoVC.loadRequest()
-            isPreLoadRewardVideo = false
         }
-//        rewardVideoVC.modalPresentationStyle = .fullScreen
+        rewardVideoVC.modalPresentationStyle = .fullScreen
         present(rewardVideoVC, animated: true, completion: nil)
+        isPreLoadRewardVideo = false
         
         /*
         第二种加载方式

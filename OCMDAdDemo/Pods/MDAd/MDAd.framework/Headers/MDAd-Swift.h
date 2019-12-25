@@ -496,8 +496,6 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
-/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
-@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -506,6 +504,9 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @property (nonatomic, strong) UIColor * _Nullable logoTextColor;
 /// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
 @property (nonatomic) CGFloat logoCornerRadius;
+/// A Boolean value that determines the current ads link should be opened from within app. Default is true.
+/// If you set to false, the app will leave and the current ads link will be opened at Safari Or App Store. Default is true.
+@property (nonatomic) BOOL needOpenAdsLinkFromWithinCurrentApp;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -567,6 +568,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 @end
 
 
@@ -597,8 +601,14 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the reward video  failed.
+/// \param controller An instance of RYRewardVideoViewController class.
+///
+/// \param isReady A Boolean value that indicates whether the player is ready to play items.
+///
+- (void)rewardVideoIsReadyForPlay:(RYRewardVideoViewController * _Nonnull)controller isReadyForPlay:(BOOL)isReady;
 /// Tells the delegate that the user did clicked the close button.
-- (void)RewardVideoWillClose;
+- (void)rewardVideoWillClose;
 @end
 
 
@@ -1107,8 +1117,6 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
-/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
-@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -1117,6 +1125,9 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @property (nonatomic, strong) UIColor * _Nullable logoTextColor;
 /// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
 @property (nonatomic) CGFloat logoCornerRadius;
+/// A Boolean value that determines the current ads link should be opened from within app. Default is true.
+/// If you set to false, the app will leave and the current ads link will be opened at Safari Or App Store. Default is true.
+@property (nonatomic) BOOL needOpenAdsLinkFromWithinCurrentApp;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -1178,6 +1189,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 @end
 
 
@@ -1208,8 +1222,14 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the reward video  failed.
+/// \param controller An instance of RYRewardVideoViewController class.
+///
+/// \param isReady A Boolean value that indicates whether the player is ready to play items.
+///
+- (void)rewardVideoIsReadyForPlay:(RYRewardVideoViewController * _Nonnull)controller isReadyForPlay:(BOOL)isReady;
 /// Tells the delegate that the user did clicked the close button.
-- (void)RewardVideoWillClose;
+- (void)rewardVideoWillClose;
 @end
 
 
@@ -1720,8 +1740,6 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
-/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
-@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -1730,6 +1748,9 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @property (nonatomic, strong) UIColor * _Nullable logoTextColor;
 /// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
 @property (nonatomic) CGFloat logoCornerRadius;
+/// A Boolean value that determines the current ads link should be opened from within app. Default is true.
+/// If you set to false, the app will leave and the current ads link will be opened at Safari Or App Store. Default is true.
+@property (nonatomic) BOOL needOpenAdsLinkFromWithinCurrentApp;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -1791,6 +1812,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 @end
 
 
@@ -1821,8 +1845,14 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the reward video  failed.
+/// \param controller An instance of RYRewardVideoViewController class.
+///
+/// \param isReady A Boolean value that indicates whether the player is ready to play items.
+///
+- (void)rewardVideoIsReadyForPlay:(RYRewardVideoViewController * _Nonnull)controller isReadyForPlay:(BOOL)isReady;
 /// Tells the delegate that the user did clicked the close button.
-- (void)RewardVideoWillClose;
+- (void)rewardVideoWillClose;
 @end
 
 
@@ -2331,8 +2361,6 @@ SWIFT_PROTOCOL("_TtP4MDAd30RYInterstitialHalfViewDelegate_")
 /// natural transition points in your application such as between games.
 SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @interface RYInterstitialView : RYAdBaseView
-/// A Boolean value that determines whether count down can cancel when show ads. Default is false.
-@property (nonatomic) BOOL needPauseCountDownWhenShowAds;
 /// Indicates that ads id.
 @property (nonatomic, copy) NSString * _Nullable adsID;
 /// Indicates that the logo label font. Only works for interstitial ad which adsID is 810002.
@@ -2341,6 +2369,9 @@ SWIFT_CLASS("_TtC4MDAd18RYInterstitialView")
 @property (nonatomic, strong) UIColor * _Nullable logoTextColor;
 /// Indicates that the corner radius value of logo image. Only works for interstitial ad which adsID is 810002.
 @property (nonatomic) CGFloat logoCornerRadius;
+/// A Boolean value that determines the current ads link should be opened from within app. Default is true.
+/// If you set to false, the app will leave and the current ads link will be opened at Safari Or App Store. Default is true.
+@property (nonatomic) BOOL needOpenAdsLinkFromWithinCurrentApp;
 /// Optional delegate object that receives state change notifications from this RYInterstitialView. Typically this is a UIViewController.
 @property (nonatomic, weak) id <RYInterstitialViewDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -2402,6 +2433,9 @@ SWIFT_CLASS("_TtC4MDAd27RYRewardVideoViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 @end
 
 
@@ -2432,8 +2466,14 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
+/// Tells the delegate that the reward video  failed.
+/// \param controller An instance of RYRewardVideoViewController class.
+///
+/// \param isReady A Boolean value that indicates whether the player is ready to play items.
+///
+- (void)rewardVideoIsReadyForPlay:(RYRewardVideoViewController * _Nonnull)controller isReadyForPlay:(BOOL)isReady;
 /// Tells the delegate that the user did clicked the close button.
-- (void)RewardVideoWillClose;
+- (void)rewardVideoWillClose;
 @end
 
 
