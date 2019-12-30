@@ -33,7 +33,7 @@
                  @{@"信息流广告": @[[[Ad alloc] initWithID:@"850006" title:@"上文下图带底部阴影类型"],
                                [[Ad alloc] initWithID:@"850009" title:@"上图下文类型"],
                                [[Ad alloc] initWithID:@"850008" title:@"左图右文类型(1:1.3)"],
-                               [[Ad alloc] initWithID:@"8500011" title:@"三图类型"]]},
+                               [[Ad alloc] initWithID:@"850011" title:@"三图类型"]]},
                  @{@"全屏广告": @[[[Ad alloc] initWithID:@"810001" title:@"开屏广告类型"],
                                 [[Ad alloc] initWithID:@"810002" title:@"开屏广告类型"]]},
                  @{@"插屏广告": @[[[Ad alloc] initWithID:@"840001" title:@"插屏广告类型"]]},
