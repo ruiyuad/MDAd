@@ -55,6 +55,10 @@ class BannerViewController: UIViewController {
         
         // Other customized settings
         bannerView.alpha = 0.3
+        /*
+        bannerView.isShowCloseButton = false
+        bannerView.isShowDownloadButton = false
+        */
     }
     
     override func viewDidLayoutSubviews() {

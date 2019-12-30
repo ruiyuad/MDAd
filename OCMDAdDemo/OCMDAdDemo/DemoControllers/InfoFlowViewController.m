@@ -96,11 +96,20 @@
         }
             break;
             
+        case 850011: {
+            // 三图模式, adsID 为 850011, 广告位尺寸是 320.0 / 125.0
+            self.ratio = 320.0 / 125.0;
+            
+            self.infoFlowView.adsID = @"850011";
+            self.infoFlowView.rootViewController = self;
+            self.infoFlowView.delegate = self;
+            [self.infoFlowView loadRequest];
+        }
+            break;
+            
         default:
             break;
     }
-    
-    //
     
     // Other custimized settings
     

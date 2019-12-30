@@ -86,15 +86,21 @@ class InfoFlowViewController: UIViewController {
             
             extraHeight = 26
             
+        case "850011":
+            // 三图模式, adsID 为 850011, 广告位尺寸是 320.0 / 125.0
+            infoFlowView.adsID = "850011"
+            ratio = 320.0 / 125.0
+            infoFlowView.rootViewController = self
+            infoFlowView.delegate = self
+            infoFlowView.loadRequest()
+            
         default:
             break
         }
         
-        /*
         // 其他可选配置项: isShowCloseButton, isShowDownloadButton, ...
-        infoFlowView.isShowCloseButton = false
-        infoFlowView.isShowDownloadButton = false
-        */
+//        infoFlowView.isShowCloseButton = false
+//        infoFlowView.isShowDownloadButton = false
         
         // Other custimized settings
         infoFlowView.alpha = 0.0
