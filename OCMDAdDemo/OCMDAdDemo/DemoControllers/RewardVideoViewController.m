@@ -78,7 +78,7 @@
     NSLog(@"rewardVideoIsReadyForPlay");
 }
 
-- (void)RewardVideoWillClose {
+- (void)rewardVideoWillClose {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
