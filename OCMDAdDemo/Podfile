@@ -5,7 +5,7 @@ use_frameworks!
 
 
 target 'OCMDAdDemo' do
-    pod 'MDAd', '~> 0.8.0'
+    pod 'MDAd', '~> 0.8.1'
 end
 
 
