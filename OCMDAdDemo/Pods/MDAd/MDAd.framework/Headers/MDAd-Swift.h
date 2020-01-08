@@ -358,6 +358,7 @@ SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class RYCustomAdItem;
 
 /// Delegate methods for receiving custom ads state change messages such as ad request status.
 SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
@@ -365,23 +366,9 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// Tells the delegate that an custom ad request successfully.
 /// \param customAd An instance of RYCustomAd class.
 ///
-/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
-/// <ul>
-///   <li>
-///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
-///   </li>
-/// </ul>
+/// \param item An dictionary and you can custom your specify ad view with it. See details in <code>RYCustomAdItem</code>            class.
 ///
-- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(RYCustomAdItem * _Nonnull)item;
 @optional
 /// Tells the delegate that an custom ad request failed.
 /// \param customAd An instance of RYCustomAd class.
@@ -389,6 +376,16 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
+@end
+
+
+SWIFT_CLASS("_TtC4MDAd14RYCustomAdItem")
+@interface RYCustomAdItem : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable imageUrls;
+@property (nonatomic, copy) NSString * _Nullable linkUrl;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -979,6 +976,7 @@ SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class RYCustomAdItem;
 
 /// Delegate methods for receiving custom ads state change messages such as ad request status.
 SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
@@ -986,23 +984,9 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// Tells the delegate that an custom ad request successfully.
 /// \param customAd An instance of RYCustomAd class.
 ///
-/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
-/// <ul>
-///   <li>
-///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
-///   </li>
-/// </ul>
+/// \param item An dictionary and you can custom your specify ad view with it. See details in <code>RYCustomAdItem</code>            class.
 ///
-- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(RYCustomAdItem * _Nonnull)item;
 @optional
 /// Tells the delegate that an custom ad request failed.
 /// \param customAd An instance of RYCustomAd class.
@@ -1010,6 +994,16 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
+@end
+
+
+SWIFT_CLASS("_TtC4MDAd14RYCustomAdItem")
+@interface RYCustomAdItem : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable imageUrls;
+@property (nonatomic, copy) NSString * _Nullable linkUrl;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1602,6 +1596,7 @@ SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class RYCustomAdItem;
 
 /// Delegate methods for receiving custom ads state change messages such as ad request status.
 SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
@@ -1609,23 +1604,9 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// Tells the delegate that an custom ad request successfully.
 /// \param customAd An instance of RYCustomAd class.
 ///
-/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
-/// <ul>
-///   <li>
-///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
-///   </li>
-/// </ul>
+/// \param item An dictionary and you can custom your specify ad view with it. See details in <code>RYCustomAdItem</code>            class.
 ///
-- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(RYCustomAdItem * _Nonnull)item;
 @optional
 /// Tells the delegate that an custom ad request failed.
 /// \param customAd An instance of RYCustomAd class.
@@ -1633,6 +1614,16 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
+@end
+
+
+SWIFT_CLASS("_TtC4MDAd14RYCustomAdItem")
+@interface RYCustomAdItem : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable imageUrls;
+@property (nonatomic, copy) NSString * _Nullable linkUrl;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -2223,6 +2214,7 @@ SWIFT_CLASS("_TtC4MDAd10RYCustomAd")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class RYCustomAdItem;
 
 /// Delegate methods for receiving custom ads state change messages such as ad request status.
 SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
@@ -2230,23 +2222,9 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// Tells the delegate that an custom ad request successfully.
 /// \param customAd An instance of RYCustomAd class.
 ///
-/// \param infos An dictionary and you can custom your specify ad view with it. The infos contains keys are:
-/// <ul>
-///   <li>
-///     “MDAdKeyForImageUrl”: Ad’s image url string. Use this key to retreive image url string. Usage is <code>info[MDAdKeyForImageUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForLinkUrl”: Ad’s link url string. Use this key to retreive link url string. Usage is <code>info[MDAdKeyForLinkUrl]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForTitle”: Ad’s title. Use this key to retreive title string. Usage is <code>info[MDAdKeyForTitle]</code>.
-///   </li>
-///   <li>
-///     “MDAdKeyForDescription”: Ad’s description text. Use this key to retreive description string. Usage is <code>info[MDAdKeyForDescription]</code>.
-///   </li>
-/// </ul>
+/// \param item An dictionary and you can custom your specify ad view with it. See details in <code>RYCustomAdItem</code>            class.
 ///
-- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(NSDictionary<NSString *, NSString *> * _Nonnull)infos;
+- (void)customAdDidReceiveAd:(RYCustomAd * _Nonnull)customAd receivedData:(RYCustomAdItem * _Nonnull)item;
 @optional
 /// Tells the delegate that an custom ad request failed.
 /// \param customAd An instance of RYCustomAd class.
@@ -2254,6 +2232,16 @@ SWIFT_PROTOCOL("_TtP4MDAd18RYCustomAdDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)customAdDidFailToReceiveAd:(RYCustomAd * _Nonnull)customAd error:(RYError * _Nonnull)error;
+@end
+
+
+SWIFT_CLASS("_TtC4MDAd14RYCustomAdItem")
+@interface RYCustomAdItem : NSObject
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable imageUrls;
+@property (nonatomic, copy) NSString * _Nullable linkUrl;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

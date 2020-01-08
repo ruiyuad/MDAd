@@ -28,7 +28,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-       pod 'MDAd', '~> 0.8.1'
+       pod 'MDAd', '~> 0.8.2'
    end
    ```
    
@@ -216,20 +216,14 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
     customAd.delegate = self
     customAd.loadRequest()
     ```
- 2. 自定义广告源在请求成功后返回. 返回类型是 [String: String]. 其中Key值分别是
-
- 	- **MDAdKeyForImageUrl**: 广告图片展示地址
- 	- **MDAdKeyForTitle**: 广告标题
- 	- **MDAdKeyForDescription**: 广告描述
-
- 	具体代码如下:
+ 2. 自定义广告源在请求成功后返回. 使用 **RYCustomAdItem** 类来获取广告数据.  具体代码如下:
  	
  	```Swift
- 	func customAdDidReceiveAd(_ customAd: RYCustomAd, receivedData infos: [String : String]) {
+ 	func customAdDidReceiveAd(_ customAd: RYCustomAd, receivedData item: RYCustomAdItem) {
  		 // customView 是开发者自定义视图, 用于定制展示广告数据
-        customView.update(infos["MDAdKeyForImageUrl"],
-                          title: infos["MDAdKeyForTitle"],
-                          desc: infos["MDAdKeyForDescription"],
+        customView.update(item.imageUrls?.first ?? "",
+                          title: item.title,
+                          desc: item.desc,
                           imageRatio: imageViewRatioForCustomAd)
     }
  	```
@@ -299,5 +293,6 @@ A: 下面分别介绍两个错误码含义:
 0.7.1: 修复场景: 当全屏广告所在视图被 keyWindow 覆盖时, 广告点击视图无法显示问题.     
 0.7.2: 视频预加载优化、开屏广告提供广告链接应用外打开方式及其他细节优化.      
 0.8.0: 新增信息流广告**三图样式**.           
-0.8.1: 优化视频播放.               
+0.8.1: 优化视频播放.          
+0.8.2: 自定义广告返回数据使用 **RYCustomAdItem** 类来代替键值对返回.       
 
