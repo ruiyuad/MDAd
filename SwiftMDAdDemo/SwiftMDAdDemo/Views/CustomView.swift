@@ -48,7 +48,10 @@ class CustomView: UIView, UIViewLoading {
         bgImageView.layer.cornerRadius = 3.0
     }
     
-    func update(_ imageUrlString: String?, title titleString: String?, desc descString: String?, imageRatio ratio: CGFloat) {
+    func update(_ imageUrlString: String?,
+                title titleString: String?,
+                desc descString: String?,
+                imageRatio ratio: CGFloat) {
         
         imageViewRatioConstraint.constant = ratio
         

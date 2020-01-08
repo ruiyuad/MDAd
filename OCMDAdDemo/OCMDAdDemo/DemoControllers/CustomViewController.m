@@ -62,28 +62,15 @@ Abstract: 演示自定义广告类 `RYCustomAd` 的使用.
 
 #pragma mark - RYCustomAdDelegate
 
-- (void)customAdDidReceiveAd:(RYCustomAd *)customAd receivedData:(NSDictionary<NSString *,NSString *> *)infos {
-    
-    /**
-     你可以从字典 infos 解析你需要的自定义数据. `infos` 包括四个 keys, 分别对应为:
-        
-        - infos[@"MDAdKeyForImageUrl"]: 广告对应的图片 Url;
-        - infos[@"MDAdKeyForTitle"]: 广告对应的 Title;
-        - infos[@"MDAdKeyForDescription"]: 广告对应的 详情描述;
-        - infos[@"MDAdKeyForLinkUrl"]: 广告对应的点击跳转链接;
-     */
+- (void)customAdDidReceiveAd:(RYCustomAd *)customAd receivedData:(RYCustomAdItem *)item {
     
     /** `140.0/180.0` 是自定义广告对应的广告图片的比例. 因为这里选择的广告是 850008, 其广告图片对应的比例是 `140.0/180.0`.
         注意: 在进行自定义广告时, 请务必保证自定义图片的比例与对应广告类型图片比例保持一致. 对应广告类型图片比例请查看对应产品文档.
     */
-    
-    if (infos.count > 0) {
-        [self.customView updateWithImageUrlString:infos[@"MDAdKeyForImageUrl"]
-                                            title:infos[@"MDAdKeyForTitle"]
-                                             desc:infos[@"MDAdKeyForDescription"]
-                                       imageRatio:140.0/180.0];
-    }
-    
+    [self.customView updateWithImageUrlString:item.imageUrls.firstObject
+                                        title:item.title
+                                         desc:item.desc
+                                   imageRatio:140.0/180.0];
 }
 
 - (void)customAdDidFailToReceiveAd:(RYCustomAd *)customAd error:(RYError *)error {
