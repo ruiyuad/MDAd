@@ -55,6 +55,8 @@ extension CustomViewController: RYCustomAdDelegate {
                           title: item.title,
                           desc: item.desc,
                           imageRatio: imageViewRatioForCustomAd)
+        
+        customAd.recordImpression()
     }
     
     func customAdDidFailToReceiveAd(_ customAd: RYCustomAd, error: RYError) {
@@ -75,5 +77,7 @@ extension CustomViewController: CustomViewDelegate {
         // open ad link.
         // called when you add gestures, actions or other Selectors to you custom ad view
         customAd.openAdLink()
+        
+        customAd.recordClick()
     }
 }
