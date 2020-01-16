@@ -42,7 +42,7 @@
             [self.interstitialView loadRequest];
         }
             break;
-        
+            
         // 左图右文模式, adsID 为 810002
         // 广告位尺寸是 750.0 : 1143.0
         case 810002: {
