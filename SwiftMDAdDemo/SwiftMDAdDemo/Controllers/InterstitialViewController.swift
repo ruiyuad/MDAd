@@ -55,8 +55,8 @@ class InterstitialViewController: UIViewController {
             
             interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "妙招助手, 活出每一个细节")
             interstitialView.logoCornerRadius = 5.0
-//            interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
-//            interstitialView.logoTextColor = UIColor.darkText
+            interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
+            interstitialView.logoTextColor = UIColor.darkText
             
         default:
             break
