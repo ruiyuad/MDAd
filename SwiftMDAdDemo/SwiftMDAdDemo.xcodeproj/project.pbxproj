@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,8 +21,10 @@
 		985292692359CB0600C4B54B /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 985292682359CB0500C4B54B /* CustomView.xib */; };
 		986C18AD22D5E9C600F06172 /* InfoFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */; };
 		98AFEDD022DECBE50046B760 /* InterstitialHalfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */; };
+		98B23F9423EA98A800615A27 /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; };
+		98B23F9523EA98A800615A27 /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		98B23F9823EA98B500615A27 /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98B23F9723EA98B500615A27 /* MDAd.bundle */; };
 		98DF7DD92371610A009A0AB5 /* RewardVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF7DD82371610A009A0AB5 /* RewardVideoViewController.swift */; };
-		FDE848557DE75B56FEDA2EAB /* Pods_SwiftMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604E37BE16241C37BBC4499 /* Pods_SwiftMDAdDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +48,20 @@
 			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98B23F9623EA98A800615A27 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				98B23F9523EA98A800615A27 /* MDAd.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5A31BE3E8F8BCFF932AC3194 /* Pods-SwiftMDAdDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMDAdDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.release.xcconfig"; sourceTree = "<group>"; };
-		71524FCBFD67007D1DA14174 /* Pods-SwiftMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMDAdDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		981A978722D71E9100C8540A /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		981C0F6C22E011DE00BDF6E1 /* BuoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuoyViewController.swift; sourceTree = "<group>"; };
 		982495BA23604AF20003AD59 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 		985292682359CB0500C4B54B /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFlowViewController.swift; sourceTree = "<group>"; };
 		98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialHalfViewController.swift; sourceTree = "<group>"; };
+		98B23F9723EA98B500615A27 /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		98DF7DD82371610A009A0AB5 /* RewardVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardVideoViewController.swift; sourceTree = "<group>"; };
 		98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B604E37BE16241C37BBC4499 /* Pods_SwiftMDAdDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMDAdDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDE848557DE75B56FEDA2EAB /* Pods_SwiftMDAdDemo.framework in Frameworks */,
+				98B23F9423EA98A800615A27 /* MDAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,11 +117,11 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
+				98B23F9723EA98B500615A27 /* MDAd.bundle */,
 				9825B87422B0E5C600D51F1C /* SwiftMDAdDemo */,
 				9825B88922B0E5C700D51F1C /* SwiftMDAdDemoTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
 				32548EB5E9AE0AB799D547B3 /* Frameworks */,
-				F254E2B7907906B229CE2278 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,15 +181,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F254E2B7907906B229CE2278 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71524FCBFD67007D1DA14174 /* Pods-SwiftMDAdDemo.debug.xcconfig */,
-				5A31BE3E8F8BCFF932AC3194 /* Pods-SwiftMDAdDemo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,13 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9825B88F22B0E5C700D51F1C /* Build configuration list for PBXNativeTarget "SwiftMDAdDemo" */;
 			buildPhases = (
-				C8D5D9356F41295EE555D4CF /* [CP] Check Pods Manifest.lock */,
 				9825B86E22B0E5C600D51F1C /* Sources */,
 				9825B86F22B0E5C600D51F1C /* Frameworks */,
 				9825B87022B0E5C600D51F1C /* Resources */,
 				98A90A7823558DE900CC043F /* Embed PlugIns */,
-				EFCCD42B466A6F45C54C34F7 /* [CP] Embed Pods Frameworks */,
-				7E832523FEDED07AA53FA37D /* [CP] Copy Pods Resources */,
+				98B23F9623EA98A800615A27 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
+				98B23F9823EA98B500615A27 /* MDAd.bundle in Resources */,
 				985292692359CB0600C4B54B /* CustomView.xib in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
@@ -278,65 +280,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7E832523FEDED07AA53FA37D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8D5D9356F41295EE555D4CF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMDAdDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EFCCD42B466A6F45C54C34F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9825B86E22B0E5C600D51F1C /* Sources */ = {
@@ -512,7 +455,6 @@
 		};
 		9825B89022B0E5C700D51F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71524FCBFD67007D1DA14174 /* Pods-SwiftMDAdDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,7 +481,6 @@
 		};
 		9825B89122B0E5C700D51F1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A31BE3E8F8BCFF932AC3194 /* Pods-SwiftMDAdDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
