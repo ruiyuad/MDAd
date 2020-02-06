@@ -28,7 +28,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-   pod 'MDAd', '~> 0.8.4'
+   pod 'MDAd', '~> 0.8.5'
    end
    ```
    
@@ -122,7 +122,7 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
  
 ### 全屏广告
 
-**全屏广告**又名插页式广告. 通常用于 App 启动或者从一个页面过渡到另一个页面的场景中. 你可以使用 **RYInterstitialView** 类来实现全屏广告的展示. framework 中提供全屏广告样式有两种, 分别是**纯图模式** (宽高比为`750 : 1334`) 和 **上图下文模式**(宽高比为`750.0 : 1143.0`). 其中后者提供对不同屏幕适配方案. 在使用该广告之前, 你需要申请全屏广告的广告 ID. 集成全屏广告的简单示例如下:
+**全屏广告**又名插页式广告. 通常用于 App 启动或者从一个页面过渡到另一个页面的场景中. 你可以使用 **RYInterstitialView** 类来实现全屏广告的展示. framework 中提供全屏广告样式有两种, 分别是**纯图模式** (宽高比为`750 : 1334`) 和 **上图下文模式**(宽高比为`750.0 : 1143.0`). **其中`上图下文模式`提供对不同屏幕适配方案**. 在使用该广告之前, 你需要申请全屏广告的广告 ID. 集成全屏广告的简单示例如下:
 
  1. 创建 **RYInterstitialView** 实例. **RYInterstitialView** 是 `MDAd.framework` 中用于展示全屏广告的视图类. 具体初始化代码如下:
  
@@ -134,6 +134,16 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
     interstitialView.delegate = self
     interstitialView.loadRequest()
     ```
+    
+    - **上图下文模式**不仅显示开屏广告图, 而且可以在底部融入 App 元素如 App logo, App 名称等.
+    	
+	 ```Swift
+	/// Only works for interstitial ad which adsID is 810002.
+       interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "妙招助手, 活出每一个细节")
+       interstitialView.logoCornerRadius = 5.0
+       interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
+       interstitialView.logoTextColor = UIColor.darkText
+	```
  
  2. **RYInterstitialViewDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
@@ -195,6 +205,8 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
     rewardVideoVC.loadRequest()
     present(rewardVideoVC, animated: true, completion: nil)
     ```
+    
+    - 为保证视频播放效果, 可以在页面进入时 `loadRequest()`, 用于预加载. 在调用场景执行 `present(rewardVideoVC, animated: true, completion: nil)`.
  
  2. **RYRewardVideoViewControllerDelegate** 提供广告加载成功、失败等可选代理方法, 具体使用可查看 framework 中对应注释.
 
@@ -298,4 +310,4 @@ A: 下面分别介绍两个错误码含义:
 0.8.3: 自定义广告增加点击和曝光支持.       
 0.8.3.1: 注释修正.    
 0.8.4: 更改 bundle 版本号为 `0.8.3.1` 不能打包上传问题.          
-
+0.8.5: 优化广告显示效果.                  

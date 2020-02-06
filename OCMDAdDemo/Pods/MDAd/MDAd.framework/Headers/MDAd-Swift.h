@@ -241,6 +241,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 - (void)enableDebugPrint:(BOOL)isEnabled;
 @end
 
+
+
 @class SKStoreProductViewController;
 
 @interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
@@ -598,7 +600,7 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
-/// Tells the delegate that the reward video  failed.
+/// Tells the delegate that the reward video play failed.
 /// \param controller An instance of RYRewardVideoViewController class.
 ///
 /// \param isReady A Boolean value that indicates whether the player is ready to play items.
@@ -859,6 +861,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 - (void)enableDebugPrint:(BOOL)isEnabled;
 @end
 
+
+
 @class SKStoreProductViewController;
 
 @interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
@@ -1216,7 +1220,7 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
-/// Tells the delegate that the reward video  failed.
+/// Tells the delegate that the reward video play failed.
 /// \param controller An instance of RYRewardVideoViewController class.
 ///
 /// \param isReady A Boolean value that indicates whether the player is ready to play items.
@@ -1479,6 +1483,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 - (void)enableDebugPrint:(BOOL)isEnabled;
 @end
 
+
+
 @class SKStoreProductViewController;
 
 @interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
@@ -1836,7 +1842,7 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
-/// Tells the delegate that the reward video  failed.
+/// Tells the delegate that the reward video play failed.
 /// \param controller An instance of RYRewardVideoViewController class.
 ///
 /// \param isReady A Boolean value that indicates whether the player is ready to play items.
@@ -2097,6 +2103,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) RYAdMobCente
 - (void)enableDebugPrint:(BOOL)isEnabled;
 @end
 
+
+
 @class SKStoreProductViewController;
 
 @interface RYAdMobCenter (SWIFT_EXTENSION(MDAd)) <SKStoreProductViewControllerDelegate>
@@ -2454,7 +2462,7 @@ SWIFT_PROTOCOL("_TtP4MDAd35RYRewardVideoViewControllerDelegate_")
 /// \param error An instance of RYError class. You can print <code>error.errorDescription</code> to check error details.
 ///
 - (void)rewardVideoDidFailToReceiveAd:(RYRewardVideoViewController * _Nonnull)controller error:(RYError * _Nonnull)error;
-/// Tells the delegate that the reward video  failed.
+/// Tells the delegate that the reward video play failed.
 /// \param controller An instance of RYRewardVideoViewController class.
 ///
 /// \param isReady A Boolean value that indicates whether the player is ready to play items.
