@@ -21,9 +21,9 @@
 		985292692359CB0600C4B54B /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 985292682359CB0500C4B54B /* CustomView.xib */; };
 		986C18AD22D5E9C600F06172 /* InfoFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */; };
 		98AFEDD022DECBE50046B760 /* InterstitialHalfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */; };
-		98DE3CE623ED3F4D00B981EB /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; };
-		98DE3CE723ED3F4D00B981EB /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		98DE3CEA23ED3F5800B981EB /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98DE3CE923ED3F5800B981EB /* MDAd.bundle */; };
+		98B57C4723F073A80064BD71 /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98B57C4623F073A80064BD71 /* MDAd.bundle */; };
+		98B57C4823F074360064BD71 /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; };
+		98B57C4923F074360064BD71 /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		98DF7DD92371610A009A0AB5 /* RewardVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF7DD82371610A009A0AB5 /* RewardVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,13 +48,13 @@
 			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98DE3CE823ED3F4D00B981EB /* Embed Frameworks */ = {
+		98B57C4A23F074360064BD71 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				98DE3CE723ED3F4D00B981EB /* MDAd.framework in Embed Frameworks */,
+				98B57C4923F074360064BD71 /* MDAd.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +81,7 @@
 		985292682359CB0500C4B54B /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		986C18AC22D5E9C600F06172 /* InfoFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFlowViewController.swift; sourceTree = "<group>"; };
 		98AFEDCF22DECBE50046B760 /* InterstitialHalfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialHalfViewController.swift; sourceTree = "<group>"; };
-		98DE3CE923ED3F5800B981EB /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
+		98B57C4623F073A80064BD71 /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		98DF7DD82371610A009A0AB5 /* RewardVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardVideoViewController.swift; sourceTree = "<group>"; };
 		98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAF796A3861C995A7ED73DA /* Pods-SwiftMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMDAdDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98DE3CE623ED3F4D00B981EB /* MDAd.framework in Frameworks */,
+				98B57C4823F074360064BD71 /* MDAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
-				98DE3CE923ED3F5800B981EB /* MDAd.bundle */,
+				98B57C4623F073A80064BD71 /* MDAd.bundle */,
 				9825B87422B0E5C600D51F1C /* SwiftMDAdDemo */,
 				9825B88922B0E5C700D51F1C /* SwiftMDAdDemoTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
@@ -204,7 +204,7 @@
 				9825B86F22B0E5C600D51F1C /* Frameworks */,
 				9825B87022B0E5C600D51F1C /* Resources */,
 				98A90A7823558DE900CC043F /* Embed PlugIns */,
-				98DE3CE823ED3F4D00B981EB /* Embed Frameworks */,
+				98B57C4A23F074360064BD71 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
-				98DE3CEA23ED3F5800B981EB /* MDAd.bundle in Resources */,
+				98B57C4723F073A80064BD71 /* MDAd.bundle in Resources */,
 				985292692359CB0600C4B54B /* CustomView.xib in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
@@ -471,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.5.1;
+				CURRENT_PROJECT_VERSION = 0.8.6.2;
 				DEVELOPMENT_TEAM = 7PSA7A9D36;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -484,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.5;
+				MARKETING_VERSION = 0.8.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -499,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.5.1;
+				CURRENT_PROJECT_VERSION = 0.8.6.2;
 				DEVELOPMENT_TEAM = 7PSA7A9D36;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -512,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.5;
+				MARKETING_VERSION = 0.8.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
