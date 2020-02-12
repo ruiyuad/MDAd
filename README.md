@@ -6,6 +6,7 @@
 
 - [环境支持](#环境支持)
 - [集成方式](#集成方式)
+- [项目配置](#项目配置)
 - [初始化](#初始化)
 - [广告样式](#广告样式)
 - [常见问题](#常见问题)
@@ -28,7 +29,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-   pod 'MDAd', '~> 0.8.5'
+   pod 'MDAd', '~> 0.8.8'
    end
    ```
    
@@ -48,7 +49,20 @@
 	
 	
      > NOTE: 如果你在 OC 项目中使用该 framework, 请在对应的 `target` -> `Build Settings` -> `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES`     设置为 **YES**.
-     
+
+
+## 项目配置
+
+每个广告对应的链接内容会由广告主配置. 这些链接内容会存在 `http` urls 的情况. 为了尽可能显示广告链接内容, 推荐项目设置中打开对 `http` 的支持.
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
 
 ## 初始化
 
@@ -118,7 +132,7 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
  3. 详细代码请看 Demo 中 `InfoFlowViewController` 类. 实现效果如下:
  
-    ![4](https://github.com/ruiyuad/MDAd/blob/master/linkImages/4.PNG)
+    ![上文下图广告样式](https://github.com/ruiyuad/MDAd/blob/master/linkImages/4.PNG)![多图广告样式](https://github.com/ruiyuad/MDAd/blob/master/linkImages/9.PNG)
  
 ### 全屏广告
 
@@ -149,7 +163,7 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
  3. 详细代码请看 Demo 中 `InterstitialViewController` 类. 实现效果如下:
     
-    ![5](https://github.com/ruiyuad/MDAd/blob/master/linkImages/5.PNG)
+    ![上图下文广告样式](https://github.com/ruiyuad/MDAd/blob/master/linkImages/5.PNG)
 
 ### 插屏广告
 
@@ -212,7 +226,7 @@ RYAdMobCenter.center.setup("appKey", appSecret: "appSecret")
 
  3. 详细演示代码请看 Demo 中 `RewardVideoViewController` 类.
     
-    ![8](https://github.com/ruiyuad/MDAd/blob/master/linkImages/8.png)
+    ![8](https://github.com/ruiyuad/MDAd/blob/master/linkImages/video.mov)
 
 ### 自定义广告
 
@@ -310,4 +324,7 @@ A: 下面分别介绍两个错误码含义:
 0.8.3: 自定义广告增加点击和曝光支持.       
 0.8.3.1: 注释修正.    
 0.8.4: 更改 bundle 版本号为 `0.8.3.1` 不能打包上传问题.          
-0.8.5: 优化广告显示效果.                  
+0.8.5: 优化广告显示效果.        
+0.8.6: 优化内部广告展示.         
+0.8.7: 新增 webView 链接广告样式.        
+0.8.8: 增加互动广告展示.          

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9825B87122B0E5C600D51F1C"
-               BuildableName = "SwiftMDAdDemo.app"
+               BuildableName = "SwiftMDAd.app"
                BlueprintName = "SwiftMDAdDemo"
                ReferencedContainer = "container:SwiftMDAdDemo.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9825B87122B0E5C600D51F1C"
-            BuildableName = "SwiftMDAdDemo.app"
+            BuildableName = "SwiftMDAd.app"
             BlueprintName = "SwiftMDAdDemo"
             ReferencedContainer = "container:SwiftMDAdDemo.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9825B87122B0E5C600D51F1C"
-            BuildableName = "SwiftMDAdDemo.app"
+            BuildableName = "SwiftMDAd.app"
             BlueprintName = "SwiftMDAdDemo"
             ReferencedContainer = "container:SwiftMDAdDemo.xcodeproj">
          </BuildableReference>
@@ -81,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9825B87122B0E5C600D51F1C"
-            BuildableName = "SwiftMDAdDemo.app"
+            BuildableName = "SwiftMDAd.app"
             BlueprintName = "SwiftMDAdDemo"
             ReferencedContainer = "container:SwiftMDAdDemo.xcodeproj">
          </BuildableReference>

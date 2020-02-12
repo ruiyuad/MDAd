@@ -1,5 +1,5 @@
 PODS:
-  - MDAd (0.8.6)
+  - MDAd (0.8.7)
 
 DEPENDENCIES:
   - MDAd (~> 0.8.6)
@@ -9,7 +9,7 @@ SPEC REPOS:
     - MDAd
 
 SPEC CHECKSUMS:
-  MDAd: eb5777e3f880d1041b09978e060d67ef5844e89e
+  MDAd: fdf959dbbafee2f78c807351bab03c8797cf11f4
 
 PODFILE CHECKSUM: 8de112bf9df9bab2297757701bf30dfa3d37bf2d
 
