@@ -29,7 +29,7 @@
    use_frameworks!
    
    target '<Your Target Name>' do
-   pod 'MDAd', '~> 0.8.8'
+   pod 'MDAd', '~> 0.8.9'
    end
    ```
    
@@ -55,7 +55,7 @@
 
 每个广告对应的链接内容会由广告主配置. 这些链接内容会存在 `http` urls 的情况. 为了尽可能显示广告链接内容, 推荐项目设置中打开对 `http` 的支持.
 
-```
+```XML
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>
@@ -328,3 +328,4 @@ A: 下面分别介绍两个错误码含义:
 0.8.6: 优化内部广告展示.         
 0.8.7: 新增 webView 链接广告样式.        
 0.8.8: 增加互动广告展示.          
+0.8.9: 互动广告内部支持 Apple Store 应用内打开方式.       
