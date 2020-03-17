@@ -53,10 +53,10 @@ class InterstitialViewController: UIViewController {
             
             /// Only works for interstitial ad which adsID is 810002.
             
-            interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "妙招助手, 活出每一个细节")
+            interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "MDAd, 广告展示更优雅")
             interstitialView.logoCornerRadius = 5.0
             interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
-            interstitialView.logoTextColor = UIColor.darkText
+            interstitialView.logoTextColor = UIColor.darkText.withAlphaComponent(0.6)
             
         default:
             break

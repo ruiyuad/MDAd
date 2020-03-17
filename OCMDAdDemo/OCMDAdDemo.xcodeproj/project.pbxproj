@@ -50,7 +50,7 @@
 		984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialHalfViewController.m; sourceTree = "<group>"; };
 		986BFC5D237CF09B00031E07 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D0852238CC720003DA8F2 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9881434322B1ED3B003037B5 /* OCMDAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCMDAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9881434322B1ED3B003037B5 /* MDAd(OC).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDAd(OC).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9881434622B1ED3B003037B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9881434722B1ED3B003037B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9881434922B1ED3B003037B5 /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		9881434422B1ED3B003037B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9881434322B1ED3B003037B5 /* OCMDAdDemo.app */,
+				9881434322B1ED3B003037B5 /* MDAd(OC).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 			);
 			name = OCMDAdDemo;
 			productName = OCTestRuiYuMob;
-			productReference = 9881434322B1ED3B003037B5 /* OCMDAdDemo.app */;
+			productReference = 9881434322B1ED3B003037B5 /* MDAd(OC).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -470,7 +470,7 @@
 				);
 				MARKETING_VERSION = 0.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.testsdk.oc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "MDAd(OC)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCMDAdDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -502,7 +502,7 @@
 				);
 				MARKETING_VERSION = 0.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.testsdk.oc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "MDAd(OC)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCMDAdDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

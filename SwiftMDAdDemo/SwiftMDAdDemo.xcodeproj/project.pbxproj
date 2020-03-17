@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53FBEAF25C68FD31A19016F9 /* Pods_SwiftMDAdDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46444EC8A65016109EA7D41B /* Pods_SwiftMDAdDemo.framework */; };
 		981A978822D71E9100C8540A /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A978722D71E9100C8540A /* InterstitialViewController.swift */; };
 		981C0F6D22E011DE00BDF6E1 /* BuoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981C0F6C22E011DE00BDF6E1 /* BuoyViewController.swift */; };
 		982495BB23604AF20003AD59 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982495BA23604AF20003AD59 /* HomePage.swift */; };
+		982589A1241A4F4800DF99D6 /* MDAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; };
+		982589A2241A4F4800DF99D6 /* MDAd.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98E3A50423CEEF2C00AB6AF5 /* MDAd.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		982589A4241A4F5400DF99D6 /* MDAd.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 982589A3241A4F5400DF99D6 /* MDAd.bundle */; };
 		9825B87622B0E5C600D51F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B87522B0E5C600D51F1C /* AppDelegate.swift */; };
 		9825B87822B0E5C600D51F1C /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B87722B0E5C600D51F1C /* BannerViewController.swift */; };
 		9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9825B87922B0E5C600D51F1C /* Main.storyboard */; };
@@ -42,6 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				982589A2241A4F4800DF99D6 /* MDAd.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +57,8 @@
 		981A978722D71E9100C8540A /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		981C0F6C22E011DE00BDF6E1 /* BuoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuoyViewController.swift; sourceTree = "<group>"; };
 		982495BA23604AF20003AD59 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
-		9825B87222B0E5C600D51F1C /* SwiftMDAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMDAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		982589A3241A4F5400DF99D6 /* MDAd.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
+		9825B87222B0E5C600D51F1C /* MDAd(Swift).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDAd(Swift).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9825B87522B0E5C600D51F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9825B87722B0E5C600D51F1C /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		9825B87A22B0E5C600D51F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53FBEAF25C68FD31A19016F9 /* Pods_SwiftMDAdDemo.framework in Frameworks */,
+				982589A1241A4F4800DF99D6 /* MDAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,7 @@
 		9825B86922B0E5C600D51F1C = {
 			isa = PBXGroup;
 			children = (
+				982589A3241A4F5400DF99D6 /* MDAd.bundle */,
 				9825B87422B0E5C600D51F1C /* SwiftMDAdDemo */,
 				9825B88922B0E5C700D51F1C /* SwiftMDAdDemoTests */,
 				9825B87322B0E5C600D51F1C /* Products */,
@@ -125,7 +130,7 @@
 		9825B87322B0E5C600D51F1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9825B87222B0E5C600D51F1C /* SwiftMDAd.app */,
+				9825B87222B0E5C600D51F1C /* MDAd(Swift).app */,
 				9825B88622B0E5C700D51F1C /* SwiftMDAdDemoTests.xctest */,
 			);
 			name = Products;
@@ -185,13 +190,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9825B88F22B0E5C700D51F1C /* Build configuration list for PBXNativeTarget "SwiftMDAdDemo" */;
 			buildPhases = (
-				B1C29C998C687E9B46091855 /* [CP] Check Pods Manifest.lock */,
 				9825B86E22B0E5C600D51F1C /* Sources */,
 				9825B86F22B0E5C600D51F1C /* Frameworks */,
 				9825B87022B0E5C600D51F1C /* Resources */,
 				98568D3023F55D2B00603F39 /* Embed Frameworks */,
-				9547BB79F8E7893A29EA08BB /* [CP] Embed Pods Frameworks */,
-				1FECF41817B5E891A9AF11AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,7 +201,7 @@
 			);
 			name = SwiftMDAdDemo;
 			productName = TestRuiYuAdMob;
-			productReference = 9825B87222B0E5C600D51F1C /* SwiftMDAd.app */;
+			productReference = 9825B87222B0E5C600D51F1C /* MDAd(Swift).app */;
 			productType = "com.apple.product-type.application";
 		};
 		9825B88522B0E5C700D51F1C /* SwiftMDAdDemoTests */ = {
@@ -264,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825B88022B0E5C700D51F1C /* LaunchScreen.storyboard in Resources */,
+				982589A4241A4F5400DF99D6 /* MDAd.bundle in Resources */,
 				985292692359CB0600C4B54B /* CustomView.xib in Resources */,
 				9825B87D22B0E5C700D51F1C /* Assets.xcassets in Resources */,
 				9825B87B22B0E5C600D51F1C /* Main.storyboard in Resources */,
@@ -278,65 +281,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1FECF41817B5E891A9AF11AB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9547BB79F8E7893A29EA08BB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1C29C998C687E9B46091855 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMDAdDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9825B86E22B0E5C600D51F1C /* Sources */ = {
@@ -517,7 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.8.6.5;
-				DEVELOPMENT_TEAM = 7PSA7A9D36;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,8 +475,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.8.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddemo;
-				PRODUCT_NAME = SwiftMDAd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddem;
+				PRODUCT_NAME = "MDAd(Swift)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -546,7 +490,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.8.6.5;
-				DEVELOPMENT_TEAM = 7PSA7A9D36;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,8 +504,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.8.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddemo;
-				PRODUCT_NAME = SwiftMDAd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.swiftmdaddem;
+				PRODUCT_NAME = "MDAd(Swift)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -573,7 +517,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PSA7A9D36;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				INFOPLIST_FILE = SwiftMDAdDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -594,7 +538,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PSA7A9D36;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				INFOPLIST_FILE = SwiftMDAdDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -53,7 +53,7 @@
             
             /// Only works for interstitial ad which adsID is 810002.
             
-            [self.interstitialView configWithAppLogo:[UIImage imageNamed:@"appIcon40"] appName:@"妙招助手, 活出每一个细节"];
+            [self.interstitialView configWithAppLogo:[UIImage imageNamed:@"appIcon40"] appName:@"MDAd, 广告展示更优雅"];
             self.interstitialView.logoTextColor = UIColor.darkTextColor;
             self.interstitialView.logoTextFont = [UIFont fontWithName:@"PingFangSC-Regular" size:18.0];
             self.interstitialView.logoCornerRadius = 5.0;
