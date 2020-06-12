@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "MDAd"
+  s.name         = "MDAdSDK"
 
   s.version      = "0.9.0"
 

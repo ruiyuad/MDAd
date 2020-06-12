@@ -31,7 +31,7 @@
    ```Ruby
    
    target '<Your Target Name>' do
-   pod 'MDAd', '~> 0.8.10'
+   pod 'MDAdSDK', '~> 0.9.0'
    end
    ```
 然后执行:
