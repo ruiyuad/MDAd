@@ -15,12 +15,14 @@ import MDAd
 
 class BuoyViewController: UIViewController {
     
+    var adModel: Banner = Banner(title: "", adsID: "")
+    
     @IBOutlet weak var buoyView: RYBuoyView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "浮标广告示例"
+        title = adModel.title
         
         // Required configs - 初始化 RYBuoyView 之后, 必要的配置有:
         
@@ -43,6 +45,16 @@ class BuoyViewController: UIViewController {
 
 extension BuoyViewController: RYBuoyViewDelegate {
     func buoyDidReceiveAd(_ buoyView: RYBuoyView) {
+        
+    }
+    
+    func buoyDidFailToReceiveAd(_ buoyView: RYBuoyView, error: RYError) {
+        let alertVC = UIAlertController(title: "检测返回异常", message: error.errorDescription ?? "无详细错误信息", preferredStyle: .alert)
+        let action = UIAlertAction(title: "确定", style: UIAlertAction.Style.default) { _ in
+            alertVC.dismiss(animated: true, completion: nil)
+        }
+        alertVC.addAction(action)
+        present(alertVC, animated: true, completion: nil)
     }
 }
 

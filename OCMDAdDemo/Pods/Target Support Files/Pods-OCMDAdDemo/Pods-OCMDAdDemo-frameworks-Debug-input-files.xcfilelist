@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-OCMDAdDemo/Pods-OCMDAdDemo-frameworks.sh
-${PODS_ROOT}/MDAd/MDAd.framework
+${PODS_ROOT}/MDAdSDK/MDAd.framework

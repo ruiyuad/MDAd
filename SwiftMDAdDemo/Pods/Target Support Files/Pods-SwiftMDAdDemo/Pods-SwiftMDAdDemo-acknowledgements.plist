@@ -39,7 +39,7 @@ SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>MDAd</string>
+			<string>MDAdSDK</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

@@ -32,7 +32,7 @@ Abstract: 演示自定义广告类 `RYCustomAd` 的使用.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"自定义广告示例";
+    self.title = @"自定义广告";
     
     // setup your custom view
     [self setupCustomView];

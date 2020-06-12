@@ -15,9 +15,9 @@ import MDAd
 
 class InterstitialViewController: UIViewController {
     
-    var adsID: String = "810001"
-    var isChildViewControllerOfHomePage = false
+    var adModel: Banner = Banner(title: "", adsID: "")
     
+    var isChildViewControllerOfHomePage = false
     
     @IBOutlet weak var interstitialView: RYInterstitialView!
     
@@ -27,11 +27,11 @@ class InterstitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "开屏广告示例"
+        title = adModel.title
         
         // Required configs - 初始化 RYInterstitialView 之后, 必要的配置有:
         
-        switch adsID {
+        switch adModel.adsID {
         case "810001":
             // 纯图模式, adsID 为 810001
             // 广告位尺寸是 750.0 : 1334.0
@@ -44,7 +44,7 @@ class InterstitialViewController: UIViewController {
             
         case "810002":
             // 上图下文模式, adsID 为 810002
-            // 广告位尺寸是 750.0 : 1143.0
+            // 广告位尺寸是 750.0 : 1334.0，底部logo界面高度为屏幕宽度的1/3
             
             interstitialView.adsID = "810002"
             interstitialView.rootViewController = self
@@ -52,16 +52,38 @@ class InterstitialViewController: UIViewController {
             interstitialView.delegate = self
             
             /// Only works for interstitial ad which adsID is 810002.
-            
-            interstitialView.config(appLogo: UIImage(named: "appIcon40"), appName: "MDAd, 广告展示更优雅")
-            interstitialView.logoCornerRadius = 5.0
-            interstitialView.logoTextFont = UIFont(name: "PingFangSC-Regular", size: 20)
-            interstitialView.logoTextColor = UIColor.darkText.withAlphaComponent(0.6)
+            interstitialView.bottomLogoView = bottomLogoView
             
         default:
             break
         }
     }
+    
+    private lazy var bottomLogoView: UIView = {
+        
+        let logoViewHeight: CGFloat = UIScreen.main.bounds.width / 3.0
+        let logoImageViewHeight: CGFloat = 40.0
+        let logoLabelHeight: CGFloat = 20.0
+        let gapBetweenLogoLabelAndLogoImageView: CGFloat = 4.0
+        let verticalGap: CGFloat = (logoViewHeight - logoImageViewHeight - logoLabelHeight - gapBetweenLogoLabelAndLogoImageView) / 2.0
+        
+        let logoView = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - logoViewHeight, width: UIScreen.main.bounds.width, height: logoViewHeight))
+        
+        let logoImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2.0 - (logoImageViewHeight / 2.0), y: verticalGap, width: logoImageViewHeight, height: logoImageViewHeight))
+        logoImageView.image = UIImage(named: "appIcon40")
+        logoImageView.layer.cornerRadius = 5.0
+        
+        let logoTextLabel = UILabel(frame: CGRect(x: 0, y: logoImageView.frame.maxY + gapBetweenLogoLabelAndLogoImageView, width: UIScreen.main.bounds.width, height: logoLabelHeight))
+        logoTextLabel.textAlignment = .center
+        logoTextLabel.font = UIFont(name: "PingFangSC-Regular", size: 20)
+        logoTextLabel.textColor = UIColor.darkText.withAlphaComponent(0.6)
+        logoTextLabel.text = "MDAd，广告展示更优雅"
+        
+        logoView.addSubview(logoImageView)
+        logoView.addSubview(logoTextLabel)
+        
+        return logoView
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

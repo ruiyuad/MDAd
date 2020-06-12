@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ad.h"
 
 @interface BannerViewController : UIViewController
 
-@property (copy, nonatomic) NSString *adsID;
+@property (strong, nonatomic) Ad *adModel;
 
 @end
 

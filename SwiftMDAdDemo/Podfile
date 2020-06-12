@@ -6,6 +6,6 @@ use_frameworks!
 
 
 target 'SwiftMDAdDemo' do
-    pod 'MDAd', '~> 0.8.10'
+    pod 'MDAdSDK'
 end
 

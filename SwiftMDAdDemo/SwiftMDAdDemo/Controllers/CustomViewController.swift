@@ -27,7 +27,7 @@ class CustomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "自定义广告示例"
+        title = "自定义广告"
         
         // add CustomView
         view.addSubview(customView)

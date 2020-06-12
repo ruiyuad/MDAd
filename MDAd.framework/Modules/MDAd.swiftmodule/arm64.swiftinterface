@@ -1,0 +1,211 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name MDAd
+import AVFoundation
+import AdSupport
+import CommonCrypto
+import CoreTelephony
+import Foundation
+import ImageIO
+@_exported import MDAd
+import MobileCoreServices
+import StoreKit
+import Swift
+import UIKit
+import WebKit
+@objc public protocol RYInfoFlowViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func infoFlowDidReceiveAd(_ infoFlowView: MDAd.RYInfoFlowView)
+  @objc optional func infoFlowDidFailToReceiveAd(_ infoFlowView: MDAd.RYInfoFlowView, error: MDAd.RYError)
+  @objc optional func infoFlowWillLeaveApplication(_ infoFlowView: MDAd.RYInfoFlowView)
+  @objc optional func infoFlowViewDidClose()
+}
+@_inheritsConvenienceInitializers @objc open class RYInfoFlowView : MDAd.RYAdBaseView {
+  @objc public var adsID: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc weak public var delegate: MDAd.RYInfoFlowViewDelegate?
+  @objc public var isShowCloseButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowDownloadButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowDescriptionText: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func loadRequest()
+  @objc deinit
+}
+@objc public protocol RYCustomAdDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func customAdDidReceiveAd(_ customAd: MDAd.RYCustomAd, receivedData item: MDAd.RYCustomAdItem)
+  @objc optional func customAdDidFailToReceiveAd(_ customAd: MDAd.RYCustomAd, error: MDAd.RYError)
+}
+@objc public class RYCustomAd : ObjectiveC.NSObject {
+  @objc public var adsID: Swift.String
+  @objc weak public var delegate: MDAd.RYCustomAdDelegate?
+  @objc weak public var rootViewController: UIKit.UIViewController? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(adsID: Swift.String)
+  @objc public func recordClick()
+  @objc public func recordImpression()
+  @objc public func openAdLink()
+  @objc public func loadRequest()
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc open class RYAdMobCenter : ObjectiveC.NSObject {
+  @objc public static var center: MDAd.RYAdMobCenter
+  @objc public func setup(_ appKey: Swift.String, appSecret appSecretString: Swift.String)
+  @objc public func enableDebugPrint(_ isEnabled: Swift.Bool = false)
+  @objc deinit
+}
+extension RYAdMobCenter : StoreKit.SKStoreProductViewControllerDelegate {
+  @objc dynamic public func productViewControllerDidFinish(_ viewController: StoreKit.SKStoreProductViewController)
+}
+@_inheritsConvenienceInitializers @objc open class RYCustomAdItem : ObjectiveC.NSObject {
+  @objc public var imageUrls: [Swift.String]?
+  @objc public var linkUrl: Swift.String?
+  @objc public var title: Swift.String?
+  @objc public var desc: Swift.String?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol RYInterstitialHalfViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func interstitialHalfDidReceiveAd(_ interstitial: MDAd.RYInterstitialHalfView)
+  @objc optional func interstitialHalfDidFailToReceiveAd(_ interstitial: MDAd.RYInterstitialHalfView, error: MDAd.RYError)
+  @objc optional func interstitialHalfWillLeaveApplication(_ interstitial: MDAd.RYInterstitialHalfView)
+  @objc optional func interstitialHalfViewDidClose()
+}
+@_inheritsConvenienceInitializers @objc open class RYInterstitialHalfView : MDAd.RYAdBaseView {
+  @objc public var adsID: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowCloseButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc weak public var delegate: MDAd.RYInterstitialHalfViewDelegate?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func loadRequest()
+  @objc deinit
+}
+@objc public protocol RYBannerViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func bannerDidReceiveAd(_ bannerView: MDAd.RYBannerView)
+  @objc optional func bannerDidFailToReceiveAd(_ bannerView: MDAd.RYBannerView, error: MDAd.RYError)
+  @objc optional func bannerWillLeaveApplication(_ bannerView: MDAd.RYBannerView)
+  @objc optional func bannerViewDidClose()
+}
+@_inheritsConvenienceInitializers @objc open class RYBannerView : MDAd.RYAdBaseView {
+  @objc public var adsID: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowCloseButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowDownloadButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc weak public var delegate: MDAd.RYBannerViewDelegate?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func loadRequest()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc open class RYError : ObjectiveC.NSObject {
+  @objc public var errorDescription: Swift.String?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol RYRewardVideoViewControllerDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func rewardVideoDidReceiveAd(_ controller: MDAd.RYRewardVideoViewController)
+  @objc optional func rewardVideoDidFailToReceiveAd(_ controller: MDAd.RYRewardVideoViewController, error: MDAd.RYError)
+  @objc optional func rewardVideoIsReadyForPlay(_ controller: MDAd.RYRewardVideoViewController, isReadyForPlay isReady: Swift.Bool)
+  @objc optional func rewardVideoWillClose()
+}
+@_inheritsConvenienceInitializers @objc public class RYRewardVideoViewController : UIKit.UIViewController {
+  @objc weak public var delegate: MDAd.RYRewardVideoViewControllerDelegate?
+  @objc public var adsID: Swift.String?
+  @objc public var needDisplayBackgroundImageView: Swift.Bool
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+}
+extension RYRewardVideoViewController {
+  @objc dynamic public func loadRequest()
+  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+@_inheritsConvenienceInitializers @objc open class RYAdBaseView : UIKit.UIView {
+  @objc weak public var rootViewController: UIKit.UIViewController? {
+    @objc get
+    @objc set(value)
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol RYInterstitialViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func interstitialDidReceiveAd(_ interstitial: MDAd.RYInterstitialView)
+  @objc optional func interstitialDidFailToReceiveAd(_ interstitial: MDAd.RYInterstitialView, error: MDAd.RYError)
+  @objc optional func interstitialWillLeaveApplication(_ interstitial: MDAd.RYInterstitialView)
+  @objc optional func interstitialCountDownDidTap()
+}
+@_inheritsConvenienceInitializers @objc open class RYInterstitialView : MDAd.RYAdBaseView {
+  @objc public var adsID: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var bottomLogoView: UIKit.UIView? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var needOpenAdsLinkFromWithinCurrentApp: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc weak public var delegate: MDAd.RYInterstitialViewDelegate?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func loadRequest()
+  @objc deinit
+}
+@objc public protocol RYBuoyViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func buoyDidReceiveAd(_ buoyView: MDAd.RYBuoyView)
+  @objc optional func buoyDidFailToReceiveAd(_ buoyView: MDAd.RYBuoyView, error: MDAd.RYError)
+  @objc optional func buoyWillLeaveApplication(_ buoyView: MDAd.RYBuoyView)
+  @objc optional func buoyViewDidClose()
+}
+@_inheritsConvenienceInitializers @objc open class RYBuoyView : MDAd.RYAdBaseView {
+  @objc public var adsID: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var isShowCloseButton: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc weak public var delegate: MDAd.RYBuoyViewDelegate?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func loadRequest()
+  @objc deinit
+}
+extension MDAd.RYRewardVideoViewController : ObjectiveC.NSObjectProtocol {}
+extension MDAd.RYInterstitialView : ObjectiveC.NSObjectProtocol {}

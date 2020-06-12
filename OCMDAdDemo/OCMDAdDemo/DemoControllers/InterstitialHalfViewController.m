@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"插屏广告示例";
+    self.title = @"插屏广告";
     
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
     

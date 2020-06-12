@@ -3,48 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0676363C3DEB2442FC47AE0E8B459922 /* MDAd */ = {
+		E801DABC02E739A615A6C3AA8D9FBDB0 /* MDAdSDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 0056D35A8920F8862A6AF5D92EA11DCB /* Build configuration list for PBXAggregateTarget "MDAd" */;
+			buildConfigurationList = 05669903716D34174101D5D1F1497798 /* Build configuration list for PBXAggregateTarget "MDAdSDK" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
-			name = MDAd;
+			name = MDAdSDK;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		188837EC5B3E83DD4A54276E84758154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		36021B553C6A60BEEB8DA9DEF3372883 /* Pods-SwiftMDAdDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */; };
-		75C47A16830EF0492A562D788A6056E9 /* Pods-SwiftMDAdDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66BDB48B8C8C0F6A52D664CAE9E68FDC /* Pods-SwiftMDAdDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */; };
+		7DC087C740AADD6259A5A1FDDEBA56FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A914F3C3A554C8212348E4938BBD681D /* Pods-SwiftMDAdDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3CC32A26707F4D0666DC5C0BBD07BBBD /* PBXContainerItemProxy */ = {
+		A4B148302A9965A93AC119B4BEB8E3A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0676363C3DEB2442FC47AE0E8B459922;
-			remoteInfo = MDAd;
+			remoteGlobalIDString = E801DABC02E739A615A6C3AA8D9FBDB0;
+			remoteInfo = MDAdSDK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		064934AFE91E1DAA7B2D3E12C80F3D7C /* Pods-SwiftMDAdDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftMDAdDemo-umbrella.h"; sourceTree = "<group>"; };
 		0D09C4478BEB08C678C8B2D1C6786CDA /* Pods-SwiftMDAdDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftMDAdDemo-Info.plist"; sourceTree = "<group>"; };
-		0DA4C66A4C99F999F100EBA063331222 /* MDAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MDAd.framework; sourceTree = "<group>"; };
-		1053EC4287B2203C1C5B730704065395 /* MDAd.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		1E3C293AF99FA29D06FE97356B052695 /* Pods-SwiftMDAdDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMDAdDemo-frameworks.sh"; sourceTree = "<group>"; };
+		1EBA33D81F944318AA8F43743BDE23F0 /* MDAdSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDAdSDK.release.xcconfig; sourceTree = "<group>"; };
+		2A0937290B2034BE2467B654D135FABF /* MDAd.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = MDAd.bundle; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		381D51B4163F38751CA793507B730DEF /* Pods-SwiftMDAdDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMDAdDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4276A0834EAC81D4173130CC7EB529C4 /* MDAdSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDAdSDK.debug.xcconfig; sourceTree = "<group>"; };
+		5D9822EAAE26FC62C3FEF8CA990AA7AE /* MDAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MDAd.framework; sourceTree = "<group>"; };
 		6F202C2FA73C332A108291635BDC614D /* Pods_SwiftMDAdDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftMDAdDemo.framework; path = "Pods-SwiftMDAdDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		710E1775597201396EF45637552F369C /* Pods-SwiftMDAdDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftMDAdDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDAd.xcconfig; sourceTree = "<group>"; };
 		8EF7DB776524399163B95B37974757D6 /* Pods-SwiftMDAdDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftMDAdDemo-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A7B66F26AE2AD36E51607502E6A38D4F /* Pods-SwiftMDAdDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftMDAdDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -54,42 +55,52 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41ED6070F0F2ED9B4237AADFEDB11D92 /* Frameworks */ = {
+		0E4B101E84E19C8E208AA0315D16FF9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188837EC5B3E83DD4A54276E84758154 /* Foundation.framework in Frameworks */,
+				7DC087C740AADD6259A5A1FDDEBA56FB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E16A8E69264E89BA717E47B43B2BF6F /* MDAd */ = {
+		19875D668E153177F250CF1374117D8D /* MDAdSDK */ = {
 			isa = PBXGroup;
 			children = (
-				348D8DC53BBEBFDB3410A579FD1751CA /* Frameworks */,
-				B62806DA0BBAFDD497B307A7DC2CED85 /* Resources */,
-				BC717744F0FC504429F06CBA31C07720 /* Support Files */,
+				4E60C78381855F310E7478CB2B7A0960 /* Frameworks */,
+				4E1F5A8D49060D4902C0A04B8D83FF0F /* Resources */,
+				38853B17C3C38B51EA69F736FA72B749 /* Support Files */,
 			);
-			name = MDAd;
-			path = MDAd;
+			name = MDAdSDK;
+			path = MDAdSDK;
 			sourceTree = "<group>";
 		};
-		348D8DC53BBEBFDB3410A579FD1751CA /* Frameworks */ = {
+		38853B17C3C38B51EA69F736FA72B749 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0DA4C66A4C99F999F100EBA063331222 /* MDAd.framework */,
+				4276A0834EAC81D4173130CC7EB529C4 /* MDAdSDK.debug.xcconfig */,
+				1EBA33D81F944318AA8F43743BDE23F0 /* MDAdSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MDAdSDK";
+			sourceTree = "<group>";
+		};
+		4E1F5A8D49060D4902C0A04B8D83FF0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A0937290B2034BE2467B654D135FABF /* MDAd.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4E60C78381855F310E7478CB2B7A0960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D9822EAAE26FC62C3FEF8CA990AA7AE /* MDAd.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5CBA0F0F554CA37CC437F27111FB7AA0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E16A8E69264E89BA717E47B43B2BF6F /* MDAd */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		7FF1ABA31D0F294FD8E9C10016865B89 /* Products */ = {
@@ -98,6 +109,14 @@
 				6F202C2FA73C332A108291635BDC614D /* Pods_SwiftMDAdDemo.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		98D4FBCBFA864231870AE4A2AA0C7469 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19875D668E153177F250CF1374117D8D /* MDAdSDK */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9CADF2991F572318F0B5D82E57BDA9B9 /* Pods-SwiftMDAdDemo */ = {
@@ -126,23 +145,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B62806DA0BBAFDD497B307A7DC2CED85 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1053EC4287B2203C1C5B730704065395 /* MDAd.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		BC717744F0FC504429F06CBA31C07720 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MDAd";
-			sourceTree = "<group>";
-		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +158,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				5CBA0F0F554CA37CC437F27111FB7AA0 /* Pods */,
+				98D4FBCBFA864231870AE4A2AA0C7469 /* Pods */,
 				7FF1ABA31D0F294FD8E9C10016865B89 /* Products */,
 				A4F495E2CCE01B698EE66C5A72E506BB /* Targets Support Files */,
 			);
@@ -173,11 +175,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		553E688827AFC30460E370BE35CFFF68 /* Headers */ = {
+		7BADE468E6789EBDE88A3377387C26D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C47A16830EF0492A562D788A6056E9 /* Pods-SwiftMDAdDemo-umbrella.h in Headers */,
+				A914F3C3A554C8212348E4938BBD681D /* Pods-SwiftMDAdDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,17 +188,17 @@
 /* Begin PBXNativeTarget section */
 		C00C4ED52618E151F7CFB21603D65749 /* Pods-SwiftMDAdDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 117596AAA9B52974AE9E6DE3081953B6 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */;
+			buildConfigurationList = 88873D5E6113E9C89C6100B2150D998E /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */;
 			buildPhases = (
-				553E688827AFC30460E370BE35CFFF68 /* Headers */,
-				EDE8689CC8DB8939E637EF04E46A29E7 /* Sources */,
-				41ED6070F0F2ED9B4237AADFEDB11D92 /* Frameworks */,
-				55BD254A08365BE6084A93A1AFAA0D9E /* Resources */,
+				7BADE468E6789EBDE88A3377387C26D9 /* Headers */,
+				803C967FB16019033B58CE93C43FA25E /* Sources */,
+				0E4B101E84E19C8E208AA0315D16FF9A /* Frameworks */,
+				293029F4016945B05282FF97B576C8BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				285EFE8AA65F2D8F10C877AD8C3B98A1 /* PBXTargetDependency */,
+				67A819B32D1418F60984103C91960382 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftMDAdDemo";
 			productName = "Pods-SwiftMDAdDemo";
@@ -213,7 +215,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -225,14 +227,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0676363C3DEB2442FC47AE0E8B459922 /* MDAd */,
+				E801DABC02E739A615A6C3AA8D9FBDB0 /* MDAdSDK */,
 				C00C4ED52618E151F7CFB21603D65749 /* Pods-SwiftMDAdDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		55BD254A08365BE6084A93A1AFAA0D9E /* Resources */ = {
+		293029F4016945B05282FF97B576C8BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,22 +244,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDE8689CC8DB8939E637EF04E46A29E7 /* Sources */ = {
+		803C967FB16019033B58CE93C43FA25E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36021B553C6A60BEEB8DA9DEF3372883 /* Pods-SwiftMDAdDemo-dummy.m in Sources */,
+				66BDB48B8C8C0F6A52D664CAE9E68FDC /* Pods-SwiftMDAdDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		285EFE8AA65F2D8F10C877AD8C3B98A1 /* PBXTargetDependency */ = {
+		67A819B32D1418F60984103C91960382 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MDAd;
-			target = 0676363C3DEB2442FC47AE0E8B459922 /* MDAd */;
-			targetProxy = 3CC32A26707F4D0666DC5C0BBD07BBBD /* PBXContainerItemProxy */;
+			name = MDAdSDK;
+			target = E801DABC02E739A615A6C3AA8D9FBDB0 /* MDAdSDK */;
+			targetProxy = A4B148302A9965A93AC119B4BEB8E3A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,66 +328,9 @@
 			};
 			name = Debug;
 		};
-		24819B0D364432DC86058B46FD6DCB3A /* Release */ = {
+		200EB6E3780268DF0B5FDCEFB89D7A13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B05C265E1EBE45C3F1C5BEE357A70A /* Pods-SwiftMDAdDemo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2FDF721A66FEE5648B836D7D62D7EA74 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7568C845DF7E268B71984C6123C9A012 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78E49A57F92B04038D3233286B4801E5 /* MDAd.xcconfig */;
+			baseConfigurationReference = 4276A0834EAC81D4173130CC7EB529C4 /* MDAdSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -400,7 +345,25 @@
 			};
 			name = Debug;
 		};
-		A0D5ADC2D939A29EEF7795D60134D738 /* Debug */ = {
+		52CA1973B813F6CCEB2FE1D95F151EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EBA33D81F944318AA8F43743BDE23F0 /* MDAdSDK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A7489E4B2C2064132B7C7A5991ED4F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 381D51B4163F38751CA793507B730DEF /* Pods-SwiftMDAdDemo.debug.xcconfig */;
 			buildSettings = {
@@ -498,23 +461,53 @@
 			};
 			name = Release;
 		};
+		EBFB66E38DBD8A61AF125C0DFBF22889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B05C265E1EBE45C3F1C5BEE357A70A /* Pods-SwiftMDAdDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMDAdDemo/Pods-SwiftMDAdDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0056D35A8920F8862A6AF5D92EA11DCB /* Build configuration list for PBXAggregateTarget "MDAd" */ = {
+		05669903716D34174101D5D1F1497798 /* Build configuration list for PBXAggregateTarget "MDAdSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7568C845DF7E268B71984C6123C9A012 /* Debug */,
-				2FDF721A66FEE5648B836D7D62D7EA74 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		117596AAA9B52974AE9E6DE3081953B6 /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0D5ADC2D939A29EEF7795D60134D738 /* Debug */,
-				24819B0D364432DC86058B46FD6DCB3A /* Release */,
+				200EB6E3780268DF0B5FDCEFB89D7A13 /* Debug */,
+				52CA1973B813F6CCEB2FE1D95F151EDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -524,6 +517,15 @@
 			buildConfigurations = (
 				196DFA3E4A09A28224918543529A1885 /* Debug */,
 				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88873D5E6113E9C89C6100B2150D998E /* Build configuration list for PBXNativeTarget "Pods-SwiftMDAdDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A7489E4B2C2064132B7C7A5991ED4F3 /* Debug */,
+				EBFB66E38DBD8A61AF125C0DFBF22889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01S-Qo-irE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01S-Qo-irE">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +26,11 @@
         <!--广告 Demo 示例-->
         <scene sceneID="6rk-ws-Fqb">
             <objects>
-                <viewController storyboardIdentifier="HomePage" id="128-Dw-V1F" customClass="HomePage" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePage" id="128-Dw-V1F" customClass="HomePage" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fur-QJ-r1Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVq-29-RsS"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q0F-Dy-idN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,12 +42,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="f9p-0I-xgr" firstAttribute="top" secondItem="iSN-lo-oO3" secondAttribute="top" id="BK9-ES-iDW"/>
+                            <constraint firstItem="f9p-0I-xgr" firstAttribute="top" secondItem="Fur-QJ-r1Q" secondAttribute="bottom" id="BK9-ES-iDW"/>
                             <constraint firstAttribute="bottom" secondItem="f9p-0I-xgr" secondAttribute="bottom" id="O5E-Nu-5lb"/>
-                            <constraint firstItem="f9p-0I-xgr" firstAttribute="leading" secondItem="iSN-lo-oO3" secondAttribute="leading" id="eC6-WP-ooj"/>
-                            <constraint firstItem="iSN-lo-oO3" firstAttribute="trailing" secondItem="f9p-0I-xgr" secondAttribute="trailing" id="uFQ-uW-pk3"/>
+                            <constraint firstItem="f9p-0I-xgr" firstAttribute="leading" secondItem="q0F-Dy-idN" secondAttribute="leading" id="eC6-WP-ooj"/>
+                            <constraint firstAttribute="trailing" secondItem="f9p-0I-xgr" secondAttribute="trailing" id="uFQ-uW-pk3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iSN-lo-oO3"/>
                     </view>
                     <navigationItem key="navigationItem" title="广告 Demo 示例" id="K1u-Vo-ou3"/>
                     <connections>
@@ -58,7 +60,11 @@
         <!--Banner View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="BannerViewController" id="BYZ-38-t0r" customClass="BannerViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BannerViewController" id="BYZ-38-t0r" customClass="BannerViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cRp-Uc-VYR"/>
+                        <viewControllerLayoutGuide type="bottom" id="sPc-cu-dEl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-Nq-ayl" customClass="RYBannerView" customModule="MDAd">
-                                <rect key="frame" x="20" y="723" width="335" height="35"/>
+                                <rect key="frame" x="0.0" y="723" width="375" height="35"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="2C4-LH-fqQ"/>
@@ -76,15 +82,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pus-D5-gFG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bje-V2-u5z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pus-D5-gFG" secondAttribute="bottom" id="EUw-v3-SiA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KaR-Nq-ayl" secondAttribute="bottom" constant="20" id="Hvu-9i-ost"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pus-D5-gFG" secondAttribute="trailing" id="WyI-qY-7b4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KaR-Nq-ayl" secondAttribute="trailing" constant="20" id="XkO-yG-z1l"/>
-                            <constraint firstItem="KaR-Nq-ayl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jbO-q1-8Ke"/>
-                            <constraint firstItem="pus-D5-gFG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m7B-S6-5u2"/>
+                            <constraint firstItem="pus-D5-gFG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bje-V2-u5z"/>
+                            <constraint firstItem="sPc-cu-dEl" firstAttribute="top" secondItem="pus-D5-gFG" secondAttribute="bottom" id="EUw-v3-SiA"/>
+                            <constraint firstItem="sPc-cu-dEl" firstAttribute="top" secondItem="KaR-Nq-ayl" secondAttribute="bottom" constant="20" id="Hvu-9i-ost"/>
+                            <constraint firstAttribute="trailing" secondItem="pus-D5-gFG" secondAttribute="trailing" id="WyI-qY-7b4"/>
+                            <constraint firstAttribute="trailing" secondItem="KaR-Nq-ayl" secondAttribute="trailing" id="XkO-yG-z1l"/>
+                            <constraint firstItem="KaR-Nq-ayl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jbO-q1-8Ke"/>
+                            <constraint firstItem="pus-D5-gFG" firstAttribute="top" secondItem="cRp-Uc-VYR" secondAttribute="bottom" id="m7B-S6-5u2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="KaR-Nq-ayl" id="emW-cA-qab"/>
@@ -98,7 +103,11 @@
         <!--Info Flow View Controller-->
         <scene sceneID="VdP-YX-Sd6">
             <objects>
-                <viewController storyboardIdentifier="InfoFlowViewController" id="bug-ps-IyC" customClass="InfoFlowViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoFlowViewController" id="bug-ps-IyC" customClass="InfoFlowViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3OJ-94-Ar8"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8V-lf-7rp"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eJg-3g-Ujo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70Q-wd-mV0" customClass="RYInfoFlowView" customModule="MDAd">
-                                <rect key="frame" x="20" y="332.66666666666669" width="335" height="157"/>
+                                <rect key="frame" x="20" y="327.66666666666669" width="335" height="157"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="157" id="8Rg-03-MoK"/>
@@ -116,16 +125,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YBM-Yk-gfv" firstAttribute="trailing" secondItem="1Pb-Y8-U4G" secondAttribute="trailing" id="BmO-Mm-Uzu"/>
-                            <constraint firstItem="70Q-wd-mV0" firstAttribute="centerX" secondItem="YBM-Yk-gfv" secondAttribute="centerX" id="D7b-zs-VZE"/>
-                            <constraint firstItem="70Q-wd-mV0" firstAttribute="leading" secondItem="YBM-Yk-gfv" secondAttribute="leading" constant="20" id="FUB-Qu-uBO"/>
-                            <constraint firstItem="YBM-Yk-gfv" firstAttribute="trailing" secondItem="70Q-wd-mV0" secondAttribute="trailing" constant="20" id="Gv6-su-LM4"/>
-                            <constraint firstItem="1Pb-Y8-U4G" firstAttribute="top" secondItem="YBM-Yk-gfv" secondAttribute="top" id="ZLp-de-QEh"/>
-                            <constraint firstItem="70Q-wd-mV0" firstAttribute="centerY" secondItem="YBM-Yk-gfv" secondAttribute="centerY" id="lQU-1B-L4R"/>
-                            <constraint firstItem="1Pb-Y8-U4G" firstAttribute="leading" secondItem="YBM-Yk-gfv" secondAttribute="leading" id="m7z-bN-774"/>
-                            <constraint firstItem="YBM-Yk-gfv" firstAttribute="bottom" secondItem="1Pb-Y8-U4G" secondAttribute="bottom" id="pDg-eB-QKb"/>
+                            <constraint firstAttribute="trailing" secondItem="1Pb-Y8-U4G" secondAttribute="trailing" id="BmO-Mm-Uzu"/>
+                            <constraint firstItem="70Q-wd-mV0" firstAttribute="centerX" secondItem="eJg-3g-Ujo" secondAttribute="centerX" id="D7b-zs-VZE"/>
+                            <constraint firstItem="70Q-wd-mV0" firstAttribute="leading" secondItem="eJg-3g-Ujo" secondAttribute="leading" constant="20" id="FUB-Qu-uBO"/>
+                            <constraint firstAttribute="trailing" secondItem="70Q-wd-mV0" secondAttribute="trailing" constant="20" id="Gv6-su-LM4"/>
+                            <constraint firstItem="1Pb-Y8-U4G" firstAttribute="top" secondItem="3OJ-94-Ar8" secondAttribute="bottom" id="ZLp-de-QEh"/>
+                            <constraint firstItem="70Q-wd-mV0" firstAttribute="centerY" secondItem="eJg-3g-Ujo" secondAttribute="centerY" id="lQU-1B-L4R"/>
+                            <constraint firstItem="1Pb-Y8-U4G" firstAttribute="leading" secondItem="eJg-3g-Ujo" secondAttribute="leading" id="m7z-bN-774"/>
+                            <constraint firstItem="S8V-lf-7rp" firstAttribute="top" secondItem="1Pb-Y8-U4G" secondAttribute="bottom" id="pDg-eB-QKb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="YBM-Yk-gfv"/>
                     </view>
                     <connections>
                         <outlet property="infoFlowView" destination="70Q-wd-mV0" id="MHs-Uv-hDb"/>
@@ -139,7 +147,11 @@
         <!--Interstitial View Controller-->
         <scene sceneID="tAI-Ce-09q">
             <objects>
-                <viewController storyboardIdentifier="InterstitialViewController" id="L4f-bf-6ex" customClass="InterstitialViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InterstitialViewController" id="L4f-bf-6ex" customClass="InterstitialViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kxm-XM-JtK"/>
+                        <viewControllerLayoutGuide type="bottom" id="A5C-X2-fpC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bZO-5V-rUA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,10 +165,9 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rpz-3N-uCA" secondAttribute="bottom" id="GiG-dY-89v"/>
                             <constraint firstItem="rpz-3N-uCA" firstAttribute="top" secondItem="bZO-5V-rUA" secondAttribute="top" id="HFZ-iE-Rcp"/>
-                            <constraint firstItem="eLT-hX-kF9" firstAttribute="trailing" secondItem="rpz-3N-uCA" secondAttribute="trailing" id="Mpt-DB-XvR"/>
-                            <constraint firstItem="rpz-3N-uCA" firstAttribute="leading" secondItem="eLT-hX-kF9" secondAttribute="leading" id="X8H-ys-8Li"/>
+                            <constraint firstAttribute="trailing" secondItem="rpz-3N-uCA" secondAttribute="trailing" id="Mpt-DB-XvR"/>
+                            <constraint firstItem="rpz-3N-uCA" firstAttribute="leading" secondItem="bZO-5V-rUA" secondAttribute="leading" id="X8H-ys-8Li"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eLT-hX-kF9"/>
                     </view>
                     <connections>
                         <outlet property="interstitialView" destination="rpz-3N-uCA" id="0sV-WG-qo7"/>
@@ -169,12 +180,15 @@
         <!--Custom View Controller-->
         <scene sceneID="67Z-AA-w7x">
             <objects>
-                <viewController storyboardIdentifier="CustomViewController" id="ccf-g0-IfM" customClass="CustomViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomViewController" id="ccf-g0-IfM" customClass="CustomViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yrE-Kx-CsH"/>
+                        <viewControllerLayoutGuide type="bottom" id="uWD-7s-8u8"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wCO-y4-f7I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="UJE-1Q-00G"/>
                     </view>
                     <navigationItem key="navigationItem" id="kKG-kF-IRE"/>
                 </viewController>
@@ -185,7 +199,11 @@
         <!--Interstitial Half View Controller-->
         <scene sceneID="5gc-Kc-Xjg">
             <objects>
-                <viewController storyboardIdentifier="InterstitialHalfViewController" id="e6u-w0-BnM" customClass="InterstitialHalfViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InterstitialHalfViewController" id="e6u-w0-BnM" customClass="InterstitialHalfViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vcf-pQ-lBy"/>
+                        <viewControllerLayoutGuide type="bottom" id="dh9-1D-Yb9"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tpK-9m-Cyc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +216,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-Xg-vjD" customClass="RYInterstitialHalfView" customModule="MDAd">
-                                <rect key="frame" x="60" y="192" width="255" height="310"/>
+                                <rect key="frame" x="60" y="187" width="255" height="310"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="OSZ-3f-jhp"/>
@@ -208,18 +226,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="i7d-wk-Gec" firstAttribute="top" secondItem="bxn-WF-z57" secondAttribute="top" id="581-El-yB3"/>
-                            <constraint firstItem="bxn-WF-z57" firstAttribute="bottom" secondItem="i7d-wk-Gec" secondAttribute="bottom" id="G9X-Af-liM"/>
-                            <constraint firstItem="bxn-WF-z57" firstAttribute="bottom" secondItem="AMd-VS-CVL" secondAttribute="bottom" id="Iio-40-Bba"/>
-                            <constraint firstItem="i7d-wk-Gec" firstAttribute="leading" secondItem="bxn-WF-z57" secondAttribute="leading" id="Ncu-ZY-hvx"/>
-                            <constraint firstItem="AMd-VS-CVL" firstAttribute="top" secondItem="bxn-WF-z57" secondAttribute="top" id="Ocm-vx-iBk"/>
-                            <constraint firstItem="bxn-WF-z57" firstAttribute="trailing" secondItem="i7d-wk-Gec" secondAttribute="trailing" id="dyk-hs-gNJ"/>
-                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerY" secondItem="bxn-WF-z57" secondAttribute="centerY" constant="-64" id="mBj-Xh-9tL"/>
-                            <constraint firstItem="AMd-VS-CVL" firstAttribute="leading" secondItem="bxn-WF-z57" secondAttribute="leading" id="pGt-nD-hlX"/>
-                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerX" secondItem="bxn-WF-z57" secondAttribute="centerX" id="t4b-7c-psx"/>
-                            <constraint firstItem="AMd-VS-CVL" firstAttribute="trailing" secondItem="bxn-WF-z57" secondAttribute="trailing" id="xiq-er-spq"/>
+                            <constraint firstItem="i7d-wk-Gec" firstAttribute="top" secondItem="Vcf-pQ-lBy" secondAttribute="bottom" id="581-El-yB3"/>
+                            <constraint firstItem="dh9-1D-Yb9" firstAttribute="top" secondItem="i7d-wk-Gec" secondAttribute="bottom" id="G9X-Af-liM"/>
+                            <constraint firstItem="dh9-1D-Yb9" firstAttribute="top" secondItem="AMd-VS-CVL" secondAttribute="bottom" id="Iio-40-Bba"/>
+                            <constraint firstItem="i7d-wk-Gec" firstAttribute="leading" secondItem="tpK-9m-Cyc" secondAttribute="leading" id="Ncu-ZY-hvx"/>
+                            <constraint firstItem="AMd-VS-CVL" firstAttribute="top" secondItem="Vcf-pQ-lBy" secondAttribute="bottom" id="Ocm-vx-iBk"/>
+                            <constraint firstAttribute="trailing" secondItem="i7d-wk-Gec" secondAttribute="trailing" id="dyk-hs-gNJ"/>
+                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerY" secondItem="tpK-9m-Cyc" secondAttribute="centerY" constant="-64" id="mBj-Xh-9tL"/>
+                            <constraint firstItem="AMd-VS-CVL" firstAttribute="leading" secondItem="tpK-9m-Cyc" secondAttribute="leading" id="pGt-nD-hlX"/>
+                            <constraint firstItem="nhH-Xg-vjD" firstAttribute="centerX" secondItem="tpK-9m-Cyc" secondAttribute="centerX" id="t4b-7c-psx"/>
+                            <constraint firstItem="AMd-VS-CVL" firstAttribute="trailing" secondItem="tpK-9m-Cyc" secondAttribute="trailing" id="xiq-er-spq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bxn-WF-z57"/>
                     </view>
                     <connections>
                         <outlet property="halfInterstitialView" destination="nhH-Xg-vjD" id="NRk-NX-RZh"/>
@@ -229,46 +246,14 @@
             </objects>
             <point key="canvasLocation" x="1750.7246376811595" y="689.73214285714278"/>
         </scene>
-        <!--Reward Video View Controller-->
-        <scene sceneID="RX9-Av-igD">
-            <objects>
-                <viewController storyboardIdentifier="RewardVideoViewController" id="SfY-4C-Rz0" customClass="RewardVideoViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Yc0-KJ-pcs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hZ-SF-Jqa">
-                                <rect key="frame" x="16" y="389" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="YeM-pT-TC1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="激励视频">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="openRewardVideo:" destination="SfY-4C-Rz0" eventType="touchUpInside" id="lBt-7O-7Sg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="439-cE-SPX" firstAttribute="trailing" secondItem="3hZ-SF-Jqa" secondAttribute="trailing" constant="16" id="IA4-3j-XPO"/>
-                            <constraint firstItem="3hZ-SF-Jqa" firstAttribute="leading" secondItem="439-cE-SPX" secondAttribute="leading" constant="16" id="Sip-Rr-v4Q"/>
-                            <constraint firstItem="3hZ-SF-Jqa" firstAttribute="centerY" secondItem="439-cE-SPX" secondAttribute="centerY" id="hnm-2K-nYV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="439-cE-SPX"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PyO-Yi-wcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2608.6956521739135" y="713.83928571428567"/>
-        </scene>
         <!--浮标广告示例-->
         <scene sceneID="pN9-Ah-B1d">
             <objects>
-                <viewController storyboardIdentifier="BuoyViewController" title="浮标广告示例" id="gI0-Qw-81S" customClass="BuoyViewController" customModule="SwiftMDAdDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuoyViewController" title="浮标广告示例" id="gI0-Qw-81S" customClass="BuoyViewController" customModule="MDAdSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aIl-AB-63W"/>
+                        <viewControllerLayoutGuide type="bottom" id="e6G-uP-U4b"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gc1-fo-I4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +262,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-5c-GRx" customClass="RYBuoyView" customModule="MDAd">
-                                <rect key="frame" x="285" y="296" width="70" height="70"/>
+                                <rect key="frame" x="285" y="291" width="70" height="70"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c1v-5c-GRx" secondAttribute="height" multiplier="1:1" id="DQj-Xf-F2X"/>
@@ -287,14 +272,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OFf-nM-Njr" firstAttribute="leading" secondItem="c27-x9-XfG" secondAttribute="leading" id="4ue-aQ-Ies"/>
-                            <constraint firstItem="c27-x9-XfG" firstAttribute="bottom" secondItem="OFf-nM-Njr" secondAttribute="bottom" id="Egg-Tg-vLD"/>
-                            <constraint firstItem="OFf-nM-Njr" firstAttribute="top" secondItem="c27-x9-XfG" secondAttribute="top" id="Klh-US-2Qc"/>
-                            <constraint firstItem="c1v-5c-GRx" firstAttribute="centerY" secondItem="c27-x9-XfG" secondAttribute="centerY" constant="-80" id="akI-JF-dpg"/>
-                            <constraint firstItem="c27-x9-XfG" firstAttribute="trailing" secondItem="OFf-nM-Njr" secondAttribute="trailing" id="c1m-KG-GDz"/>
-                            <constraint firstItem="c27-x9-XfG" firstAttribute="trailing" secondItem="c1v-5c-GRx" secondAttribute="trailing" constant="20" id="lU4-LT-WbE"/>
+                            <constraint firstItem="OFf-nM-Njr" firstAttribute="leading" secondItem="gc1-fo-I4o" secondAttribute="leading" id="4ue-aQ-Ies"/>
+                            <constraint firstItem="e6G-uP-U4b" firstAttribute="top" secondItem="OFf-nM-Njr" secondAttribute="bottom" id="Egg-Tg-vLD"/>
+                            <constraint firstItem="OFf-nM-Njr" firstAttribute="top" secondItem="aIl-AB-63W" secondAttribute="bottom" id="Klh-US-2Qc"/>
+                            <constraint firstItem="c1v-5c-GRx" firstAttribute="centerY" secondItem="gc1-fo-I4o" secondAttribute="centerY" constant="-80" id="akI-JF-dpg"/>
+                            <constraint firstAttribute="trailing" secondItem="OFf-nM-Njr" secondAttribute="trailing" id="c1m-KG-GDz"/>
+                            <constraint firstAttribute="trailing" secondItem="c1v-5c-GRx" secondAttribute="trailing" constant="20" id="lU4-LT-WbE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="c27-x9-XfG"/>
                     </view>
                     <connections>
                         <outlet property="buoyView" destination="c1v-5c-GRx" id="bDk-Fp-p7V"/>

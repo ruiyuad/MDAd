@@ -12,18 +12,28 @@ class HomePage: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    fileprivate let ads: [[String: [Banner]]] = [["Banner 广告": [Banner(title: "纯图类型", adsID: "820001"),
-                                                                 Banner(title: "左图右文类型", adsID: "820004")]],
-                                                 ["信息流广告": [Banner(title: "上文下图带底部阴影类型", adsID: "850006"),
-                                                               Banner(title: "上图下文类型", adsID: "850009"),
-                                                               Banner(title: "左图右文类型(1:1.3)", adsID: "850008"),
-                                                               Banner(title: "三图类型", adsID: "850011")]],
-                                                 ["全屏广告":[Banner(title: "开屏广告类型", adsID: "810001"),
-                                                            Banner(title: "开屏广告类型", adsID: "810002")]],
-                                                 ["插屏广告":[Banner(title: "插屏广告类型", adsID: "840001")]],
-                                                 ["浮标广告":[Banner(title: "浮标广告类型", adsID: "860001")]],
-                                                 ["视频广告":[Banner(title: "视频广告类型", adsID: "870001")]],
-                                                 ["自定义广告":[Banner(title: "自定义广告类型", adsID: "-")]]]
+    fileprivate let ads: [[String: [Banner]]] = [
+        
+        ["开屏广告": [Banner(title: "开屏-单图0.56", adsID: "810001"),
+                         Banner(title: "开屏-上图下logo0.7", adsID: "810002")]],
+        
+        ["Banner广告": [Banner(title: "Banner-单图10.67", adsID: "820001"),
+                           Banner(title: "Banner-左图右文1.56", adsID: "820004"),
+                           Banner(title: "Banner-单图4.26", adsID: "820005")]],
+        
+        ["插屏广告": [Banner(title: "插屏广告", adsID: "840001")]],
+        
+        ["信息流广告": [Banner(title: "信息流-左图右文0.67", adsID: "850002"),
+                             Banner(title: "信息流-上文下图1.78", adsID: "850006"),
+                             Banner(title: "信息流-左文右图0.78", adsID: "850007"),
+                             Banner(title: "信息流-左图右文0.78", adsID: "850008"),
+                             Banner(title: "信息流-上图下文1.78", adsID: "850009"),
+                             Banner(title: "信息流-左图右文1.5", adsID: "850010"),
+                             Banner(title: "信息流-左文右图1.5", adsID: "850011")]],
+        
+        ["浮标广告": [Banner(title: "浮标广告", adsID: "860001")]],
+        
+        ["自定义广告": [Banner(title: "自定义广告", adsID: "-")]]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +41,18 @@ class HomePage: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
-    
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
         // Add InterstitialViewController as full screen ad
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let interstitialVC = main.instantiateViewController(withIdentifier: "InterstitialViewController") as? InterstitialViewController {
             interstitialVC.isChildViewControllerOfHomePage = true
-            interstitialVC.adsID = "810002"
+            interstitialVC.adModel = Banner(title: "开屏-上图下logo0.7", adsID: "810002")
             addChild(interstitialVC)
             
             view.addSubview(interstitialVC.view)
@@ -94,43 +109,40 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
         let main = UIStoryboard(name: "Main", bundle: nil)
         
         switch ads[indexPath.section].keys.first {
-        case "Banner 广告":
+        case "Banner广告":
             if let bannerVC = main.instantiateViewController(withIdentifier: "BannerViewController") as? BannerViewController {
-                bannerVC.adsID = ads[indexPath.section].values.first![indexPath.row].adsID
+                bannerVC.adModel = ads[indexPath.section].values.first![indexPath.row]
                 navigationController?.pushViewController(bannerVC, animated: true)
             }
             
         case "信息流广告":
             if let infoflowVC = main.instantiateViewController(withIdentifier: "InfoFlowViewController") as? InfoFlowViewController {
-                infoflowVC.adsID = ads[indexPath.section].values.first![indexPath.row].adsID
+                infoflowVC.adModel = ads[indexPath.section].values.first![indexPath.row]
                 navigationController?.pushViewController(infoflowVC, animated: true)
             }
             
-        case "全屏广告":
+        case "开屏广告":
             if let interstitialVC = main.instantiateViewController(withIdentifier: "InterstitialViewController") as? InterstitialViewController {
-                interstitialVC.adsID = ads[indexPath.section].values.first![indexPath.row].adsID
+                interstitialVC.adModel = ads[indexPath.section].values.first![indexPath.row]
                 navigationController?.pushViewController(interstitialVC, animated: true)
             }
             
         case "插屏广告":
             if let interstitialHalfVC = main.instantiateViewController(withIdentifier: "InterstitialHalfViewController") as? InterstitialHalfViewController {
+                interstitialHalfVC.adModel = ads[indexPath.section].values.first![indexPath.row]
                 navigationController?.pushViewController(interstitialHalfVC, animated: true)
             }
             
         case "浮标广告":
             if let buoyVC = main.instantiateViewController(withIdentifier: "BuoyViewController") as? BuoyViewController {
+                buoyVC.adModel = ads[indexPath.section].values.first![indexPath.row]
                 navigationController?.pushViewController(buoyVC, animated: true)
             }
             
-        case "视频广告":
-            if let rewardVideoVC = main.instantiateViewController(withIdentifier: "RewardVideoViewController") as? RewardVideoViewController {
-                navigationController?.pushViewController(rewardVideoVC, animated: true)
-            }
-            
         case "自定义广告":
-        if let customBannerVC = main.instantiateViewController(withIdentifier: "CustomViewController") as? CustomViewController {
-            navigationController?.pushViewController(customBannerVC, animated: true)
-        }
+            if let customBannerVC = main.instantiateViewController(withIdentifier: "CustomViewController") as? CustomViewController {
+                navigationController?.pushViewController(customBannerVC, animated: true)
+            }
             
         default: break
         }

@@ -15,7 +15,7 @@ import MDAd
 
 class BannerViewController: UIViewController {
     
-    var adsID: String = "820001"
+    var adModel: Banner = Banner(title: "", adsID: "")
     
     @IBOutlet weak var bannerViewHeightConstraint: NSLayoutConstraint!
     fileprivate var ratio: CGFloat = 640.0 / 60.0
@@ -26,11 +26,9 @@ class BannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "横幅广告示例"
+        title = adModel.title
         
-        // 横幅广告位可选择两种样式. 不同的 AdsID 对应不同样式. 以下分别列举2种横幅广告位的 adsID 和 尺寸. 每次请选择一种样式展示.
-        
-        switch adsID {
+        switch adModel.adsID {
         
         // 纯图模式, adsID 为 820001, 广告位尺寸是 640.0 : 60.0 (请初始化 bannerView 初始宽高比为 640.0 : 60.0)
         case "820001":
@@ -46,6 +44,15 @@ class BannerViewController: UIViewController {
             ratio = 690.0 / 100.0
             
             bannerView.adsID = "820004"
+            bannerView.rootViewController = self
+            bannerView.delegate = self
+            bannerView.loadRequest()
+            
+        // 纯图模式, adsID 为 820005, 广告位尺寸是 640.0 : 150.0 (请初始化 bannerView 初始宽高比为 640.0 : 150.0)
+        case "820005":
+            ratio = 640.0 / 150.0
+            
+            bannerView.adsID = "820005"
             bannerView.rootViewController = self
             bannerView.delegate = self
             bannerView.loadRequest()

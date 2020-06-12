@@ -20,7 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoFlowViewHeightConstraint;
 @property CGFloat ratio;
-@property CGFloat extraHeight;
 
 @end
 
@@ -28,26 +27,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"信息流广告示例";
+    self.title = self.adModel.title;
 
     // Required configs - 初始化 RYInfoFlowView 实例之后, 必要的配置有:
     
     // 信息流广告位可选择6种样式. 不同的 AdsID 对应不同样式. 以下分别列举6种信息流广告位的 adsID 和 尺寸.
     
-    switch (self.adsID.integerValue) {
-        case 850001: {
-            // 纯图模式, adsID 为 850001, 广告位尺寸是 700.0 : 280.0 (请初始化 infoFlowView 初始宽高比为 700.0 : 280.0)
-            self.ratio = 700.0 / 280.0;
-            
-            self.infoFlowView.adsID = @"850001";
-            self.infoFlowView.rootViewController = self;
-            self.infoFlowView.delegate = self;
-            [self.infoFlowView loadRequest];
-        }
-            break;
+    switch (self.adModel.adsID.integerValue) {
             
         case 850002: {
-            // 左图右文模式, adsID 为 850002, 广告位尺寸是 690.0 : 290.0, 广告图片比例是 576: 386(请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
+            // 左图右文模式, adsID 为 850002, 广告位尺寸是 690.0 : 290.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
             self.ratio = 690.0 / 290.0;
             
             self.infoFlowView.adsID = @"850002";
@@ -58,8 +47,8 @@
             break;
             
         case 850006: {
-            // 上文下图底部浮层模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0
-            self.ratio = 686.0 / 386.0;
+            // 上文下图底部浮层模式, adsID 为 850006, 广告位尺寸是 690.0 : 440.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 440.0)
+            self.ratio = 686.0 / 440.0;
             
             self.infoFlowView.adsID = @"850006";
             // 配置 isShowDescriptionText 为 YES, 打开浮层模式, 否则关闭. 默认关闭
@@ -67,14 +56,24 @@
             self.infoFlowView.rootViewController = self;
             self.infoFlowView.delegate = self;
             [self.infoFlowView loadRequest];
+        }
+            break;
             
-            self.extraHeight = 26;
+        case 850007: {
+            // 左文右图模式, adsID 为 850007,
+            // 广告位尺寸是 690.0 : 290.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
+            self.ratio = 690.0 / 290.0;
+            
+            self.infoFlowView.adsID = @"850007";
+            self.infoFlowView.rootViewController = self;
+            self.infoFlowView.delegate = self;
+            [self.infoFlowView loadRequest];
         }
             break;
             
         case 850008: {
-            // 左图右文模式, adsID 为 850008, 广告位尺寸是 690.0 : 290.0, 广告图片比例是 140: 180 (请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
-            self.ratio = 700.0 / 280.0;
+            // 左图右文模式, adsID 为 850008, 广告位尺寸是 690.0 : 290.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 290.0)
+            self.ratio = 690.0 / 290.0;
             
             self.infoFlowView.adsID = @"850008";
             self.infoFlowView.rootViewController = self;
@@ -84,21 +83,33 @@
             break;
             
         case 850009: {
-            // 上图下文模式, adsID 为 850009, 广告位尺寸是 690.0 : 440.0
-            self.ratio = 686.0 / 386.0;
+            // 上图下文模式, adsID 为 850009,
+            // 广告位尺寸是 690.0 : 440.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 440.0)
+            self.ratio = 690.0 / 440.0;
             
             self.infoFlowView.adsID = @"850009";
             self.infoFlowView.rootViewController = self;
             self.infoFlowView.delegate = self;
             [self.infoFlowView loadRequest];
+        }
+            break;
             
-            self.extraHeight = 26;
+        case 850010: {
+            // 左图右文模式, adsID 为 850010,
+            // 广告位尺寸是 690.0 : 168.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 168.0)
+            self.ratio = 690.0 / 168.0;
+            
+            self.infoFlowView.adsID = @"850010";
+            self.infoFlowView.rootViewController = self;
+            self.infoFlowView.delegate = self;
+            [self.infoFlowView loadRequest];
         }
             break;
             
         case 850011: {
-            // 三图模式, adsID 为 850011, 广告位尺寸是 320.0 / 125.0
-            self.ratio = 320.0 / 125.0;
+            // 左文右图模式, adsID 为 850011,
+            // 广告位尺寸是 690.0 : 168.0 (请初始化 infoFlowView 初始宽高比为 690.0 : 168.0)
+            self.ratio = 690.0 / 168.0;
             
             self.infoFlowView.adsID = @"850011";
             self.infoFlowView.rootViewController = self;
@@ -121,7 +132,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     if (!self.infoFlowView) { return; }
-    self.infoFlowViewHeightConstraint.constant = self.infoFlowView.bounds.size.width / self.ratio + self.extraHeight;
+    self.infoFlowViewHeightConstraint.constant = self.infoFlowView.bounds.size.width / self.ratio;
     [self.infoFlowView updateConstraintsIfNeeded];
 }
 

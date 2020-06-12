@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPn-gU-R6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPn-gU-R6J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--横幅广告示例-->
+        <!--Banner广告示例-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="BannerViewController" title="横幅广告示例" id="BYZ-38-t0r" customClass="BannerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BannerViewController" title="Banner广告示例" id="BYZ-38-t0r" customClass="BannerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPW-eN-eLb" customClass="RYBannerView" customModule="MDAd">
-                                <rect key="frame" x="20" y="817" width="374" height="35"/>
+                                <rect key="frame" x="0.0" y="817" width="414" height="35"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="KUg-UR-zDW"/>
@@ -32,9 +32,9 @@
                             <constraint firstItem="05V-zi-HxR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2ln-3H-lj9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="05V-zi-HxR" secondAttribute="bottom" id="6hD-uV-aLz"/>
                             <constraint firstItem="05V-zi-HxR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Gy-xu-i3T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OPW-eN-eLb" secondAttribute="trailing" constant="20" id="7Hm-gu-9Cq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OPW-eN-eLb" secondAttribute="trailing" id="7Hm-gu-9Cq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OPW-eN-eLb" secondAttribute="bottom" constant="10" id="KvD-c0-Mzg"/>
-                            <constraint firstItem="OPW-eN-eLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bNJ-h8-8I6"/>
+                            <constraint firstItem="OPW-eN-eLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bNJ-h8-8I6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="05V-zi-HxR" secondAttribute="trailing" id="eoO-im-hID"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -139,42 +139,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zS-C5-MXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1589.8550724637682" y="-443.30357142857139"/>
-        </scene>
-        <!--Reward Video View Controller-->
-        <scene sceneID="7mV-nM-qig">
-            <objects>
-                <viewController storyboardIdentifier="RewardVideoViewController" id="BuD-tI-jNb" customClass="RewardVideoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="drc-Ao-cFb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mr8-qX-isx">
-                                <rect key="frame" x="16" y="431" width="382" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="rT0-cW-Ai6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="激励视频">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="openRewardVideo:" destination="BuD-tI-jNb" eventType="touchUpInside" id="Xsh-SO-BzS"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Mr8-qX-isx" firstAttribute="centerY" secondItem="uqQ-r2-d3C" secondAttribute="centerY" id="D2A-VF-nPa"/>
-                            <constraint firstItem="uqQ-r2-d3C" firstAttribute="trailing" secondItem="Mr8-qX-isx" secondAttribute="trailing" constant="16" id="nhA-KR-Ly0"/>
-                            <constraint firstItem="Mr8-qX-isx" firstAttribute="leading" secondItem="uqQ-r2-d3C" secondAttribute="leading" constant="16" id="uEj-Xv-ipW"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uqQ-r2-d3C"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G5e-K1-xuz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2375" y="-441"/>
         </scene>
         <!--开屏广告示例-->
         <scene sceneID="Se6-cs-ny7">

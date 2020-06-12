@@ -14,7 +14,6 @@
 		98380AE323683CAD00BA8784 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98380AE223683CAD00BA8784 /* CustomViewController.m */; };
 		98405EA3237CFA1100C81574 /* CustomAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98405EA2237CFA1100C81574 /* CustomAdView.m */; };
 		98405EA5237CFA2600C81574 /* CustomAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98405EA4237CFA2600C81574 /* CustomAdView.xib */; };
-		98405EA8237D068F00C81574 /* RewardVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98405EA7237D068F00C81574 /* RewardVideoViewController.m */; };
 		984DDAF822DDDAB3006C2F27 /* InfoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAF722DDDAB3006C2F27 /* InfoFlowViewController.m */; };
 		984DDAFB22DDDB10006C2F27 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFA22DDDB10006C2F27 /* InterstitialViewController.m */; };
 		984DDAFE22DDDBEB006C2F27 /* InterstitialHalfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */; };
@@ -40,8 +39,6 @@
 		98405EA1237CFA1100C81574 /* CustomAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAdView.h; sourceTree = "<group>"; };
 		98405EA2237CFA1100C81574 /* CustomAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAdView.m; sourceTree = "<group>"; };
 		98405EA4237CFA2600C81574 /* CustomAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAdView.xib; sourceTree = "<group>"; };
-		98405EA6237D068F00C81574 /* RewardVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardVideoViewController.h; sourceTree = "<group>"; };
-		98405EA7237D068F00C81574 /* RewardVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardVideoViewController.m; sourceTree = "<group>"; };
 		984DDAF622DDDAB3006C2F27 /* InfoFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoFlowViewController.h; sourceTree = "<group>"; };
 		984DDAF722DDDAB3006C2F27 /* InfoFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoFlowViewController.m; sourceTree = "<group>"; };
 		984DDAF922DDDB10006C2F27 /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
@@ -50,7 +47,7 @@
 		984DDAFD22DDDBEB006C2F27 /* InterstitialHalfViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialHalfViewController.m; sourceTree = "<group>"; };
 		986BFC5D237CF09B00031E07 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D0852238CC720003DA8F2 /* MDAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9881434322B1ED3B003037B5 /* MDAd(OC).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDAd(OC).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9881434322B1ED3B003037B5 /* MDAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9881434622B1ED3B003037B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9881434722B1ED3B003037B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9881434922B1ED3B003037B5 /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 				981C0F6F22E016CD00BDF6E1 /* BuoyViewController.m */,
 				98380AE123683CAD00BA8784 /* CustomViewController.h */,
 				98380AE223683CAD00BA8784 /* CustomViewController.m */,
-				98405EA6237D068F00C81574 /* RewardVideoViewController.h */,
-				98405EA7237D068F00C81574 /* RewardVideoViewController.m */,
 			);
 			path = DemoControllers;
 			sourceTree = "<group>";
@@ -140,7 +135,7 @@
 		9881434422B1ED3B003037B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9881434322B1ED3B003037B5 /* MDAd(OC).app */,
+				9881434322B1ED3B003037B5 /* MDAdDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +178,7 @@
 			);
 			name = OCMDAdDemo;
 			productName = OCTestRuiYuMob;
-			productReference = 9881434322B1ED3B003037B5 /* MDAd(OC).app */;
+			productReference = 9881434322B1ED3B003037B5 /* MDAdDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -302,7 +297,6 @@
 				98405EA3237CFA1100C81574 /* CustomAdView.m in Sources */,
 				9881435622B1ED3B003037B5 /* main.m in Sources */,
 				984DDAFE22DDDBEB006C2F27 /* InterstitialHalfViewController.m in Sources */,
-				98405EA8237D068F00C81574 /* RewardVideoViewController.m in Sources */,
 				98380ADD2368302F00BA8784 /* HomePage.m in Sources */,
 				984DDAFB22DDDB10006C2F27 /* InterstitialViewController.m in Sources */,
 				984DDAF822DDDAB3006C2F27 /* InfoFlowViewController.m in Sources */,
@@ -454,8 +448,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.10.1;
-				DEVELOPMENT_TEAM = X3TCHH8YF6;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,9 +462,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testsdk.oc;
-				PRODUCT_NAME = "MDAd(OC)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.testmdad;
+				PRODUCT_NAME = MDAdDemo;
 				SWIFT_OBJC_BRIDGING_HEADER = "OCMDAdDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -486,8 +480,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.10.1;
-				DEVELOPMENT_TEAM = X3TCHH8YF6;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G98K5299V8;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,9 +494,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testsdk.oc;
-				PRODUCT_NAME = "MDAd(OC)";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiyu.testmdad;
+				PRODUCT_NAME = MDAdDemo;
 				SWIFT_OBJC_BRIDGING_HEADER = "OCMDAdDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

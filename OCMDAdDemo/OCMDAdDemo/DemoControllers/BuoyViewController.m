@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"浮标广告";
     // Required configs - 初始化 RYInterstitialHalfView 实例之后, 必要的配置有:
     
     /// `RYBuoyView`'s ratio is 110 : 110(Width : Height).

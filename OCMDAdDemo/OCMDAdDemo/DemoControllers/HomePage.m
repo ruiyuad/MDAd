@@ -14,7 +14,6 @@
 #import "InterstitialViewController.h"
 #import "InterstitialHalfViewController.h"
 #import "BuoyViewController.h"
-#import "RewardVideoViewController.h"
 #import "CustomViewController.h"
 
 @interface HomePage ()
@@ -28,20 +27,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ads = @[@{@"Banner 广告": @[[[Ad alloc] initWithID:@"820001" title:@"纯图类型"],
-                                   [[Ad alloc] initWithID:@"820004" title:@"左图右文类型"]]},
-                 @{@"信息流广告": @[[[Ad alloc] initWithID:@"850006" title:@"上文下图带底部阴影类型"],
-                               [[Ad alloc] initWithID:@"850009" title:@"上图下文类型"],
-                               [[Ad alloc] initWithID:@"850008" title:@"左图右文类型(1:1.3)"],
-                               [[Ad alloc] initWithID:@"850011" title:@"三图类型"]]},
-                 @{@"全屏广告": @[[[Ad alloc] initWithID:@"810001" title:@"开屏广告类型"],
-                                [[Ad alloc] initWithID:@"810002" title:@"开屏广告类型"]]},
-                 @{@"插屏广告": @[[[Ad alloc] initWithID:@"840001" title:@"插屏广告类型"]]},
-                 @{@"浮标广告": @[[[Ad alloc] initWithID:@"860001" title:@"浮标广告类型"]]},
-                 @{@"视频广告": @[[[Ad alloc] initWithID:@"870001" title:@"视频广告类型"]]},
-                 @{@"自定义广告": @[[[Ad alloc] initWithID:@"-" title:@"自定义广告类型"]]}];
+    self.ads = @[
+        @{@"开屏广告": @[
+                  [[Ad alloc] initWithID:@"810001" title:@"开屏-单图0.56"],
+                  [[Ad alloc] initWithID:@"810002" title:@"开屏-上图下logo0.7"]]},
+        @{@"Banner广告": @[
+                  [[Ad alloc] initWithID:@"820001" title:@"Banner-单图10.67"],
+                  [[Ad alloc] initWithID:@"820004" title:@"Banner-左图右文1.56"],
+                  [[Ad alloc] initWithID:@"820005" title:@"Banner-单图4.26"]]},
+        @{@"插屏广告": @[[[Ad alloc] initWithID:@"840001" title:@"插屏广告"]]},
+        @{@"信息流广告": @[
+                  [[Ad alloc] initWithID:@"850002" title:@"信息流-左图右文0.67"],
+                  [[Ad alloc] initWithID:@"850006" title:@"信息流-上文下图1.78"],
+                  [[Ad alloc] initWithID:@"850007" title:@"信息流-左文右图0.78"],
+                  [[Ad alloc] initWithID:@"850008" title:@"信息流-左图右文0.78"],
+                  [[Ad alloc] initWithID:@"850009" title:@"信息流-上图下文1.78"],
+                  [[Ad alloc] initWithID:@"850010" title:@"信息流-左图右文1.5"],
+                  [[Ad alloc] initWithID:@"850011" title:@"信息流-左文右图1.5"]]},
+        @{@"浮标广告": @[[[Ad alloc] initWithID:@"860001" title:@"浮标广告"]]},
+        @{@"自定义广告": @[[[Ad alloc] initWithID:@"-" title:@"自定义广告"]]}];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Default_UITableViewCell"];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
 }
 
 #pragma mark - TableView DataSources && Delegates
@@ -96,46 +103,47 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
    
     switch (indexPath.section) {
+            
         case 0: {
-            BannerViewController *bannerVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"BannerViewController"];
-            if ([bannerVC isKindOfClass:BannerViewController.class] && bannerVC) {
-                NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
-                if (ads.count > indexPath.row) {
-                    bannerVC.adsID = ((Ad *)ads[indexPath.row]).adsID;
-                }
-                [self.navigationController pushViewController:bannerVC animated:YES];
-            }
-        }
-            break;
-            
-        case 1: {
-            InfoFlowViewController *infoFlowVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"InfoFlowViewController"];
-            if ([infoFlowVC isKindOfClass:InfoFlowViewController.class] && infoFlowVC) {
-                NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
-                if (ads.count > indexPath.row) {
-                    infoFlowVC.adsID = ((Ad *)ads[indexPath.row]).adsID;
-                }
-                [self.navigationController pushViewController:infoFlowVC animated:YES];
-            }
-        }
-            break;
-            
-        case 2: {
             InterstitialViewController *interstitialVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"InterstitialViewController"];
             if ([interstitialVC isKindOfClass:InterstitialViewController.class] && interstitialVC) {
                 NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
                 if (ads.count > indexPath.row) {
-                    interstitialVC.adsID = ((Ad *)ads[indexPath.row]).adsID;
+                    interstitialVC.adModel = ((Ad *)ads[indexPath.row]);
                 }
                 [self.navigationController pushViewController:interstitialVC animated:YES];
             }
         }
             break;
             
-        case 3: {
+        case 1: {
+            BannerViewController *bannerVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"BannerViewController"];
+            if ([bannerVC isKindOfClass:BannerViewController.class] && bannerVC) {
+                NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
+                if (ads.count > indexPath.row) {
+                    bannerVC.adModel = ((Ad *)ads[indexPath.row]);
+                }
+                [self.navigationController pushViewController:bannerVC animated:YES];
+            }
+        }
+            break;
+            
+        case 2: {
             InterstitialHalfViewController *interstitialHalfVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"InterstitialHalfViewController"];
             if ([interstitialHalfVC isKindOfClass:InterstitialHalfViewController.class] && interstitialHalfVC) {
                 [self.navigationController pushViewController:interstitialHalfVC animated:YES];
+            }
+        }
+            break;
+            
+        case 3: {
+            InfoFlowViewController *infoFlowVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"InfoFlowViewController"];
+            if ([infoFlowVC isKindOfClass:InfoFlowViewController.class] && infoFlowVC) {
+                NSArray * ads = (NSArray *)[self.ads[indexPath.section] allValues].firstObject;
+                if (ads.count > indexPath.row) {
+                    infoFlowVC.adModel = ((Ad *)ads[indexPath.row]);
+                }
+                [self.navigationController pushViewController:infoFlowVC animated:YES];
             }
         }
             break;
@@ -149,14 +157,6 @@
             break;
             
         case 5: {
-            RewardVideoViewController *rewardVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"RewardVideoViewController"];
-            if ([rewardVC isKindOfClass:RewardVideoViewController.class] && rewardVC) {
-                [self.navigationController pushViewController:rewardVC animated:YES];
-            }
-        }
-            break;
-            
-        case 6: {
             CustomViewController *customVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"CustomViewController"];
             if ([customVC isKindOfClass:CustomViewController.class] && customVC) {
                 [self.navigationController pushViewController:customVC animated:YES];
