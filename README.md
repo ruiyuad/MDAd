@@ -1,6 +1,6 @@
 # MDAdSDK
 
-**`MDAd.framework`** 用于 iOS 端移动应用广告展示. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 如有疑问, 请联系我们 *admin@mobiw.com* 或者当前 github 账号.
+**`MDAd.framework`** 用于 iOS 端移动应用广告展示. 基于 Swift 语言开发. 在使用广告服务的同时, 我们真诚希望收到大家的反馈. 如有疑问, 请联系我们 *admin@mobdatas.com* 或者当前 github 账号.
 
 ## 目录
 - [环境支持](#环境支持)
